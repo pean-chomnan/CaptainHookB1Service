@@ -1,0 +1,85 @@
+
+        Dim a As String
+
+        ' =========== Add Issue For Production By Batch ========'
+
+        Dim IGEs As New List(Of ServiceReference4.ClassIssueProductionOIGE)
+        Dim IGE As New ServiceReference4.ClassIssueProductionOIGE ' List(Of ocrd)
+        Dim IGELs As New List(Of ServiceReference4.ClassIssueProductionLine)
+        Dim IGEL As New ServiceReference4.ClassIssueProductionLine
+        Dim ls_Serials As New List(Of ServiceReference4.ClassIssueProductionSerialNumbers)
+        Dim Serial As New ServiceReference4.ClassIssueProductionSerialNumbers
+        Dim ls_result As List(Of ServiceReference4.ReturnStatus)
+        Dim ls_Batchs As New List(Of ServiceReference4.ClassIssueProductionBatchNumbers)
+        Dim Batch As New ServiceReference4.ClassIssueProductionBatchNumbers
+        Dim ibar As New ServiceReference4.ItemMasterData.CodeBars
+
+        IGE = New ServiceReference4.ClassIssueProductionOIGE
+
+        IGE.Series = 2464
+        IGE.DocDate = "2021-07-06"
+        'IGE.TaxDate = "2021-07-06"
+        IGE.Ref2 = "Ref.002"
+        IGE.WebDocNum = 1235
+        IGE.Comments = "Testing Compy IGE Batch"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then
+                ' Row Number 1
+		IGEL.ItemCode = "4BV0100"
+                IGEL.VendorNum = "Ven Num002"
+                IGEL.Quantity = 1
+                IGEL.Warehouse = "01"
+                IGEL.CogsCode = "CSM"
+                IGEL.CogsCode2 = "DP01"
+
+                ' Setup Batch Line 1
+                Batch.Batch = "PO20092009004-00001"
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                IGEL.ls_Batch = ls_Batchs.ToArray
+
+                IGEL.BaseEntry = 10
+                '   IGEL.BaseType = "17"
+                IGEL.BaseLine = 0
+
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference4.ClassIssueProductionBatchNumbers
+
+            Else 'Row Number 2
+		IGEL.ItemCode = "4GT0100"
+                IGEL.VendorNum = "Ven Num003"
+                IGEL.Quantity = 1
+                IGEL.Warehouse = "01"
+                IGEL.CogsCode = "CSM"
+                IGEL.CogsCode2 = "DP01"
+
+                ' Setup Batch Line 1
+                Batch.Batch = "PO20082008009-00003"
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                IGEL.ls_Batch = ls_Batchs.ToArray
+
+                IGEL.BaseEntry = 10
+                '   IGEL.BaseType = "17"
+                IGEL.BaseLine = 3
+
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference4.ClassIssueProductionBatchNumbers
+
+            End If
+
+            IGELs.Add(IGEL)
+            IGEL = Nothing
+            IGEL = New ServiceReference4.ClassIssueProductionLine
+        Next
+
+        IGE.Lines = IGELs.ToArray
+        IGEs.Add(IGE)
+        ls_result = Client._AddIssueProduction(IGEs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

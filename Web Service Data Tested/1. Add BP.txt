@@ -1,0 +1,44 @@
+
+        '============ END TEST BP ADD =========='
+
+        Dim OCRD As New List(Of ServiceReference1.BPMasterData)
+        Dim BP As New ServiceReference1.BPMasterData ' List(Of ocrd)
+        Dim ls_result As List(Of ServiceReference1.ReturnStatus)
+        BP = New ServiceReference1.BPMasterData
+        '   OCRD = New List(Of ServiceReference1.BPMasterData)
+        BP.DocType = "C"
+        BP.AcctReceivable = "113010100"
+        BP.AcctDownPayment = ""
+
+        BP.CardCode = "CHOM-00001"
+        BP.DocCurr = "THB"
+        BP.CardName = "www"
+        BP.ForeignName = "FCwwww"
+        BP.TaxID = "12345"
+        BP.GroupID = "107"
+        BP.Tel1 = "099999"
+        BP.Tel2 = "012"
+        BP.Name = "CONTACT NAME"
+        BP.FristName = "First"
+        BP.Tel_1 = "01011"
+
+        'BP.Branch = "Branch"
+        BP.TaxID = "1234444"
+        BP.PaymentMethods = "6"
+
+        'Bill To
+        BP.Branch = "CHOM-00001"
+        BP.Line1 = "addr1"
+        BP.Line2 = "addr2"
+
+        'PayTo 
+        BP.Branch = "CHOM-00001"
+        BP.Line1 = "PayLin1"
+        BP.Line2 = "PayLine2"
+
+        OCRD.Add(BP)
+
+
+        ls_result = server._CreateBP(OCRD.ToArray).ToList
+
+        '========= End Create BP ==========

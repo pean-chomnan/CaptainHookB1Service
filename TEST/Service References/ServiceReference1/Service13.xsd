@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3606/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+  <xs:import schemaLocation="http://localhost:3606/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_CreateBP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q3:ArrayOfBPMasterData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_CreateBPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_CreateBPResult" nillable="true" type="q4:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_UpdateBP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q5:ArrayOfBPMasterData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_UpdateBPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_UpdateBPResult" nillable="true" type="q6:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_CreateItemMaster">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q7:ArrayOfItemMasterData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_CreateItemMasterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_CreateItemMasterResult" nillable="true" type="q8:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_UpdateBarCodeItemMaster">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q9:ArrayOfItemMasterData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_UpdateBarCodeItemMasterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_UpdateBarCodeItemMasterResult" nillable="true" type="q10:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_UpdateItemMaster">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q11:ArrayOfItemMasterData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_UpdateItemMasterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_UpdateItemMasterResult" nillable="true" type="q12:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddGoodsReceiptPO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q13:ArrayOfGoodsReceiptPO.OPDN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddGoodsReceiptPOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_AddGoodsReceiptPOResult" nillable="true" type="q14:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q15:ArrayOfClassDelivery.ODLN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddDeliveryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_AddDeliveryResult" nillable="true" type="q16:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddGoodsReceipt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q17:ArrayOfClassGoodsReceipt.OIGN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddGoodsReceiptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_AddGoodsReceiptResult" nillable="true" type="q18:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddGoodsIssue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q19:ArrayOfClassGoodsIssue.OIGE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddGoodsIssueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_AddGoodsIssueResult" nillable="true" type="q20:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddInventoryTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q21:ArrayOfClassInventoryTransfer.OWTR" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddInventoryTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_AddInventoryTransferResult" nillable="true" type="q22:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddInventoryCounting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q23:ArrayOfClassInventoryCounting.OINC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddInventoryCountingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_AddInventoryCountingResult" nillable="true" type="q24:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddIssueProduction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q25:ArrayOfClassIssueProduction.OIGE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddIssueProductionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_AddIssueProductionResult" nillable="true" type="q26:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddReceiptFromProduction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q27:ArrayOfClassReceiptFromProduction.OIGN" />
+        <xs:element minOccurs="0" name="iCopyFrom" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddReceiptFromProductionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_AddReceiptFromProductionResult" nillable="true" type="q28:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_myClass">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_myClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_myClassResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_UpdateUDFBorCodeBoxNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="ipaObj" nillable="true" type="q29:ArrayOfPackingClass.ClassPacking" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_UpdateUDFBorCodeBoxNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_UpdateUDFBorCodeBoxNumberResult" nillable="true" type="q30:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetPacking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BarCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetPackingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPackingResult" nillable="true" type="q31:PackingClass.ClassPackingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPGroupCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPGroupCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPGroupCodeResult" nillable="true" type="q32:ReturnBPGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPCurrencyCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPCurrencyCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPCurrencyCodeResult" nillable="true" type="q33:ReturnBPCurrency" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPAccountReceivable">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPAccountReceivableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPAccountReceivableResult" nillable="true" type="q34:ReturnBPAccountReceivable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPAccountDownPayment">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPAccountDownPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPAccountDownPaymentResult" nillable="true" type="q35:ReturnAccountDownPayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPPaymentTerms">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPPaymentTermsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPPaymentTermsResult" nillable="true" type="q36:ReturnBPReturnPaymentTerms" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPCountry">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBPCountryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPCountryResult" nillable="true" type="q37:ReturnBPCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBankCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBankCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBankCodeResult" nillable="true" type="q38:ReturnBankCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetHouseBankCountry">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetHouseBankCountryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetHouseBankCountryResult" nillable="true" type="q39:ReturnHouseBankCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetHouseBankAccountCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BankAcctCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetHouseBankAccountCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetHouseBankAccountCodeResult" nillable="true" type="q40:ReturnHouseBankAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetPaymentMoethod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IorO" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetPaymentMoethodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPaymentMoethodResult" nillable="true" type="q41:ReturnPaymentMeothod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetWithholdingTax">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetWithholdingTaxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetWithholdingTaxResult" nillable="true" type="q42:ReturnWithholdingTax" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetItemCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchingItem" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetItemCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetItemCodeResult" nillable="true" type="q43:ReturnItemCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetUomGroup">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetUomGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetUomGroupResult" nillable="true" type="q44:ReturnUomGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetItemGroupCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetItemGroupCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetItemGroupCodeResult" nillable="true" type="q45:ReturnItemGroupCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetFirmCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetFirmCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetFirmCodeResult" nillable="true" type="q46:ReturnFirmCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetUDFType">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetUDFTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetUDFTypeResult" nillable="true" type="q47:ReturnUDFType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetSeries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PostingDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetSeriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetSeriesResult" nillable="true" type="q48:ReturnSeries" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetCardCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SearchingBP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetCardCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetCardCodeResult" nillable="true" type="q49:ReturnBP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetContactPerson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetContactPersonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetContactPersonResult" nillable="true" type="q50:ReturnContactPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetSalesPersonCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetSalesPersonCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetSalesPersonCodeResult" nillable="true" type="q51:ReturnSalesPersonCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetOwner">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetOwnerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetOwnerResult" nillable="true" type="q52:ReturnOwner" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetbBarCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetbBarCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetbBarCodeResult" nillable="true" type="q53:ReturnBarCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetTaxCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IorO" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetTaxCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetTaxCodeResult" nillable="true" type="q54:ReturnTaxCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetUomCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetUomCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetUomCodeResult" nillable="true" type="q55:ReturnUomCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetWarehouse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetWarehouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetWarehouseResult" nillable="true" type="q56:ReturnWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetDimension">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OneOrTwo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetDimensionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetDimensionResult" nillable="true" type="q57:ReturnDimension" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetPurchaseOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocNum" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetPurchaseOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPurchaseOrderResult" nillable="true" type="q58:ReturnPurchaseOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetListOfPurchaseDocument">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetListOfPurchaseDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetListOfPurchaseDocumentResult" nillable="true" type="q59:ReturnListOfPurchaseDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBinCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WarehouseCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBinCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBinCodeResult" nillable="true" type="q60:ReturnBinCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetSalesOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocNum" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetSalesOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetSalesOrderResult" nillable="true" type="q61:ReturnSalesOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetListOfSalesOrder">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetListOfSalesOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetListOfSalesOrderResult" nillable="true" type="q62:ReturnListOfSalesOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetAvailableSerialBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WarehouseCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetAvailableSerialBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetAvailableSerialBatchResult" nillable="true" type="q63:ReturnAvailableSerialBatch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetPriceList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetPriceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPriceListResult" nillable="true" type="q64:ReturnPriceList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetShipTo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetShipToResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetShipToResult" nillable="true" type="q65:ReturnShipTo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetShipToAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ShipTo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetShipToAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetShipToAddressResult" nillable="true" type="q66:ReturnShipToAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetItemSetupBySerialOrBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetItemSetupBySerialOrBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_GetItemSetupBySerialOrBatchResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_IsWarehouseManagerByBIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WhsCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_IsWarehouseManagerByBINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_IsWarehouseManagerByBINResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetOrderInterval">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetOrderIntervalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetOrderIntervalResult" nillable="true" type="q67:ReturnOrderInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetInventoryCountingUomCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetInventoryCountingUomCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetInventoryCountingUomCodeResult" nillable="true" type="q68:ReturnInventoryCountingUomCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetGetItemOnHandPerWhsOrBIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Warehouse" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BinCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetGetItemOnHandPerWhsOrBINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetGetItemOnHandPerWhsOrBINResult" nillable="true" type="q69:ReturnItemOnHandPerWhsOrBIN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLisOfAvailableIssueLineFromProductionOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductionOrderDocEntry" nillable="true" type="q70:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLisOfAvailableIssueLineFromProductionOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLisOfAvailableIssueLineFromProductionOrderResult" nillable="true" type="q71:ReturnLoadProductionOrderToIssueLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLoadProductionOrderThatAvaibableForReceiptFromProduction">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLoadProductionOrderThatAvaibableForReceiptFromProductionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadProductionOrderThatAvaibableForReceiptFromProductionResult" nillable="true" type="q72:ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLoadIssueForProductionToReceiptFromProduction">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLoadIssueForProductionToReceiptFromProductionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadIssueForProductionToReceiptFromProductionResult" nillable="true" type="q73:ReturnLoadIssueForProductionToReceiptFromProduction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLoadIssueForProductionToReceiptFromProductionLine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListOfProductionOrderDocEntry" nillable="true" type="q74:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLoadIssueForProductionToReceiptFromProductionLineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadIssueForProductionToReceiptFromProductionLineResult" nillable="true" type="q75:ReturnLoadIssueForProductionToReceiptFromProductionLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetProductionOrderListForIssueProduction">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetProductionOrderListForIssueProductionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetProductionOrderListForIssueProductionResult" nillable="true" type="q76:ReturnProductionOrderListForIssueProduction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLoadProductionOrderToIssueLine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListOfProductionOrderDocEntry" nillable="true" type="q77:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetLoadProductionOrderToIssueLineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadProductionOrderToIssueLineResult" nillable="true" type="q78:ReturnLoadProductionOrderToIssueLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

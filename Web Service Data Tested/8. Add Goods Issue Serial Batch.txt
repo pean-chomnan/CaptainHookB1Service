@@ -1,0 +1,95 @@
+
+        Dim a As String
+
+        ' =========== Add Delivery By Batch ========'
+
+        Dim OIGEs As New List(Of ServiceReference2.ClassGoodsIssueOIGE)
+        Dim OIGE As New ServiceReference2.ClassGoodsIssueOIGE ' List(Of ocrd)
+        Dim OIGELs As New List(Of ServiceReference2.ClassGoodsIssueLine)
+        Dim OIGEL As New ServiceReference2.ClassGoodsIssueLine
+        Dim ls_Serials As New List(Of ServiceReference2.ClassGoodsIssueSerialNumbers)
+        Dim Serial As New ServiceReference2.ClassGoodsIssueSerialNumbers
+        Dim ls_result As List(Of ServiceReference2.ReturnStatus)
+        Dim ls_Batchs As New List(Of ServiceReference2.ClassGoodsIssueBatchNumbers)
+        Dim Batch As New ServiceReference2.ClassGoodsIssueBatchNumbers
+        Dim ibar As New ServiceReference2.ItemMasterData.CodeBars
+
+        OIGE = New ServiceReference2.ClassGoodsIssueOIGE
+
+        OIGE.Series = 2462
+        OIGE.DocDate = "2021-06-21"
+        OIGE.TaxDate = "2021-06-21"
+        OIGE.Ref2 = "Ref2-001"
+        OIGE.PriceListNum = 1
+        OIGE.WebDocNum = "1114"
+        OIGE.Comments = "Testing Compy OIGE Batch"
+        OIGE.JournalRemark = "Journal Remark"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then  ' Row Number 1
+                OIGEL.ItemCode = "1IGDL0000"
+                OIGEL.BarCode = "1I-B001"
+                OIGEL.Quantity = 2
+                OIGEL.Price = 300
+                OIGEL.GrossPrice = 321
+                OIGEL.DiscPercent = 10
+                OIGEL.WhsCode = "03.HKT05"
+                OIGEL.CogsCode = "CSM"
+                OIGEL.CogsCode2 = "DP01"
+
+
+                ' Setup Serial Line 1
+                Serial.SerialNumber = "SC-0006"
+                ls_Serials.Add(Serial)
+                Serial = Nothing
+                Serial = New ServiceReference2.ClassGoodsIssueSerialNumbers
+
+                ' Setup Serial Line 2           
+                Serial.SerialNumber = "SC-0007"
+  
+                ls_Serials.Add(Serial)
+                OIGEL.ls_Serial = ls_Serials.ToArray
+                ls_Serials.Clear()
+                Serial = Nothing
+                Serial = New ServiceReference2.ClassGoodsIssueSerialNumbers
+            Else 'Row Number 2
+                OIGEL.ItemCode = "1IGBP0000"
+                OIGEL.BarCode = "1IGS-B002"
+                OIGEL.Quantity = 3
+                OIGEL.Price = 400
+                OIGEL.GrossPrice = 428
+                OIGEL.DiscPercent = 0
+                '   OIGEL.UomEntry = ""
+                OIGEL.WhsCode = "03.HKT05"
+                OIGEL.CogsCode = "DEL"
+                OIGEL.CogsCode2 = "DP02"
+
+                ' Setup Batch Line 1
+                Batch.Batch = "BNN-0003"
+                Batch.Quantity = 2
+
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference2.ClassGoodsIssueBatchNumbers
+
+                ' Setup Batch Line 2
+                Batch.Batch = "BNN-0005"
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                OIGEL.ls_Batch = ls_Batchs.ToArray
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference2.ClassGoodsIssueBatchNumbers
+            End If
+
+            OIGELs.Add(OIGEL)
+            OIGEL = Nothing
+            OIGEL = New ServiceReference2.ClassGoodsIssueLine
+        Next
+
+        OIGE.Lines = OIGELs.ToArray
+        OIGEs.Add(OIGE)
+        ls_result = server._AddGoodsIssue(OIGEs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

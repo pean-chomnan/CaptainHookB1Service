@@ -1,0 +1,77 @@
+	'GET GroupCode
+	Dim ls_Res As New ServiceReference1.ReturnBPGroup
+        ls_Res = Client._GetBPGroupCode("C") ' C=Customer,S=Vendor
+        ls_Res = ls_Res
+
+	'GET Currency
+        Dim ls_Res As New ServiceReference1.ReturnBPCurrency
+        ls_Res = Client._GetBPCurrencyCode()
+        ls_Res = ls_Res
+
+	'Get AccountReceivable
+        Dim ls_Res As New ServiceReference1.ReturnBPAccountReceivable
+        ls_Res = Client._GetBPAccountReceivable()
+        Dim i As Integer
+        i = ls_Res.ls.Count
+        i = i
+	
+	'Get Account DownPayment
+	Dim ls_Res As New ServiceReference1.ReturnAccountDownPayment
+        ls_Res = Client._GetBPAccountDownPayment()
+        Dim i As Integer
+        i = ls_Res.ls.Count
+        i = i
+
+	'Get BP Payment Terms
+        Dim ls_Res As New ServiceReference1.ReturnBPReturnPaymentTerms
+        ls_Res = Client._GetBPPaymentTerms()
+        Dim i As Integer
+        i = ls_Res.ls.Count
+        i = i
+	
+	'Get BP Country
+        Dim ls_Res As New ServiceReference1.ReturnBPCountry
+        ls_Res = Client._GetBPCountry()
+        Dim i As Integer
+        i = ls_Res.ls.Count
+        i = i
+
+	'Get Bank Code
+	Dim ls_Res As New ServiceReference1.ReturnBankCode
+        ls_Res = Client._GetBankCode
+        Dim i As Integer
+        i = ls_Res.ls.Count
+        i = i
+
+	'Get HouseBankAccountCode
+        Dim ls_Res As New ServiceReference1.ReturnHouseBankAccount
+        ls_Res = Client._GetHouseBankAccountCode("BBL") 'BBL is bank code
+        Dim i As Integer
+        i = ls_Res.ls.Count
+        i = i
+
+	'Get Payment Method
+        Dim ls_Res As New ServiceReference1.ReturnPaymentMeothod
+        ls_Res = Client._GetPaymentMoethod("O")  ' I=Incoming,O=Outgoing
+        Dim i As Integer
+        i = ls_Res.ls.Count
+        i = i
+
+	'Get Withholding Tax
+        Dim ls_Res As New ServiceReference1.ReturnWithholdingTax
+        ls_Res = Client._GetWithholdingTax  
+        Dim i As Integer
+        i = ls_Res.ls.Count
+        i = i
+
+
+
+
+
+
+
+
+
+
+
+

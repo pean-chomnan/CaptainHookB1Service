@@ -1,0 +1,143 @@
+
+        Dim a As String
+
+        ' =========== Add Goods Receipt By Batch ========'
+
+        Dim OIGNs As New List(Of ServiceReference2.ClassGoodsReceiptOIGN)
+        Dim OIGN As New ServiceReference2.ClassGoodsReceiptOIGN ' List(Of ocrd)
+        Dim OIGNLs As New List(Of ServiceReference2.ClassGoodsReceiptLine)
+        Dim OIGNL As New ServiceReference2.ClassGoodsReceiptLine
+        Dim ls_Serials As New List(Of ServiceReference2.ClassGoodsReceiptSerialNumbers)
+        Dim Serial As New ServiceReference2.ClassGoodsReceiptSerialNumbers
+        Dim ls_result As List(Of ServiceReference2.ReturnStatus)
+        Dim ls_Batchs As New List(Of ServiceReference2.ClassGoodsReceiptBatchNumbers)
+        Dim Batch As New ServiceReference2.ClassGoodsReceiptBatchNumbers
+        Dim ibar As New ServiceReference2.ItemMasterData.CodeBars
+
+        OIGN = New ServiceReference2.ClassGoodsReceiptOIGN
+
+        OIGN.Series = 1471
+        OIGN.DocDate = "2021-06-21"
+        OIGN.TaxDate = "2021-06-21"
+        OIGN.Ref2 = "Ref2-001"
+        OIGN.PriceListNum = 1
+        OIGN.WebDocNum = "1114"
+        OIGN.Comments = "Testing Compy OIGN Batch"
+        OIGN.JournalRemark = "Journal Remark"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then  ' Row Number 1
+                OIGNL.ItemCode = "1IGDL0000"
+                OIGNL.BarCode = "1I-B001"
+                OIGNL.Quantity = 2
+                OIGNL.Price = 300
+                OIGNL.GrossPrice = 321
+                OIGNL.DiscPercent = 10
+                OIGNL.WhsCode = "03.HKT05"
+                OIGNL.CogsCode = "CSM"
+                OIGNL.CogsCode2 = "DP01"
+
+                ' Setup Serial Line 1
+                Serial.SerialNumber = "SC-0001"
+                Serial.ManufacturerSerialNumber = "SM-0001"
+                Serial.ManufactureDate = "2021-06-19"
+                Serial.ExpirationDate = "2021-07-19"
+                Serial.Note = "Note Test"
+                Serial.Location = "Locate Test"
+                Serial.ReceptionDate = "2021-06-01"
+                Serial.ACT_WeightOnBatch = 12.8
+                Serial.CompanyAddress = "Com Addr"
+                Serial.BarCodeBoxNumber = "BarBox"
+                Serial.Smoking = "Smoking"
+                Serial.BinAbsEntry = 52
+                Serial.Quantity = 1
+
+                ls_Serials.Add(Serial)
+                Serial = Nothing
+                Serial = New ServiceReference2.ClassGoodsReceiptSerialNumbers
+
+                ' Setup Serial Line 2           
+                Serial.SerialNumber = "SC-0002"
+                Serial.ManufacturerSerialNumber = "SM-0002"
+                Serial.ManufactureDate = "2021-06-15"
+                Serial.ExpirationDate = "2021-07-15"
+                Serial.Note = "Note Test2"
+                Serial.Location = "Locate Test2"
+                Serial.ReceptionDate = "2021-06-01"
+                Serial.ACT_WeightOnBatch = 19.8
+                Serial.CompanyAddress = "Com Addr2"
+                Serial.BarCodeBoxNumber = "BarBox2"
+                Serial.Smoking = "Smoking2"
+                Serial.BinAbsEntry = 52
+                Serial.Quantity = 1
+
+                ls_Serials.Add(Serial)
+                OIGNL.ls_Serial = ls_Serials.ToArray
+                ls_Serials.Clear()
+                Serial = Nothing
+                Serial = New ServiceReference2.ClassGoodsReceiptSerialNumbers
+            Else 'Row Number 2
+                OIGNL.ItemCode = "1IGBP0000"
+                OIGNL.BarCode = "1IGS-B002"
+                OIGNL.Quantity = 3
+                OIGNL.Price = 400
+                OIGNL.GrossPrice = 428
+                OIGNL.DiscPercent = 0
+                '   OIGNL.UomEntry = ""
+                OIGNL.WhsCode = "03.HKT05"
+                OIGNL.CogsCode = "CSM"
+                OIGNL.CogsCode2 = "DP01"
+
+                ' Setup Batch Line 1
+                Batch.Batch = "BNN-0001"
+                Batch.ManufacturerSerialNumber = "BNM-0001"
+                Batch.ManufacturingDate = "2021-06-21"
+                Batch.Notes = "Btch Notes"
+                Batch.Location = "Locat Batch"
+                Batch.ReceptionDate = "2021-06-21"
+                Batch.AdmissionDate = "2021-06-21"
+                Batch.ExpirationDate = "2021-07-21"
+                Batch.ACT_WeightOnBatch = 123
+                Batch.CompanyAddress = "Com addr"
+                Batch.BarCodeBoxNumber = "BarCodeb0xNum"
+                Batch.Smoking = "Smoking Udf"
+                Batch.BinAbsEntry = 53
+                Batch.Quantity = 2
+
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference2.ClassGoodsReceiptBatchNumbers
+
+                ' Setup Batch Line 2
+                Batch.Batch = "BNN-0002"
+                Batch.ManufacturerSerialNumber = "BNM-0002"
+                Batch.ManufacturingDate = "2021-06-21"
+                Batch.Notes = "Btch Notes2"
+                Batch.Location = "Locat Batch2"
+                Batch.ReceptionDate = "2021-06-21"
+                Batch.AdmissionDate = "2021-06-21"
+                Batch.ExpirationDate = "2021-07-21"
+                Batch.ACT_WeightOnBatch = 22
+                Batch.CompanyAddress = "Com addr2"
+                Batch.BarCodeBoxNumber = "BarCodeb0xNum2"
+                Batch.Smoking = "Smoking Udf2"
+                Batch.BinAbsEntry = 53
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                OIGNL.ls_Batch = ls_Batchs.ToArray
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference2.ClassGoodsReceiptBatchNumbers
+            End If
+
+            OIGNLs.Add(OIGNL)
+            OIGNL = Nothing
+            OIGNL = New ServiceReference2.ClassGoodsReceiptLine
+        Next
+
+        OIGN.Lines = OIGNLs.ToArray
+        OIGNs.Add(OIGN)
+        ls_result = server._AddGoodsReceipt(OIGNs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

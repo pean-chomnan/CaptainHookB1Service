@@ -1,0 +1,143 @@
+        Dim a As String
+
+        ' =========== Add Goods Receipt PO  By Serial ========'
+
+        Dim GPOs As New List(Of ServiceReference2.GoodsReceiptPOOPDN)
+        Dim GPO As New ServiceReference2.GoodsReceiptPOOPDN ' List(Of ocrd)
+        Dim GPOLs As New List(Of ServiceReference2.GoodsReceiptPOLine)
+        Dim GPOL As New ServiceReference2.GoodsReceiptPOLine
+        Dim ls_Serials As New List(Of ServiceReference2.GoodsReceiptPOSerialNumbers)
+        Dim Serial As New ServiceReference2.GoodsReceiptPOSerialNumbers
+        Dim ls_result As List(Of ServiceReference2.ReturnStatus)
+
+        Dim ls_Batchs As New List(Of ServiceReference2.GoodsReceiptPOBatchNumbers)
+        Dim Batch As New ServiceReference2.GoodsReceiptPOBatchNumbers
+
+        '    Dim myClasss As New ServiceReference2.m
+
+        Dim ibar As New ServiceReference2.ItemMasterData.CodeBars
+
+        GPO = New ServiceReference2.GoodsReceiptPOOPDN
+
+        GPO.Series = 1731
+        GPO.CardCode = "VLC10003"
+        GPO.DocDate = "2021-06-19"
+        GPO.DocDueDate = "2021-06-19"
+        GPO.TaxDate = "2021-06-19"
+        '    GPO.RequestByBranch=
+        GPO.WebDocNum = "1112"
+        GPO.PriceMode = "N"
+        GPO.DiscountPercent = 10
+        GPO.ContactPersonCode = 3
+        GPO.SalesPersonCode = 1
+        GPO.DocumentsOwner = 2
+        GPO.NumAtCard = "Num-VLC0001"
+        GPO.Comments = "Testing Compy GPO"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then  ' Row Number 1
+                GPOL.ItemCode = "1IGDL0000"
+                GPOL.BarCode = "1I-B001"
+                GPOL.Quantity = 2
+                GPOL.Price = 300
+                GPOL.GrossPrice = 321
+                GPOL.DiscPercent = 0
+                GPOL.VatGroup = "P07"
+                '   GPOL.UomEntry = ""
+                GPOL.WhsCode = "03.HKT05"
+                GPOL.CogsCode = "CSM"
+                GPOL.CogsCode2 = "DP01"
+
+                ' Setup Serial Line 1
+                Serial.SerialNumber = "SC-001"
+                Serial.ManufacturerSerialNumber = "SM-001"
+                Serial.ManufactureDate = "2021-06-19"
+                Serial.ExpirationDate = "2021-07-19"
+                Serial.Note = "Note Test"
+                Serial.Location = "Locate Test"
+                Serial.ReceptionDate = "2021-06-01"
+                Serial.ACT_WeightOnBatch = 12.8
+                Serial.CompanyAddress = "Com Addr"
+                Serial.BarCodeBoxNumber = "BarBox"
+                Serial.Smoking = "Smoking"
+                Serial.BinAbsEntry = 52
+                Serial.Quantity = 1
+
+                ls_Serials.Add(Serial)
+                Serial = Nothing
+                Serial = New ServiceReference2.GoodsReceiptPOSerialNumbers
+
+                ' Setup Serial Line 2
+                Serial.SerialNumber = "SC-002"
+                Serial.ManufacturerSerialNumber = "SM-002"
+                Serial.ManufactureDate = "2021-06-15"
+                Serial.ExpirationDate = "2021-07-15"
+                Serial.Note = "Note Test2"
+                Serial.Location = "Locate Test2"
+                Serial.ReceptionDate = "2021-06-01"
+                Serial.ACT_WeightOnBatch = 19.8
+                Serial.CompanyAddress = "Com Addr2"
+                Serial.BarCodeBoxNumber = "BarBox2"
+                Serial.Smoking = "Smoking2"
+                Serial.BinAbsEntry = 53
+                Serial.Quantity = 1
+
+                ls_Serials.Add(Serial)
+                GPOL.ls_Serial = ls_Serials.ToArray
+
+                GPOL.BaseEntry = 13
+                GPOL.BaseType = "22"
+                GPOL.Baseline = 0
+
+                ls_Serials.Clear()
+                Serial = Nothing
+                Serial = New ServiceReference2.GoodsReceiptPOSerialNumbers
+            Else 'Row Number 2
+                GPOL.ItemCode = "1IGDL0000"
+                GPOL.BarCode = "1I-B002"
+                GPOL.Quantity = 1
+                GPOL.Price = 400
+                GPOL.GrossPrice = 428
+                GPOL.DiscPercent = 0
+                GPOL.VatGroup = "P07"
+                '   GPOL.UomEntry = ""
+                GPOL.WhsCode = "03.HKT05"
+                GPOL.CogsCode = "CSM"
+                GPOL.CogsCode2 = "DP01"
+                ' Setup Serial Line 1
+                Serial.SerialNumber = "SC-003"
+                Serial.ManufacturerSerialNumber = "SM-003"
+                Serial.ManufactureDate = "2021-06-19"
+                Serial.ExpirationDate = "2021-07-19"
+                Serial.Note = "Note Test3"
+                Serial.Location = "Locate Test3"
+                Serial.ReceptionDate = "2021-06-01"
+                Serial.ACT_WeightOnBatch = 12.8
+                Serial.CompanyAddress = "Com Addr3"
+                Serial.BarCodeBoxNumber = "BarBox3"
+                Serial.Smoking = "Smoking3"
+                Serial.BinAbsEntry = 52
+                Serial.Quantity = 1
+
+                ls_Serials.Add(Serial)
+                GPOL.ls_Serial = ls_Serials.ToArray
+
+                GPOL.BaseEntry = 13
+                GPOL.BaseType = "22"
+                GPOL.Baseline = 1
+
+                ls_Serials.Clear()
+                Serial = Nothing
+                Serial = New ServiceReference2.GoodsReceiptPOSerialNumbers
+            End If
+
+            GPOLs.Add(GPOL)
+            GPOL = Nothing
+            GPOL = New ServiceReference2.GoodsReceiptPOLine
+        Next
+
+        GPO.Lines = GPOLs.ToArray
+        GPOs.Add(GPO)
+        ls_result = server._AddGoodsReceiptPO(GPOs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

@@ -1,0 +1,5 @@
+	Dim ls_result As ServiceReference2.ClassPackingResponse
+        ls_result = Client._GetPacking("SC-00022")
+        Dim st As String
+        st = ls_result.Obj(0).ItemCode
+        st = st

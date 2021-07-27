@@ -1,0 +1,39 @@
+
+        Dim a As String
+
+        ' =========== Update BarCode IN Item Master =========='
+
+        Dim OITM As New List(Of ServiceReference2.ItemMasterData)
+        Dim ITM As New ServiceReference2.ItemMasterData ' List(Of ocrd)
+        Dim ls_result As List(Of ServiceReference2.ReturnStatus)
+        Dim CB As New List(Of ServiceReference2.ItemMasterData.CodeBars)
+        Dim BS As New ServiceReference2.ItemMasterData.CodeBars
+        ITM = New ServiceReference2.ItemMasterData
+
+        ITM.ItemCode = "CH-0012"
+        ' ITM.UomGroup = 2  ' UOM GROUP =2 HAVE 2 UOM CODE 9,....
+        ' ITM.InventoryUOM = "Unit"
+
+        ' BS.BcdUOMCode = 9 'UOM CODE
+        BS.BcdCode = "C00911"
+        BS.BcdName = "C00911"
+
+        CB.Add(BS)
+        BS = Nothing
+        BS = New ServiceReference2.ItemMasterData.CodeBars
+
+        '  BS.BcdUOMCode = 9 'UOM CODE
+        BS.BcdCode = "C00811"
+        BS.BcdName = "C00811"
+        CB.Add(BS)
+        ITM.CodeBar = CB.ToArray
+
+        ' ITM.ItmsGrpCod = 105
+        ' ITM.ItmsGrpNam = "GROUP NAME"
+        ' ITM.FirmCode = 1
+        '   ITM.PricingUnit = 9  ' Pricing Unit of UomGroup 2 is 9,14,1
+
+        OITM.Add(ITM)
+        ls_result = server._UpdateBarCodeItemMaster(OITM.ToArray).ToList
+        a = ls_result.Item(0).ErrirMsg
+

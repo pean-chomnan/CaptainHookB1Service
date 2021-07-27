@@ -1,0 +1,223 @@
+======= GET Goods Receipt & Document=========
+
+	' GET Series Per Object
+	Dim ls_Res As New ServiceReference3.ReturnSeries
+        ls_Res = Client._GetSeries("20", Now.Date)  ' 20=Object Code of Goods Receipts
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+        'Get CardCode Search
+        Dim ls_Res As New ServiceReference3.ReturnBP
+        ls_Res = Client._GetCardCode("C", "Ch") ' CardType =C it mean Customer,S is Vendor
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get Contact Person
+        Dim ls_Res As New ServiceReference3.ReturnContactPerson
+        ls_Res = Client._GetContactPerson("CHOM-00003")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get Sales Person Code
+        Dim ls_Res As New ServiceReference3.ReturnSalesPersonCode
+        ls_Res = Client._GetSalesPersonCode
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+        'Get Owner
+        Dim ls_Res As New ServiceReference3.ReturnOwner
+        ls_Res = Client._GetOwner
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get BarCode
+        Dim ls_Res As New ServiceReference3.ReturnBarCode
+        ls_Res = Client._GetbBarCode("1IGBL0008")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get TaxCode
+        Dim ls_Res As New ServiceReference3.ReturnTaxCode
+        ls_Res = Client._GetTaxCode("I") ' I= AP, O=AR
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+        'Get UomCode
+        Dim ls_Res As New ServiceReference3.ReturnUomCode
+        ls_Res = Client._GetUomCode("TC0005")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get Warehouse
+        Dim ls_Res As New ServiceReference3.ReturnWarehouse
+        ls_Res = Client._GetWarehouse()
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get Dimension
+        Dim ls_Res As New ServiceReference3.ReturnDimension
+        ls_Res = Client._GetDimension(1) ' 1=PROFIT CENTER, 2=DEPARTMENT
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+        'Get List Of PO 
+        Dim ls_Res As New ServiceReference3.ReturnListOfPurchaseDocument
+        ls_Res = Client._GetListOfPurchaseDocument
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get Purchase Order Document
+        Dim ls_Res As New ServiceReference3.ReturnPurchaseOrder
+        ls_Res = Client._GetPurchaseOrder(212400001)
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+        'Get BinCode
+        Dim ls_Res As New ServiceReference3.ReturnBinCode
+        ls_Res = Client._GetBinCode("03.HKT05")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+======= END GET Goods Receipt & Document=========
+	
+	GET DELIVERY
+
+======= GET DELIVERY AND DOCUMENT=========
+
+        'Get List Of Sales Order
+        Dim ls_Res As New ServiceReference3.ReturnListOfSalesOrder
+        ls_Res = Client._GetListOfSalesOrder
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get Sales Order
+        Dim ls_Res As New ServiceReference3.ReturnSalesOrder
+        ls_Res = Client._GetSalesOrder(212600001)
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get Serial Batch Avaible For Select
+        Dim ls_Res As New ServiceReference3.ReturnAvailableSerialBatch
+        ls_Res = Client._GetAvailableSerialBatch("1IGBP0000", "03.HKT05")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+======= END GET Delivery & Document=========
+	
+	GET Goods Issue
+
+======= GET Goods Issue AND DOCUMENT=========
+
+        'Get PriceList
+        Dim ls_Res As New ServiceReference3.ReturnPriceList
+        ls_Res = Client._GetPriceList
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+======= END Goods Issue & Document=========
+	GET Goods Receipt
+======= GET Goods Receipt AND DOCUMENT=========
+
+        'Get ShipTo
+        Dim ls_Res As New ServiceReference3.ReturnShipTo
+        ls_Res = Client._GetShipTo("CHOM-00001")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+        'Get ShipTo Address
+        Dim ls_Res As New ServiceReference3.ReturnShipToAddress
+        ls_Res = Client._GetShipToAddress("CHOM-00001", "CHOM-00001")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+======= END Goods Receipt & Document=========
+	GET Inventory Counting
+======= GET Inventory Counting AND DOCUMENT=========
+	
+	'Get Inventory Counting UomCode
+        Dim ls_Res As New ServiceReference4.ReturnInventoryCountingUomCode
+        ls_Res = Client._GetInventoryCountingUomCode("1IGBP0000")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get Item Stock OnHand
+        Dim ls_Res As New ServiceReference4.ReturnItemOnHandPerWhsOrBIN
+        ls_Res = Client._GetGetItemOnHandPerWhsOrBIN("1IGBP0000", "03.HKT05", "03.HKT05-SYSTEM-BIN-LOCATION")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	======= END Inventory Counting & Document=========
+		GET FOR RECEIPT FROM PRODUCTION
+	======= GET FOR Receipt From Production AND DOCUMENT=========
+
+	'Get Return Load Production Order That Avaibable For ReceiptFromProduction
+        Dim ls_Res1 As New ServiceReference4.ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction
+        ls_Res1 = Client._GetLoadProductionOrderThatAvaibableForReceiptFromProduction
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i
+
+	'Get Load Issue For Production To Receipt From Production
+        Dim ls_Res1 As New ServiceReference4.ReturnLoadIssueForProductionToReceiptFromProduction
+        ls_Res1 = Client._GetLoadIssueForProductionToReceiptFromProduction
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i
+
+	'' Get Load Issue For Production To Receipt From Production Line
+        Dim ls_Res As New ServiceReference4.ReturnLoadIssueForProductionToReceiptFromProductionLine
+        Dim ls_DocEntry As New List(Of Integer)
+
+        ls_DocEntry.Add(14)
+        ls_DocEntry.Add(15)
+        ls_DocEntry.Add(16)
+
+        ls_Res = Client._GetLoadIssueForProductionToReceiptFromProductionLine(ls_DocEntry.ToArray)
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i	
+
+	======= END FOR Receipt From Production & Document=========
+		GET Issue For Production
+	======= GET FOR Issue For Production AND DOCUMENT=========
+
+	'Get Production Order List For Issue Production
+        Dim ls_Res1 As New ServiceReference4.ReturnProductionOrderListForIssueProduction
+        ls_Res1 = Client._GetProductionOrderListForIssueProduction
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i	
+
+	'' Get Load Production Order To Issue Line
+        Dim ls_Res As New ServiceReference4.ReturnLoadProductionOrderToIssueLine
+        Dim ls_DocEntry As New List(Of Integer)
+
+        ls_DocEntry.Add(14)
+        ls_DocEntry.Add(15)
+        ls_DocEntry.Add(16)
+
+        ls_Res = Client._GetLoadProductionOrderToIssueLine(ls_DocEntry.ToArray)
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i

@@ -1,0 +1,21 @@
+	Dim ls_Packing As New List(Of ServiceReference3.PackingClassClassPacking)
+        Dim Packing As New ServiceReference3.PackingClassClassPacking
+        Dim ReturnSt As New List(Of ServiceReference3.ReturnStatus)
+
+        Packing.ItemCode = "4GT0100"
+        Packing.DistNumber = "PO20082008009-00003"
+        Packing.BarCodeBoxNumber = "BX001"
+        Packing.Type = "Batch"
+        ls_Packing.Add(Packing)
+        Packing = Nothing
+        Packing = New ServiceReference3.PackingClassClassPacking
+
+        Packing.ItemCode = "1IGDL0000"
+        Packing.DistNumber = "SC-00022"
+        Packing.BarCodeBoxNumber = "BX001"
+        Packing.Type = "serial"
+        ls_Packing.Add(Packing)
+        ReturnSt = Client._UpdateUDFBorCodeBoxNumber(ls_Packing.ToArray).ToList '(ls_Packing.ToList).
+        Packing = Nothing
+        Packing = New ServiceReference3.PackingClassClassPacking
+        ReturnSt = ReturnSt

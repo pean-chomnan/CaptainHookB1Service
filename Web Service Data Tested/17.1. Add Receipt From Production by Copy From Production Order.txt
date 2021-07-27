@@ -1,0 +1,111 @@
+
+        Dim a As String
+
+        ' =========== Add Issue For Production By Batch ========'
+
+        Dim IGNs As New List(Of ServiceReference4.ClassReceiptFromProductionOIGN)
+        Dim IGN As New ServiceReference4.ClassReceiptFromProductionOIGN ' List(Of ocrd)
+        Dim IGNLs As New List(Of ServiceReference4.ClassReceiptFromProductionLine)
+        Dim IGNL As New ServiceReference4.ClassReceiptFromProductionLine
+        Dim ls_Serials As New List(Of ServiceReference4.ClassReceiptFromProductionSerialNumbers)
+        Dim Serial As New ServiceReference4.ClassReceiptFromProductionSerialNumbers
+        Dim ls_result As List(Of ServiceReference4.ReturnStatus)
+        Dim ls_Batchs As New List(Of ServiceReference4.ClassReceiptFromProductionBatchNumbers)
+        Dim Batch As New ServiceReference4.ClassReceiptFromProductionBatchNumbers
+        Dim ibar As New ServiceReference4.ItemMasterData.CodeBars
+
+        IGN = New ServiceReference4.ClassReceiptFromProductionOIGN
+
+        IGN.Series = 1473
+        IGN.DocDate = "2021-07-09"
+        'IGN.TaxDate = "2021-07-06"
+        IGN.Ref2 = "Ref.002"
+        IGN.WebDocNum = 12351
+        IGN.Comments = "Testing Compy IGN Batch"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then
+                ' Row Number 1
+                IGNL.ItemCode = "2HBNOCS08"
+                '   IGNL.TransType = "C"
+                IGNL.Quantity = 1
+                IGNL.Warehouse = "06.HKT03"
+                IGNL.CogsCode = "CSM"
+                IGNL.CogsCode2 = "DP01"
+
+                ' Setup Batch Line 1
+
+                Batch.Batch = "BY-1001"
+                Batch.ManufacturerSerialNumber = "BY-1001"
+                Batch.ManufacturingDate = "2021-06-21"
+                Batch.Notes = "Btch Notes1"
+                Batch.Location = "Locat Batch"
+                Batch.ReceptionDate = "2021-06-21"
+                Batch.Quantity = 1
+                Batch.AdmissionDate = "2021-06-21"
+                Batch.ExpirationDate = "2021-07-21"
+                Batch.ACT_WeightOnBatch = 22
+                Batch.CompanyAddress = "Com addr2"
+                Batch.BarCodeBoxNumber = "BarCodeb0xNum2"
+                Batch.Smoking = "Smoking Udf2"
+                'Batch.BinAbsEntry = 53
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                IGNL.ls_Batch = ls_Batchs.ToArray
+
+                IGNL.BaseEntry = 15
+                '  IGNL.BaseType = "22"
+                'IGNL.BaseLine = 0
+
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference4.ClassReceiptFromProductionBatchNumbers
+            Else 'Row Number 2
+                IGNL.ItemCode = "2HBNOCS08"
+                '    IGNL.TransType = "C"
+                IGNL.Quantity = 1
+                IGNL.Warehouse = "06.HKT03"
+                IGNL.CogsCode = "CSM"
+                IGNL.CogsCode2 = "DP01"
+
+                ' Setup Batch Line 1
+
+                Batch.Batch = "2HBNOCS08"
+                Batch.ManufacturerSerialNumber = "BY-1002"
+                Batch.ManufacturingDate = "2021-06-21"
+                Batch.Notes = "Btch Notes2"
+                Batch.Location = "Locat Batch2"
+                Batch.ReceptionDate = "2021-06-21"
+                Batch.Quantity = 1
+                Batch.AdmissionDate = "2021-06-21"
+                Batch.ExpirationDate = "2021-07-21"
+                Batch.ACT_WeightOnBatch = 11
+                Batch.CompanyAddress = "Com addr2"
+                Batch.BarCodeBoxNumber = "BarCodeb0xNum2"
+                Batch.Smoking = "Smoking Udf2"
+                'Batch.BinAbsEntry = 53
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                IGNL.ls_Batch = ls_Batchs.ToArray
+
+                IGNL.BaseEntry = 16
+                '  IGNL.BaseType = "22"
+                '    IGNL.BaseLine = 0
+
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference4.ClassReceiptFromProductionBatchNumbers
+            End If
+
+            IGNLs.Add(IGNL)
+            IGNL = Nothing
+            IGNL = New ServiceReference4.ClassReceiptFromProductionLine
+        Next
+
+        IGN.Lines = IGNLs.ToArray
+        IGNs.Add(IGN)
+        ls_result = Client._AddReceiptFromProduction(IGNs.ToArray,1).ToList
+
+        a = ls_result(0).ErrirMsg

@@ -1,0 +1,110 @@
+Dim a As String
+
+        ' =========== Add Delivery By Batch ========'
+
+        Dim DLNs As New List(Of ServiceReference2.ClassDeliveryODLN)
+        Dim DLN As New ServiceReference2.ClassDeliveryODLN ' List(Of ocrd)
+        Dim DLNLs As New List(Of ServiceReference2.ClassDeliveryLine)
+        Dim DLNL As New ServiceReference2.ClassDeliveryLine
+        Dim ls_Serials As New List(Of ServiceReference2.ClassDeliverySerialNumbers)
+        Dim Serial As New ServiceReference2.ClassDeliverySerialNumbers
+        Dim ls_result As List(Of ServiceReference2.ReturnStatus)
+        Dim ls_Batchs As New List(Of ServiceReference2.ClassDeliveryBatchNumbers)
+        Dim Batch As New ServiceReference2.ClassDeliveryBatchNumbers
+        Dim ibar As New ServiceReference2.ItemMasterData.CodeBars
+
+        DLN = New ServiceReference2.ClassDeliveryODLN
+
+        DLN.Series = 362
+        DLN.CardCode = "CLC10001"
+        DLN.DocDate = "2021-06-21"
+        DLN.DocDueDate = "2021-06-21"
+        DLN.TaxDate = "2021-06-21"
+        '    DLN.RequestByBranch=
+        DLN.WebDocNum = "1114"
+        DLN.PriceMode = "N"
+        DLN.DiscountPercent = 0
+        DLN.ContactPersonCode = 4
+        DLN.SalesPersonCode = 1
+        DLN.DocumentsOwner = 2
+        DLN.NumAtCard = "Num-CLC10001"
+        DLN.Comments = "Testing Compy DLN Batch"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then
+                ' Row Number 1
+                DLNL.ItemCode = "1IGBL0008"
+                DLNL.BarCode = "1IGS-B001"
+                DLNL.Quantity = 2
+                DLNL.Price = 300
+                DLNL.GrossPrice = 321
+                DLNL.DiscPercent = 0
+                DLNL.VatGroup = "S07"
+                '   DLNL.UomEntry = ""
+                DLNL.WhsCode = "03.HKT05"
+                DLNL.CogsCode = "CSM"
+                DLNL.CogsCode2 = "DP01"
+
+                ' Setup Serial Line 1
+                Serial.SerialNumber = "S001"
+                Serial.Quantity = 1
+
+                ls_Serials.Add(Serial)
+                Serial = Nothing
+                Serial = New ServiceReference2.ClassDeliverySerialNumbers
+
+                ' Setup Serial Line 2
+                Serial.SerialNumber = "S002"
+                Serial.Quantity = 1
+
+                ls_Serials.Add(Serial)
+                DLNL.ls_Serial = ls_Serials.ToArray
+
+                DLNL.BaseEntry = 16
+                DLNL.BaseType = "17"
+                DLNL.Baseline = 0
+
+                ls_Serials.Clear()
+                Serial = Nothing
+                Serial = New ServiceReference2.ClassDeliverySerialNumbers
+            Else 'Row Number 2
+
+                DLNL.ItemCode = "1IGBP0000"
+                DLNL.BarCode = "1IGS-B002"
+                DLNL.Quantity = 3
+                DLNL.Price = 400
+                DLNL.GrossPrice = 428
+                DLNL.DiscPercent = 0
+                DLNL.VatGroup = "S07"
+                '   DLNL.UomEntry = ""
+                DLNL.WhsCode = "03.HKT05"
+                DLNL.CogsCode = "CSM"
+                DLNL.CogsCode2 = "DP01"
+
+                ' Setup Batch Line 1
+                Batch.Batch = "B001"
+                Batch.Quantity = 3
+
+                ls_Batchs.Add(Batch)
+                DLNL.ls_Batch = ls_Batchs.ToArray
+
+                DLNL.BaseEntry = 16
+                DLNL.BaseType = "17"
+                DLNL.Baseline = 1
+
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference2.ClassDeliveryBatchNumbers
+
+            End If
+
+            DLNLs.Add(DLNL)
+            DLNL = Nothing
+            DLNL = New ServiceReference2.ClassDeliveryLine
+        Next
+
+        DLN.Lines = DLNLs.ToArray
+        DLNs.Add(DLN)
+        ls_result = server._AddDeliver(DLNs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

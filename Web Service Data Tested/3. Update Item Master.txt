@@ -1,0 +1,81 @@
+
+        Dim a As String
+
+        ' =========== Update Item Master =========='
+
+        Dim OITM As New List(Of ServiceReference2.ItemMasterData)
+        Dim ITM As New ServiceReference2.ItemMasterData ' List(Of ocrd)
+        Dim ls_result As List(Of ServiceReference2.ReturnStatus)
+        Dim CB As New List(Of ServiceReference2.ItemMasterData.CodeBars)
+        Dim BS As New ServiceReference2.ItemMasterData.CodeBars
+        ITM = New ServiceReference2.ItemMasterData
+
+        ITM.ItemCode = "CH-0012"
+        ITM.ItemName = "CHOMNAN-TEST-Update-Update"
+        ITM.FrgName = "CHF-TEST"
+        ITM.UomGroup = 2  ' UOM GROUP =2 HAVE 2 UOM CODE 9,....
+        ITM.InventoryUOM = "Unit"
+
+        BS.BcdUOMCode = 9 'UOM CODE
+        BS.BcdCode = "C001"
+        BS.BcdName = "C001-DESC Update"
+
+        CB.Add(BS)
+        BS = Nothing
+        BS = New ServiceReference2.ItemMasterData.CodeBars
+
+        BS.BcdUOMCode = 9 'UOM CODE
+        BS.BcdCode = "C002"
+        BS.BcdName = "C002-DESC"
+        CB.Add(BS)
+        ITM.CodeBar = CB.ToArray
+
+        ITM.ItmsGrpCod = 105
+        ITM.ItmsGrpNam = "GROUP NAME"
+        ITM.FirmCode = 1
+	ITM.PricingUnit=9  ' Pricing Unit of UomGroup 2 is 9,14,1
+
+        'ITM.ManBatchNum = "Y"  'Batch
+        'ITM.ManagmtMethod = "A"
+        'ITM.GLMethod = "W"
+
+        ITM.ManSerNum = "Y"
+        ITM.ManagmtMethod = "A"
+        '   ITM.GLMethod = "C"
+
+        ITM.PurchasePackagingUoMName = "Pur Packing"
+        ITM.SalePackagingUoMName = "Sales Packing"
+        ITM.SalesUoMName = "Sales Uom Name"
+        ITM.PurchasingUoMName = "Purchass Uom Name"
+
+        ITM.PurchaseItemsPerUnit = 2
+        ITM.PurchaseQtyPerPackUnit = 5
+        ITM.SalesItemsPerUnit = 4
+        ITM.SalesQtyPerPackUnit = 3
+
+        ITM.SHeight = 3
+        ITM.SWidth = 3
+        ITM.SLength = 2
+        ITM.SVolume = 4
+        ITM.Sweight = 3
+
+        ITM.BHeight = 2
+        ITM.BWidth = 4
+        ITM.BLength = 6
+        ITM.BVolume = 4
+        ITM.BWeight = 2
+
+        'ITM.PrchseItem = "Y"
+        ITM.SellItem = "N"
+        'ITM.InvntItem = "Y"
+
+        ITM.UserText = "CHOMNAN REMARK TEST MASTER-Update"
+
+        ITM.U_Type = "1.01"
+        ITM.U_StorageCondition = "storage condition"
+        ITM.U_HowToEat = " Push into your mouth"
+        ITM.U_Certifiedcode = "MMA Quator"
+
+        OITM.Add(ITM)
+        ls_result = server._UpdateItemMaster(OITM.ToArray).ToList
+        a = ls_result.Item(0).ErrirMsg

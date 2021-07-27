@@ -1,0 +1,180 @@
+
+        Dim a As String
+
+        ' =========== Add Goods Receipt PO  By Batch ========'
+
+        Dim GPOs As New List(Of ServiceReference1.GoodsReceiptPOOPDN)
+        Dim GPO As New ServiceReference1.GoodsReceiptPOOPDN ' List(Of ocrd)
+        Dim GPOLs As New List(Of ServiceReference1.GoodsReceiptPOLine)
+        Dim GPOL As New ServiceReference1.GoodsReceiptPOLine
+        Dim ls_Serials As New List(Of ServiceReference1.GoodsReceiptPOSerialNumbers)
+        Dim Serial As New ServiceReference1.GoodsReceiptPOSerialNumbers
+        Dim ls_result As List(Of ServiceReference1.ReturnStatus)
+
+        Dim ls_Batchs As New List(Of ServiceReference1.GoodsReceiptPOBatchNumbers)
+        Dim Batch As New ServiceReference1.GoodsReceiptPOBatchNumbers
+
+        Dim BIN As New ServiceReference1.GoodsReceiptPOBINCode
+        Dim ls_BIN As New List(Of ServiceReference1.GoodsReceiptPOBINCode)
+
+        Dim ibar As New ServiceReference1.ItemMasterData.CodeBars
+
+        GPO = New ServiceReference1.GoodsReceiptPOOPDN
+
+        GPO.Series = 1735
+        GPO.CardCode = "VLC10002"
+        GPO.DocDate = "2021-07-21"
+        GPO.DocDueDate = "2021-07-21"
+        GPO.TaxDate = "2021-07-21"
+        '    GPO.RequestByBranch=
+        GPO.WebDocNum = "1114"
+        GPO.PriceMode = "N"
+        GPO.DiscountPercent = 0
+        GPO.ContactPersonCode = 15
+        GPO.SalesPersonCode = 1
+        GPO.DocumentsOwner = 2
+        GPO.NumAtCard = "Num-VLC0002"
+        GPO.Comments = "Testing Compy GPO Batch"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then  ' Row Number 1
+                GPOL.ItemCode = "1IGSTIOD"
+                '     GPOL.BarCode = "1IGS-B001"
+                GPOL.Quantity = 3
+                GPOL.Price = 300
+                GPOL.GrossPrice = 321
+                GPOL.DiscPercent = 0
+                GPOL.VatGroup = "P07"
+                '   GPOL.UomEntry = ""
+                GPOL.WhsCode = "03.HKT05"
+                GPOL.CogsCode = "CSM"
+                GPOL.CogsCode2 = "DP01"
+
+                ' Setup Batch Line 1
+                If Client._GetItemSetupBySerialOrBatch("1IGSTIOD") = 2 Then
+                    Batch.Batch = "BNN-0001"
+                    Batch.ManufacturerSerialNumber = "BNM-001"
+                    Batch.ManufacturingDate = "2021-07-21"
+                    Batch.Notes = "Btch Notes"
+                    Batch.Location = "Locat Batch"
+                    Batch.ReceptionDate = "2021-07-21"
+                    Batch.AdmissionDate = "2021-07-21"
+                    Batch.ExpirationDate = "2021-07-21"
+                    Batch.ACT_WeightOnBatch = 123
+                    Batch.CompanyAddress = "Com addr"
+                    Batch.BarCodeBoxNumber = "BarCodeb0xNum"
+                    Batch.Smoking = "Smoking Udf"
+                    Batch.Quantity = 2
+                    If Client._IsWarehouseManagerByBIN("03.HKT05") = True Then
+                        'Multiple BIN 1
+                        BIN.BinAbsEntry = 52
+                        BIN.BinQuantity = 1
+                        ls_BIN.Add(BIN)
+                        BIN = Nothing
+                        BIN = New ServiceReference1.GoodsReceiptPOBINCode
+
+                        'Multiple BIN 2
+                        BIN.BinAbsEntry = 53
+                        BIN.BinQuantity = 1
+                        ls_BIN.Add(BIN)
+
+                        Batch.ls_BatchBIN = ls_BIN.ToArray()
+                        BIN = Nothing
+                        BIN = New ServiceReference1.GoodsReceiptPOBINCode
+                        ls_BIN = Nothing
+                        ls_BIN = New List(Of ServiceReference1.GoodsReceiptPOBINCode)
+                    End If
+
+                    ls_Batchs.Add(Batch)
+                    Batch = Nothing
+                    Batch = New ServiceReference1.GoodsReceiptPOBatchNumbers
+
+                    ' Setup Batch Line 2
+
+                    Batch.Batch = "BNN-0001"
+                    Batch.ManufacturerSerialNumber = "BNN-0001"
+                    Batch.ManufacturingDate = "2021-07-21"
+                    Batch.Notes = "Btch Notes2"
+                    Batch.Location = "Locat Batch2"
+                    Batch.ReceptionDate = "2021-07-21"
+                    Batch.Quantity = 1
+                    Batch.AdmissionDate = "2021-07-21"
+                    Batch.ExpirationDate = "2021-07-21"
+                    Batch.ACT_WeightOnBatch = 22
+                    Batch.CompanyAddress = "Com addr2"
+                    Batch.BarCodeBoxNumber = "BarCodeb0xNum2"
+                    Batch.Smoking = "Smoking Udf2"
+
+                    If Client._IsWarehouseManagerByBIN("03.HKT05") = True Then
+                        'Multiple BIN 1
+                        BIN.BinAbsEntry = 53
+                        BIN.BinQuantity = 1
+                        ls_BIN.Add(BIN)
+
+                        Batch.ls_BatchBIN = ls_BIN.ToArray()
+                        BIN = Nothing
+                        BIN = New ServiceReference1.GoodsReceiptPOBINCode
+                        ls_BIN = Nothing
+                        ls_BIN = New List(Of ServiceReference1.GoodsReceiptPOBINCode)
+                    End If
+
+                    ls_Batchs.Add(Batch)
+                    GPOL.ls_Batch = ls_Batchs.ToArray
+                ElseIf Client._GetItemSetupBySerialOrBatch("1IGSTIOD") = 3 Then
+
+                End If
+
+                GPOL.BaseEntry = 26
+                GPOL.BaseType = "22"
+                GPOL.Baseline = 0
+
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference1.GoodsReceiptPOBatchNumbers
+            ElseIf i = 2 Then 'Row Number 2
+                GPOL.ItemCode = "1RMSNFRWH"
+                '  GPOL.BarCode = "1I-B002"
+                GPOL.Quantity = 2
+                GPOL.Price = 400
+                GPOL.GrossPrice = 428
+                GPOL.DiscPercent = 0
+                GPOL.VatGroup = "P07"
+                '   GPOL.UomEntry = ""
+                GPOL.WhsCode = "03.HKT05"
+                GPOL.CogsCode = "CSM"
+                GPOL.CogsCode2 = "DP01"
+
+                If Client._IsWarehouseManagerByBIN("03.HKT05") = True Then
+                    'Multiple BIN 1
+                    BIN.BinAbsEntry = 52
+                    BIN.BinQuantity = 1
+                    ls_BIN.Add(BIN)
+                    BIN = Nothing
+                    BIN = New ServiceReference1.GoodsReceiptPOBINCode
+
+                    'Multiple BIN 2
+                    BIN.BinAbsEntry = 53
+                    BIN.BinQuantity = 1
+                    ls_BIN.Add(BIN)
+
+                    GPOL.ls_LineBIN = ls_BIN.ToArray()
+                    BIN = Nothing
+                    BIN = New ServiceReference1.GoodsReceiptPOBINCode
+                End If
+
+                GPOL.BaseEntry = 26
+                GPOL.BaseType = "22"
+                GPOL.Baseline = 1
+
+            End If
+
+            GPOLs.Add(GPOL)
+            GPOL = Nothing
+            GPOL = New ServiceReference1.GoodsReceiptPOLine
+        Next
+
+        GPO.Lines = GPOLs.ToArray
+        GPOs.Add(GPO)
+        ls_result = Client._AddGoodsReceiptPO(GPOs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

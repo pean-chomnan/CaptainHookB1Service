@@ -1,0 +1,154 @@
+
+        Dim a As String
+
+        ' =========== Add Goods Receipt PO  By Batch ========'
+
+        Dim GPOs As New List(Of ServiceReference2.GoodsReceiptPOOPDN)
+        Dim GPO As New ServiceReference2.GoodsReceiptPOOPDN ' List(Of ocrd)
+        Dim GPOLs As New List(Of ServiceReference2.GoodsReceiptPOLine)
+        Dim GPOL As New ServiceReference2.GoodsReceiptPOLine
+        Dim ls_Serials As New List(Of ServiceReference2.GoodsReceiptPOSerialNumbers)
+        Dim Serial As New ServiceReference2.GoodsReceiptPOSerialNumbers
+        Dim ls_result As List(Of ServiceReference2.ReturnStatus)
+
+        Dim ls_Batchs As New List(Of ServiceReference2.GoodsReceiptPOBatchNumbers)
+        Dim Batch As New ServiceReference2.GoodsReceiptPOBatchNumbers
+
+        '    Dim myClasss As New ServiceReference2.m
+
+        Dim ibar As New ServiceReference2.ItemMasterData.CodeBars
+
+        GPO = New ServiceReference2.GoodsReceiptPOOPDN
+
+        GPO.Series = 1731
+        GPO.CardCode = "VLC10003"
+        GPO.DocDate = "2021-06-21"
+        GPO.DocDueDate = "2021-06-21"
+        GPO.TaxDate = "2021-06-21"
+        '    GPO.RequestByBranch=
+        GPO.WebDocNum = "1113"
+        GPO.PriceMode = "N"
+        GPO.DiscountPercent = 0
+        GPO.ContactPersonCode = 3
+        GPO.SalesPersonCode = 1
+        GPO.DocumentsOwner = 2
+        GPO.NumAtCard = "Num-VLC0002"
+        GPO.Comments = "Testing Compy GPO Batch"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then  ' Row Number 1
+                GPOL.ItemCode = "1IGSTIOD"
+                GPOL.BarCode = "1IGS-B001"
+                GPOL.Quantity = 2
+                GPOL.Price = 300
+                GPOL.GrossPrice = 321
+                GPOL.DiscPercent = 0
+                GPOL.VatGroup = "P07"
+                '   GPOL.UomEntry = ""
+                GPOL.WhsCode = "03.HKT05"
+                GPOL.CogsCode = "CSM"
+                GPOL.CogsCode2 = "DP01"
+
+                ' Setup Batch Line 1
+                Batch.Batch = "BNN-001"
+                Batch.ManufacturerSerialNumber = "BNM-001"
+                Batch.ManufacturingDate = "2021-06-21"
+                Batch.Notes = "Btch Notes"
+                Batch.Location = "Locat Batch"
+                Batch.ReceptionDate = "2021-06-21"
+                Batch.Quantity = 1
+                Batch.AdmissionDate = "2021-06-21"
+                Batch.ExpirationDate = "2021-07-21"
+                Batch.ACT_WeightOnBatch = 123
+                Batch.CompanyAddress = "Com addr"
+                Batch.BarCodeBoxNumber = "BarCodeb0xNum"
+                Batch.Smoking = "Smoking Udf"
+                Batch.BinAbsEntry = 52
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference2.GoodsReceiptPOBatchNumbers
+
+                ' Setup Batch Line 2
+
+                Batch.Batch = "BNN-002"
+                Batch.ManufacturerSerialNumber = "BNM-002"
+                Batch.ManufacturingDate = "2021-06-21"
+                Batch.Notes = "Btch Notes2"
+                Batch.Location = "Locat Batch2"
+                Batch.ReceptionDate = "2021-06-21"
+                Batch.Quantity = 1
+                Batch.AdmissionDate = "2021-06-21"
+                Batch.ExpirationDate = "2021-07-21"
+                Batch.ACT_WeightOnBatch = 22
+                Batch.CompanyAddress = "Com addr2"
+                Batch.BarCodeBoxNumber = "BarCodeb0xNum2"
+                Batch.Smoking = "Smoking Udf2"
+                Batch.BinAbsEntry = 53
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                GPOL.ls_Batch = ls_Batchs.ToArray
+
+                GPOL.BaseEntry = 14
+                GPOL.BaseType = "22"
+                GPOL.Baseline = 0
+
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference2.GoodsReceiptPOBatchNumbers
+            Else 'Row Number 2
+
+                GPOL.ItemCode = "1IGGC0006"
+                GPOL.BarCode = "1IGS-B002"
+                GPOL.Quantity = 3
+                GPOL.Price = 400
+                GPOL.GrossPrice = 428
+                GPOL.DiscPercent = 0
+                GPOL.VatGroup = "P07"
+                '   GPOL.UomEntry = ""
+                GPOL.WhsCode = "03.HKT05"
+                GPOL.CogsCode = "CSM"
+                GPOL.CogsCode2 = "DP01"
+
+                ' Setup Batch Line 1
+                Batch.Batch = "BNN-003"
+                Batch.ManufacturerSerialNumber = "BNM-003"
+                Batch.ManufacturingDate = "2021-06-21"
+                Batch.Notes = "Btch Notes3"
+                Batch.Location = "Locat Batch3"
+                Batch.ReceptionDate = "2021-06-21"
+                Batch.Quantity = 1
+                Batch.AdmissionDate = "2021-06-21"
+                Batch.ExpirationDate = "2021-07-21"
+                Batch.ACT_WeightOnBatch = 44
+                Batch.CompanyAddress = "Com addr"
+                Batch.BarCodeBoxNumber = "BarCodeb0xNum"
+                Batch.Smoking = "Smoking Udf"
+                Batch.BinAbsEntry = 52
+                Batch.Quantity = 3
+
+                ls_Batchs.Add(Batch)
+                GPOL.ls_Batch = ls_Batchs.ToArray
+
+                GPOL.BaseEntry = 14
+                GPOL.BaseType = "22"
+                GPOL.Baseline = 1
+
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference2.GoodsReceiptPOBatchNumbers
+
+            End If
+
+            GPOLs.Add(GPOL)
+            GPOL = Nothing
+            GPOL = New ServiceReference2.GoodsReceiptPOLine
+        Next
+
+        GPO.Lines = GPOLs.ToArray
+        GPOs.Add(GPO)
+        ls_result = server._AddGoodsReceiptPO(GPOs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

@@ -1,0 +1,48 @@
+	'Get ItemCode Like both(ItemCode,ItemName) 50 Rows
+	Dim ls_Res As New ServiceReference3.ReturnItemCode
+        ls_Res = Client._GetItemCode("Ch")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get UomGroup
+	Dim ls_Res As New ServiceReference3.ReturnUomGroup
+        ls_Res = Client._GetUomGroup
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get ItemGroup
+	Dim ls_Res As New ServiceReference3.ReturnItemGroupCode
+        ls_Res = Client._GetItemGroupCode
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'Get FirmCode
+	Dim ls_Res As New ServiceReference3.ReturnFirmCode
+        ls_Res = Client._GetFirmCode
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+	'GET UDF Type
+	Dim ls_Res As New ServiceReference3.ReturnUDFType
+        ls_Res = Client._GetUDFType
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+        'Get OrderInterval
+        Dim ls_Res As New ServiceReference4.ReturnOrderInterval
+        ls_Res = Client._GetOrderInterval
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
+
+
+
+
+
+
+

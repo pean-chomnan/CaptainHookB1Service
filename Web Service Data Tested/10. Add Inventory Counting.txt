@@ -1,0 +1,116 @@
+
+        Dim a As String
+
+        ' =========== Add Ineventory Transfer By Batch & Serial ========'
+
+        Dim OINCs As New List(Of ServiceReference4.ClassInventoryCountingOINC)
+        Dim OINC As New ServiceReference4.ClassInventoryCountingOINC
+        Dim OINCLs As New List(Of ServiceReference4.ClassInventoryCountingLine)
+        Dim OINCL As New ServiceReference4.ClassInventoryCountingLine
+        Dim ls_Serials As New List(Of ServiceReference4.ClassInventoryCountingSerialNumbers)
+        Dim Serial As New ServiceReference4.ClassInventoryCountingSerialNumbers
+        Dim ls_result As List(Of ServiceReference4.ReturnStatus)
+        Dim ls_Batchs As New List(Of ServiceReference4.ClassInventoryCountingBatchNumbers)
+        Dim Batch As New ServiceReference4.ClassInventoryCountingBatchNumbers
+        Dim ibar As New ServiceReference4.ItemMasterData.CodeBars
+
+        OINC = New ServiceReference4.ClassInventoryCountingOINC
+
+        OINC.CountingDate = "2021-07-02"
+        OINC.CountingTime = "11:30"
+        OINC.Series = 2673
+        OINC.Ref2 = "Ref2-001"
+        OINC.Comments = "Comm sss"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then  ' Row Number 1
+                OINCL.ItemCode = "1IGDL0000"
+                OINCL.BarCode = "1I-B001"
+                OINCL.Freeze = "Y"
+                OINCL.WhsCode = "03.HKT05"
+                OINCL.BinCode = 52 '"03.HKT05-SYSTEM-BIN-LOCATION"
+                OINCL.CountedQuantity = 3
+
+                OINCL.CogsCode = "CSM"
+                OINCL.CogsCode2 = "DP02"
+
+                ' Setup Serial Line 1
+                Serial.SerialNumber = "S04"
+                ls_Serials.Add(Serial)
+                Serial = Nothing
+                Serial = New ServiceReference4.ClassInventoryCountingSerialNumbers
+
+                ' Setup Serial Line 2
+                Serial.SerialNumber = "S05"
+                ls_Serials.Add(Serial)
+                Serial = Nothing
+                Serial = New ServiceReference4.ClassInventoryCountingSerialNumbers
+
+                ' Setup Serial Line 3
+                Serial.SerialNumber = "S06"
+                ls_Serials.Add(Serial)
+                OINCL.ls_Serial = ls_Serials.ToArray
+                ls_Serials.Clear()
+                Serial = Nothing
+                Serial = New ServiceReference4.ClassInventoryCountingSerialNumbers
+                
+
+            Else 'Row Number 2
+                OINCL.ItemCode = "1IGBP0000"
+                OINCL.BarCode = "1I-B001"
+                OINCL.Freeze = "Y"
+                OINCL.WhsCode = "03.HKT05"
+                OINCL.BinCode = 53 '"03.HKT05-SYSTEM-BIN-LOCATION"
+                OINCL.CountedQuantity = 9
+                OINCL.CogsCode = "CSM"
+                OINCL.CogsCode2 = "DP02"
+
+                ' Setup Serial Line 1
+                Batch.Batch = "BNN-0002"
+                Batch.Quantity = 1
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference4.ClassInventoryCountingBatchNumbers
+
+                ' Setup Serial Line 2
+                Batch.Batch = "BNN-0004"
+                Batch.Quantity = 1
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference4.ClassInventoryCountingBatchNumbers
+
+                ' Setup Serial Line 3
+                Batch.Batch = "BNN-0005"
+                Batch.Quantity = 1
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference4.ClassInventoryCountingBatchNumbers
+
+                ' Setup Serial Line 1
+                Batch.Batch = "BNN-00011"
+                Batch.Quantity = 4
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference4.ClassInventoryCountingBatchNumbers
+
+                ' Setup Serial Line 1
+                Batch.Batch = "BNN-00022"
+                Batch.Quantity = 2
+                ls_Batchs.Add(Batch)
+                OINCL.ls_Batch = ls_Batchs.ToArray
+                Batch = Nothing
+                Batch = New ServiceReference4.ClassInventoryCountingBatchNumbers
+
+
+            End If
+
+            OINCLs.Add(OINCL)
+            OINCL = Nothing
+            OINCL = New ServiceReference4.ClassInventoryCountingLine
+        Next
+
+        OINC.Lines = OINCLs.ToArray
+        OINCs.Add(OINC)
+        ls_result = Client._AddInventoryCounting(OINCs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

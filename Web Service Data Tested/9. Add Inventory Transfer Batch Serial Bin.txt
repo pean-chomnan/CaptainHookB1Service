@@ -1,0 +1,103 @@
+
+        Dim a As String
+
+        ' =========== Add Ineventory Transfer By Batch & Serial ========'
+
+        Dim OWTRs As New List(Of ServiceReference2.ClassInventoryTransferOWTR)
+        Dim OWTR As New ServiceReference2.ClassInventoryTransferOWTR
+        Dim OWTRLs As New List(Of ServiceReference2.ClassInventoryTransferLine)
+        Dim OWTRL As New ServiceReference2.ClassInventoryTransferLine
+        Dim ls_Serials As New List(Of ServiceReference2.ClassInventoryTransferSerialNumbers)
+        Dim Serial As New ServiceReference2.ClassInventoryTransferSerialNumbers
+        Dim ls_result As List(Of ServiceReference2.ReturnStatus)
+        Dim ls_Batchs As New List(Of ServiceReference2.ClassInventoryTransferBatchNumbers)
+        Dim Batch As New ServiceReference2.ClassInventoryTransferBatchNumbers
+        Dim ibar As New ServiceReference2.ItemMasterData.CodeBars
+
+        OWTR = New ServiceReference2.ClassInventoryTransferOWTR
+
+        OWTR.Series = 2566
+        OWTR.DocDate = "2021-06-22"
+        OWTR.TaxDate = "2021-06-22"
+        OWTR.PriceListNum = 1
+        OWTR.CardCode = "CHOM-00001"
+        OWTR.ContactPersonCode = 1
+        OWTR.ShipToCode = "CHOM-00001"
+        OWTR.Address = "THAILAND"
+
+        OWTR.FromWhs = "03.HKT05"
+        OWTR.ToWhs = "01.OTH03"
+
+        OWTR.WebDocNum = "1116"
+        OWTR.Comments = "Testing OWTR Batch Serial"
+        OWTR.JournalRemark = "Journal Remark"
+
+        For i As Integer = 1 To 2
+            If i = 1 Then  ' Row Number 1
+                OWTRL.ItemCode = "1IGDL0000"
+                OWTRL.BarCode = "1I-B001"
+                OWTRL.Quantity = 2
+                OWTRL.Price = 300
+                OWTRL.GrossPrice = 322
+                OWTRL.DiscPercent = 10
+                OWTRL.FromWhs = "03.HKT05"
+                OWTRL.ToWhs = "01.OTH03"
+                OWTRL.CogsCode = "CSM"
+                OWTRL.CogsCode2 = "DP01"
+
+                ' Setup Serial Line 1
+                Serial.SerialNumber = "S0003"
+                ls_Serials.Add(Serial)
+                Serial = Nothing
+                Serial = New ServiceReference2.ClassInventoryTransferSerialNumbers
+
+                ' Setup Serial Line 2           
+                Serial.SerialNumber = "SC-0001"
+
+                ls_Serials.Add(Serial)
+                OWTRL.ls_Serial = ls_Serials.ToArray
+                ls_Serials.Clear()
+                Serial = Nothing
+                Serial = New ServiceReference2.ClassInventoryTransferSerialNumbers
+            Else 'Row Number 2
+                OWTRL.ItemCode = "1IGBP0000"
+                OWTRL.BarCode = "1IGS-B002"
+                OWTRL.Quantity = 3
+                OWTRL.Price = 400
+                OWTRL.GrossPrice = 428
+                OWTRL.DiscPercent = 20
+                '   OWTRL.UomEntry = ""
+                OWTRL.FromWhs = "03.HKT05"
+                OWTRL.ToWhs = "01"
+                OWTRL.CogsCode = "DEL"
+                OWTRL.CogsCode2 = "DP02"
+
+                ' Setup Batch Line 1
+                Batch.Batch = "BNN-0001"
+                Batch.Quantity = 2
+
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference2.ClassInventoryTransferBatchNumbers
+
+                ' Setup Batch Line 2
+                Batch.Batch = "BNN-0002"
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                OWTRL.ls_Batch = ls_Batchs.ToArray
+                ls_Batchs.Clear()
+                Batch = Nothing
+                Batch = New ServiceReference2.ClassInventoryTransferBatchNumbers
+            End If
+
+            OWTRLs.Add(OWTRL)
+            OWTRL = Nothing
+            OWTRL = New ServiceReference2.ClassInventoryTransferLine
+        Next
+
+        OWTR.Lines = OWTRLs.ToArray
+        OWTRs.Add(OWTR)
+        ls_result = Client._AddInventoryTransfer(OWTRs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

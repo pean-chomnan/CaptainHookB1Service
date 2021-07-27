@@ -1,0 +1,7 @@
+'Dim ls_result As ServiceReference2.GetMasterResponse
+        'ls_result = server._GetSimple("1")
+        'Dim ls_result As ServiceReference2
+
+        'Dim cl As ServiceReference2.classget
+
+        Client._TEST_GETFUNC("Welcome")

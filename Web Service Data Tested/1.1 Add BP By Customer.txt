@@ -1,0 +1,55 @@
+
+        Dim OCRD As New List(Of ServiceReference3.BPMasterData)
+        Dim BP As New ServiceReference3.BPMasterData ' List(Of ocrd)
+        Dim ls_result As List(Of ServiceReference3.ReturnStatus)
+        BP = New ServiceReference3.BPMasterData
+        '   OCRD = New List(Of ServiceReference1.BPMasterData)
+        BP.DocType = "C"
+        BP.AcctReceivable = "113010100"
+        BP.AcctDownPayment = ""
+
+        BP.CardCode = "CHOM-00005"
+        BP.DocCurr = "THB"
+        BP.CardName = "CHOMNAN"
+        BP.ForeignName = "FCHOMNAN"
+        BP.TaxID = "12345"
+        BP.GroupID = "107"
+        BP.Tel1 = "099999"
+        BP.Tel2 = "012"
+        BP.Name = "CONTACT NAME"
+        BP.FristName = "First"
+        BP.Tel_1 = "01011"
+
+        'BP.Branch = "Branch"
+        BP.TaxID = "1234444"
+        BP.PaymentMethods = "6"
+
+        'Bill To
+        BP.Branch = "CHOM-00005"
+        BP.Line1 = "addr1"
+        BP.Line2 = "addr2"
+
+        'PayTo 
+        BP.Branch = "CHOM-00005"
+        BP.Line1 = "PayLin1"
+        BP.Line2 = "PayLine2"
+
+        BP.BankID = "BBL"
+        BP.BankAcct = "00023456"
+        BP.BankName = "EM QUATIER2"
+        BP.BranchAcct = "111010050"
+        BP.IBAN = "002"
+
+        'House Bank
+        BP.HouseBankCountry = "TH"
+        BP.HouseBankAccount = "0308096684"
+        BP.HouseBank = "BBL"
+        BP.HouseBankBrand = "EM QUATIER"
+
+
+        OCRD.Add(BP)
+
+
+        ls_result = Client._CreateBP(OCRD.ToArray).ToList
+
+        '========= End Create BP ==========
