@@ -17,6 +17,7 @@
         'Public Property Series As Integer
         'Public Property LineNum As Integer
         'Public Property Type As Integer
+        'Test Change
         Public Property ItemCode As String
         Public Property BarCode As String
         Public Property VendorNum As String
