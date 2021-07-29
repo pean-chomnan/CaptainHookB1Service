@@ -16,7 +16,7 @@ Public Class OWORforIssueForProduction
     Public Property Comments As String
     Public Property StartDate As Date
     Public Property Priority As Double
-
+    Public Property ExpiryDate As Integer
 End Class
 
 Public Class GetListOfOWORforIssueForProduction
@@ -48,7 +48,8 @@ Public Class GetListOfOWORforIssueForProduction
                         .ProductName = oRs.Fields.Item("ProdName").Value.ToString.Trim,
                         .Comments = oRs.Fields.Item("Comments").Value.ToString.Trim,
                         .StartDate = oRs.Fields.Item("StartDate").Value,
-                        .Priority = oRs.Fields.Item("Priority").Value
+                        .Priority = oRs.Fields.Item("Priority").Value,
+                        .ExpiryDate = oRs.Fields.Item("Expirydate").Value
                     })
                     oRs.MoveNext()
                 Loop

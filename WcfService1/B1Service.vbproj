@@ -154,13 +154,16 @@
     <Compile Include="Models\Class\Data Response\Get Master\ReturnObject\Item Master\ReturnUomGroup.vb" />
     <Compile Include="Models\Class\Data Response\Packing\PackingClass.vb" />
     <Compile Include="Models\Class\Data Response\Packing\GetPackingResponse.vb" />
+    <Compile Include="Models\Class\Data Response\Packing\ReturnBatchByBoxNumber.vb" />
+    <Compile Include="Models\Class\Data Response\Packing\ReturnBatchNumber.vb" />
     <Compile Include="Models\Class\Inventory\GoodsIssue\ClassGoodsIssue.vb" />
     <Compile Include="Models\Class\Inventory\GoodsIssue\CreateGoodsIssue.vb" />
     <Compile Include="Models\Class\Inventory\GoodsReceipt\ClassGoodsReceipt.vb" />
     <Compile Include="Models\Class\Inventory\GoodsReceipt\CreateGoodsReceipt.vb" />
     <Compile Include="Models\Class\Inventory\InventoryCounting\ClassInventoryCounting.vb" />
-    <Compile Include="Models\Class\Inventory\InventoryCounting\ClassSampleAddInventoryCounting.vb" />
     <Compile Include="Models\Class\Inventory\InventoryCounting\CreateInventoryCounting.vb" />
+    <Compile Include="Models\Class\Inventory\InventoryPosting\ClassInventoryPosting.vb" />
+    <Compile Include="Models\Class\Inventory\InventoryPosting\CreateInventoryPosting.vb" />
     <Compile Include="Models\Class\Inventory\InventoryTransfer\ClassInventoryTransfer.vb" />
     <Compile Include="Models\Class\Inventory\InventoryTransfer\CreateInventoryTransfer.vb" />
     <Compile Include="Models\Class\Master Data\BP Master\BPMasterData.vb" />

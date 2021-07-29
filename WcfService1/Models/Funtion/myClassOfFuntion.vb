@@ -206,6 +206,24 @@
 
     End Function
 
+    Public Function ICaseListInventoryPosting(ByRef obj As List(Of ClassInventoryPosting.InventoryPostingLineUoMs)) As Integer
+        Try
+            If IsNothing(obj) = False Then
+                If obj.Count > 0 Then
+                    Return obj.Count
+                Else
+                    Return 0
+                End If
+            Else
+                Return 0
+            End If
+
+        Catch ex As Exception
+            Return 0
+        End Try
+
+    End Function
+
     Public Function ICaseListOfBIN(ByRef obj As List(Of GoodsReceiptPO.BINCode)) As Integer
         Try
             If IsNothing(obj) = False Then

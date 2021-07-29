@@ -7,7 +7,6 @@ End Class
 Public Class OWORforReturnComponent
     Public Property DocEntry As Integer
     Public Property DocNum As Integer
-    ' Public Property Series As Integer
     Public Property SeriesName As String
     Public Property Type As String
     Public Property PostDate As Date
@@ -15,6 +14,7 @@ Public Class OWORforReturnComponent
     Public Property ProductNo As String
     Public Property ProductName As String
     Public Property Comments As String
+    Public Property Expirydate As Integer
 End Class
 
 Public Class GetListOfOWORforReturnComponent
@@ -44,7 +44,8 @@ Public Class GetListOfOWORforReturnComponent
                         .DueDate = oRs.Fields.Item("DueDate").Value,
                         .ProductNo = oRs.Fields.Item("ProductNo").Value.ToString.Trim,
                         .ProductName = oRs.Fields.Item("ProdName").Value.ToString.Trim,
-                        .Comments = oRs.Fields.Item("Comments").Value.ToString.Trim
+                        .Comments = oRs.Fields.Item("Comments").Value.ToString.Trim,
+                        .Expirydate = oRs.Fields.Item("Expirydate").Value
                     })
                     oRs.MoveNext()
                 Loop

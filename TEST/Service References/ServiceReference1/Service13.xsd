@@ -213,6 +213,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="_AddInventoryPosting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="obj" nillable="true" type="q29:ArrayOfClassInventoryPosting.OIQR" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_AddInventoryPostingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_AddInventoryPostingResult" nillable="true" type="q30:ArrayOfReturnStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="_myClass">
     <xs:complexType>
       <xs:sequence />
@@ -228,14 +242,14 @@
   <xs:element name="_UpdateUDFBorCodeBoxNumber">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="ipaObj" nillable="true" type="q29:ArrayOfPackingClass.ClassPacking" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="ipaObj" nillable="true" type="q31:ArrayOfPackingClass.ClassPacking" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="_UpdateUDFBorCodeBoxNumberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_UpdateUDFBorCodeBoxNumberResult" nillable="true" type="q30:ArrayOfReturnStatus" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_UpdateUDFBorCodeBoxNumberResult" nillable="true" type="q32:ArrayOfReturnStatus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -249,7 +263,7 @@
   <xs:element name="_GetPackingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPackingResult" nillable="true" type="q31:PackingClass.ClassPackingResponse" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPackingResult" nillable="true" type="q33:PackingClass.ClassPackingResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -263,7 +277,7 @@
   <xs:element name="_GetBPGroupCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPGroupCodeResult" nillable="true" type="q32:ReturnBPGroup" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPGroupCodeResult" nillable="true" type="q34:ReturnBPGroup" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -275,7 +289,7 @@
   <xs:element name="_GetBPCurrencyCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPCurrencyCodeResult" nillable="true" type="q33:ReturnBPCurrency" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPCurrencyCodeResult" nillable="true" type="q35:ReturnBPCurrency" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -287,7 +301,7 @@
   <xs:element name="_GetBPAccountReceivableResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPAccountReceivableResult" nillable="true" type="q34:ReturnBPAccountReceivable" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPAccountReceivableResult" nillable="true" type="q36:ReturnBPAccountReceivable" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -299,7 +313,7 @@
   <xs:element name="_GetBPAccountDownPaymentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPAccountDownPaymentResult" nillable="true" type="q35:ReturnAccountDownPayment" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPAccountDownPaymentResult" nillable="true" type="q37:ReturnAccountDownPayment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -311,7 +325,7 @@
   <xs:element name="_GetBPPaymentTermsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPPaymentTermsResult" nillable="true" type="q36:ReturnBPReturnPaymentTerms" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPPaymentTermsResult" nillable="true" type="q38:ReturnBPReturnPaymentTerms" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -323,7 +337,7 @@
   <xs:element name="_GetBPCountryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPCountryResult" nillable="true" type="q37:ReturnBPCountry" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBPCountryResult" nillable="true" type="q39:ReturnBPCountry" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -335,7 +349,7 @@
   <xs:element name="_GetBankCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBankCodeResult" nillable="true" type="q38:ReturnBankCode" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBankCodeResult" nillable="true" type="q40:ReturnBankCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -347,7 +361,7 @@
   <xs:element name="_GetHouseBankCountryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetHouseBankCountryResult" nillable="true" type="q39:ReturnHouseBankCountry" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetHouseBankCountryResult" nillable="true" type="q41:ReturnHouseBankCountry" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -361,7 +375,7 @@
   <xs:element name="_GetHouseBankAccountCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetHouseBankAccountCodeResult" nillable="true" type="q40:ReturnHouseBankAccount" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetHouseBankAccountCodeResult" nillable="true" type="q42:ReturnHouseBankAccount" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -375,7 +389,7 @@
   <xs:element name="_GetPaymentMoethodResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPaymentMoethodResult" nillable="true" type="q41:ReturnPaymentMeothod" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPaymentMoethodResult" nillable="true" type="q43:ReturnPaymentMeothod" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -387,7 +401,7 @@
   <xs:element name="_GetWithholdingTaxResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetWithholdingTaxResult" nillable="true" type="q42:ReturnWithholdingTax" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetWithholdingTaxResult" nillable="true" type="q44:ReturnWithholdingTax" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -401,7 +415,7 @@
   <xs:element name="_GetItemCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetItemCodeResult" nillable="true" type="q43:ReturnItemCode" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetItemCodeResult" nillable="true" type="q45:ReturnItemCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -413,7 +427,7 @@
   <xs:element name="_GetUomGroupResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetUomGroupResult" nillable="true" type="q44:ReturnUomGroup" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetUomGroupResult" nillable="true" type="q46:ReturnUomGroup" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -425,7 +439,7 @@
   <xs:element name="_GetItemGroupCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetItemGroupCodeResult" nillable="true" type="q45:ReturnItemGroupCode" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetItemGroupCodeResult" nillable="true" type="q47:ReturnItemGroupCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -437,7 +451,7 @@
   <xs:element name="_GetFirmCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetFirmCodeResult" nillable="true" type="q46:ReturnFirmCode" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetFirmCodeResult" nillable="true" type="q48:ReturnFirmCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -449,7 +463,7 @@
   <xs:element name="_GetUDFTypeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetUDFTypeResult" nillable="true" type="q47:ReturnUDFType" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetUDFTypeResult" nillable="true" type="q49:ReturnUDFType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -464,7 +478,7 @@
   <xs:element name="_GetSeriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetSeriesResult" nillable="true" type="q48:ReturnSeries" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetSeriesResult" nillable="true" type="q50:ReturnSeries" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -479,7 +493,7 @@
   <xs:element name="_GetCardCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetCardCodeResult" nillable="true" type="q49:ReturnBP" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetCardCodeResult" nillable="true" type="q51:ReturnBP" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -493,7 +507,7 @@
   <xs:element name="_GetContactPersonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetContactPersonResult" nillable="true" type="q50:ReturnContactPerson" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetContactPersonResult" nillable="true" type="q52:ReturnContactPerson" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -505,7 +519,7 @@
   <xs:element name="_GetSalesPersonCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetSalesPersonCodeResult" nillable="true" type="q51:ReturnSalesPersonCode" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetSalesPersonCodeResult" nillable="true" type="q53:ReturnSalesPersonCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -517,7 +531,7 @@
   <xs:element name="_GetOwnerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetOwnerResult" nillable="true" type="q52:ReturnOwner" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetOwnerResult" nillable="true" type="q54:ReturnOwner" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -531,7 +545,7 @@
   <xs:element name="_GetbBarCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetbBarCodeResult" nillable="true" type="q53:ReturnBarCode" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetbBarCodeResult" nillable="true" type="q55:ReturnBarCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -545,7 +559,7 @@
   <xs:element name="_GetTaxCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetTaxCodeResult" nillable="true" type="q54:ReturnTaxCode" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetTaxCodeResult" nillable="true" type="q56:ReturnTaxCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -559,7 +573,7 @@
   <xs:element name="_GetUomCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetUomCodeResult" nillable="true" type="q55:ReturnUomCode" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetUomCodeResult" nillable="true" type="q57:ReturnUomCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -571,7 +585,7 @@
   <xs:element name="_GetWarehouseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetWarehouseResult" nillable="true" type="q56:ReturnWarehouse" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetWarehouseResult" nillable="true" type="q58:ReturnWarehouse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -585,7 +599,7 @@
   <xs:element name="_GetDimensionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetDimensionResult" nillable="true" type="q57:ReturnDimension" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetDimensionResult" nillable="true" type="q59:ReturnDimension" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -599,7 +613,7 @@
   <xs:element name="_GetPurchaseOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPurchaseOrderResult" nillable="true" type="q58:ReturnPurchaseOrder" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPurchaseOrderResult" nillable="true" type="q60:ReturnPurchaseOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -611,7 +625,7 @@
   <xs:element name="_GetListOfPurchaseDocumentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetListOfPurchaseDocumentResult" nillable="true" type="q59:ReturnListOfPurchaseDocument" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetListOfPurchaseDocumentResult" nillable="true" type="q61:ReturnListOfPurchaseDocument" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -625,7 +639,7 @@
   <xs:element name="_GetBinCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBinCodeResult" nillable="true" type="q60:ReturnBinCode" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBinCodeResult" nillable="true" type="q62:ReturnBinCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -639,7 +653,7 @@
   <xs:element name="_GetSalesOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetSalesOrderResult" nillable="true" type="q61:ReturnSalesOrder" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetSalesOrderResult" nillable="true" type="q63:ReturnSalesOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -651,7 +665,7 @@
   <xs:element name="_GetListOfSalesOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetListOfSalesOrderResult" nillable="true" type="q62:ReturnListOfSalesOrder" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetListOfSalesOrderResult" nillable="true" type="q64:ReturnListOfSalesOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -666,7 +680,7 @@
   <xs:element name="_GetAvailableSerialBatchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetAvailableSerialBatchResult" nillable="true" type="q63:ReturnAvailableSerialBatch" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetAvailableSerialBatchResult" nillable="true" type="q65:ReturnAvailableSerialBatch" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -678,7 +692,7 @@
   <xs:element name="_GetPriceListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPriceListResult" nillable="true" type="q64:ReturnPriceList" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetPriceListResult" nillable="true" type="q66:ReturnPriceList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -692,7 +706,7 @@
   <xs:element name="_GetShipToResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetShipToResult" nillable="true" type="q65:ReturnShipTo" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetShipToResult" nillable="true" type="q67:ReturnShipTo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -707,7 +721,7 @@
   <xs:element name="_GetShipToAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetShipToAddressResult" nillable="true" type="q66:ReturnShipToAddress" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetShipToAddressResult" nillable="true" type="q68:ReturnShipToAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -747,7 +761,7 @@
   <xs:element name="_GetOrderIntervalResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetOrderIntervalResult" nillable="true" type="q67:ReturnOrderInterval" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetOrderIntervalResult" nillable="true" type="q69:ReturnOrderInterval" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -761,7 +775,7 @@
   <xs:element name="_GetInventoryCountingUomCodeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetInventoryCountingUomCodeResult" nillable="true" type="q68:ReturnInventoryCountingUomCode" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetInventoryCountingUomCodeResult" nillable="true" type="q70:ReturnInventoryCountingUomCode" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -777,21 +791,21 @@
   <xs:element name="_GetGetItemOnHandPerWhsOrBINResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetGetItemOnHandPerWhsOrBINResult" nillable="true" type="q69:ReturnItemOnHandPerWhsOrBIN" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetGetItemOnHandPerWhsOrBINResult" nillable="true" type="q71:ReturnItemOnHandPerWhsOrBIN" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="_GetLisOfAvailableIssueLineFromProductionOrder">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductionOrderDocEntry" nillable="true" type="q70:ArrayOfint" />
+        <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductionOrderDocEntry" nillable="true" type="q72:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="_GetLisOfAvailableIssueLineFromProductionOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLisOfAvailableIssueLineFromProductionOrderResult" nillable="true" type="q71:ReturnLoadProductionOrderToIssueLine" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLisOfAvailableIssueLineFromProductionOrderResult" nillable="true" type="q73:ReturnGetListOfIssueComponent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -803,7 +817,7 @@
   <xs:element name="_GetLoadProductionOrderThatAvaibableForReceiptFromProductionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadProductionOrderThatAvaibableForReceiptFromProductionResult" nillable="true" type="q72:ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadProductionOrderThatAvaibableForReceiptFromProductionResult" nillable="true" type="q74:ReturnGetListOfOWORforReceiptFromProduction" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -815,21 +829,21 @@
   <xs:element name="_GetLoadIssueForProductionToReceiptFromProductionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadIssueForProductionToReceiptFromProductionResult" nillable="true" type="q73:ReturnLoadIssueForProductionToReceiptFromProduction" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadIssueForProductionToReceiptFromProductionResult" nillable="true" type="q75:ReturnGetListOfOWORforReturnComponent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="_GetLoadIssueForProductionToReceiptFromProductionLine">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListOfProductionOrderDocEntry" nillable="true" type="q74:ArrayOfint" />
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListOfProductionOrderDocEntry" nillable="true" type="q76:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="_GetLoadIssueForProductionToReceiptFromProductionLineResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadIssueForProductionToReceiptFromProductionLineResult" nillable="true" type="q75:ReturnLoadIssueForProductionToReceiptFromProductionLine" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadIssueForProductionToReceiptFromProductionLineResult" nillable="true" type="q77:ReturnGetListOfReturnComponent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -841,21 +855,53 @@
   <xs:element name="_GetProductionOrderListForIssueProductionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetProductionOrderListForIssueProductionResult" nillable="true" type="q76:ReturnProductionOrderListForIssueProduction" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetProductionOrderListForIssueProductionResult" nillable="true" type="q78:ReturnGetListOfOWORforIssueForProduction" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="_GetLoadProductionOrderToIssueLine">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListOfProductionOrderDocEntry" nillable="true" type="q77:ArrayOfint" />
+        <xs:element xmlns:q79="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListOfProductionOrderDocEntry" nillable="true" type="q79:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="_GetLoadProductionOrderToIssueLineResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadProductionOrderToIssueLineResult" nillable="true" type="q78:ReturnLoadProductionOrderToIssueLine" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetLoadProductionOrderToIssueLineResult" nillable="true" type="q80:ReturnGetListOfIssueComponent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBatchByBatchNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WhsCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BatchNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBatchByBatchNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBatchByBatchNumberResult" nillable="true" type="q81:ReturnBatchNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBatchByBoxNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WhsCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BoxNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBatchByBoxNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBatchByBoxNumberResult" nillable="true" type="q82:ReturnBatchByBoxNumber" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

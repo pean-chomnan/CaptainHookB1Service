@@ -30,7 +30,7 @@ Public Class IssueComponent
     Public Property OcrCode3 As String
     Public Property OcrCode4 As String
     Public Property OcrCode5 As String
-
+    Public Property ExpiryDate As Integer
 
 End Class
 
@@ -87,7 +87,8 @@ Public Class GetListOfIssueComponent
                         .OcrCode2 = oRs.Fields.Item("OcrCode2").Value,
                         .OcrCode3 = oRs.Fields.Item("OcrCode3").Value,
                         .OcrCode4 = oRs.Fields.Item("OcrCode4").Value,
-                        .OcrCode5 = oRs.Fields.Item("OcrCode5").Value
+                        .OcrCode5 = oRs.Fields.Item("OcrCode5").Value,
+                        .ExpiryDate = oRs.Fields.Item("Expirydate").Value
                     })
                     oRs.MoveNext()
                 Loop

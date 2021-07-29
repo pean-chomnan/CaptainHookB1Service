@@ -221,3 +221,19 @@
         Dim i As Integer
         i = ls_Res.ls_data.Count
         i = i
+
+	'''Get BatchNumber
+        Dim ls_Res As New ServiceReference1.ReturnBatchNumber
+        ls_Res = Client._GetBatchByBatchNumber("03.HKT05", "1IGSTIOD", "BY001")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+
+        ''''Get BatchNumber By BoxNumber
+        Dim ls_Res As New ServiceReference1.ReturnBatchByBoxNumber
+        ls_Res = Client._GetBatchByBoxNumber("03.HKT05", "1IGSTIOD", "1")
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+
+
+
+

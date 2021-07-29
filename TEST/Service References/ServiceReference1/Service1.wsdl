@@ -98,6 +98,12 @@
   <wsdl:message name="IServices__AddReceiptFromProduction_OutputMessage">
     <wsdl:part name="parameters" element="tns:_AddReceiptFromProductionResponse" />
   </wsdl:message>
+  <wsdl:message name="IServices__AddInventoryPosting_InputMessage">
+    <wsdl:part name="parameters" element="tns:_AddInventoryPosting" />
+  </wsdl:message>
+  <wsdl:message name="IServices__AddInventoryPosting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:_AddInventoryPostingResponse" />
+  </wsdl:message>
   <wsdl:message name="IServices__myClass_InputMessage">
     <wsdl:part name="parameters" element="tns:_myClass" />
   </wsdl:message>
@@ -392,6 +398,18 @@
   <wsdl:message name="IServices__GetLoadProductionOrderToIssueLine_OutputMessage">
     <wsdl:part name="parameters" element="tns:_GetLoadProductionOrderToIssueLineResponse" />
   </wsdl:message>
+  <wsdl:message name="IServices__GetBatchByBatchNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:_GetBatchByBatchNumber" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetBatchByBatchNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:_GetBatchByBatchNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetBatchByBoxNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:_GetBatchByBoxNumber" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetBatchByBoxNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:_GetBatchByBoxNumberResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServices">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IServices/GetData" message="tns:IServices_GetData_InputMessage" />
@@ -452,6 +470,10 @@
     <wsdl:operation name="_AddReceiptFromProduction">
       <wsdl:input wsaw:Action="http://tempuri.org/IServices/_AddReceiptFromProduction" message="tns:IServices__AddReceiptFromProduction_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServices/_AddReceiptFromProductionResponse" message="tns:IServices__AddReceiptFromProduction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="_AddInventoryPosting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/_AddInventoryPosting" message="tns:IServices__AddInventoryPosting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/_AddInventoryPostingResponse" message="tns:IServices__AddInventoryPosting_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="_myClass">
       <wsdl:input wsaw:Action="http://tempuri.org/IServices/_myClass" message="tns:IServices__myClass_InputMessage" />
@@ -649,6 +671,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetLoadProductionOrderToIssueLine" message="tns:IServices__GetLoadProductionOrderToIssueLine_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetLoadProductionOrderToIssueLineResponse" message="tns:IServices__GetLoadProductionOrderToIssueLine_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="_GetBatchByBatchNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetBatchByBatchNumber" message="tns:IServices__GetBatchByBatchNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetBatchByBatchNumberResponse" message="tns:IServices__GetBatchByBatchNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="_GetBatchByBoxNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetBatchByBoxNumber" message="tns:IServices__GetBatchByBoxNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetBatchByBoxNumberResponse" message="tns:IServices__GetBatchByBoxNumber_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServices" type="tns:IServices">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -780,6 +810,15 @@
     </wsdl:operation>
     <wsdl:operation name="_AddReceiptFromProduction">
       <soap:operation soapAction="http://tempuri.org/IServices/_AddReceiptFromProduction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_AddInventoryPosting">
+      <soap:operation soapAction="http://tempuri.org/IServices/_AddInventoryPosting" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1221,6 +1260,24 @@
     </wsdl:operation>
     <wsdl:operation name="_GetLoadProductionOrderToIssueLine">
       <soap:operation soapAction="http://tempuri.org/IServices/_GetLoadProductionOrderToIssueLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_GetBatchByBatchNumber">
+      <soap:operation soapAction="http://tempuri.org/IServices/_GetBatchByBatchNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_GetBatchByBoxNumber">
+      <soap:operation soapAction="http://tempuri.org/IServices/_GetBatchByBoxNumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

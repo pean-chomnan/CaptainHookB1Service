@@ -23,7 +23,6 @@ Public Class Service1
         Return composite
     End Function
 
-
     Public Function _CreateBP(obj As List(Of BPMasterData)) As List(Of ReturnStatus) Implements IServices._CreateBP
         Dim ob As CreateBP = Nothing
         Dim ls_result As List(Of ReturnStatus) = Nothing
@@ -177,8 +176,16 @@ Public Class Service1
         Return ls_result
     End Function
 
-
-    '  Function _AddReceiptFromProduction(ByVal obj As List(Of ClassReceiptFromProduction.OIGN)) As List(Of ReturnStatus)
+    Public Function _AddInventoryPosting(ByVal obj As List(Of ClassInventoryPosting.OIQR)) As List(Of ReturnStatus) Implements IServices._AddInventoryPosting
+        Dim ob As CreateInventoryPosting = Nothing
+        Dim ls_result As List(Of ReturnStatus) = Nothing
+        Try
+            ob = New CreateInventoryPosting
+            ls_result = ob.Send(obj)
+        Catch ex As Exception
+        End Try
+        Return ls_result
+    End Function
 
     Public Function _GetPacking(ByVal BarCode As String) As PackingClass.ClassPackingResponse Implements IServices._GetPacking
         Dim obj As New GetDataResonse
@@ -415,10 +422,15 @@ Public Class Service1
         Dim obj As New GetListOfIssueComponent
         Return obj.Execute(ListOfProductionOrderDocEntry)
     End Function
-    'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
-    '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
-    '    Return obj.FGetReturnLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)
-    'End Function
+    Public Function _GetBatchByBatchNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BatchNo As String) As ReturnBatchNumber Implements IServices._GetBatchByBatchNumber
+        Dim obj As New CReturnGetBatchNo
+        Return obj.FGetReturnBatchByBatchNumber(WhsCode, ItemCode, BatchNo)
+    End Function
+
+    Public Function _GetBatchByBoxNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As ReturnBatchByBoxNumber Implements IServices._GetBatchByBoxNumber
+        Dim obj As New CReturnGetBatchNumber
+        Return obj.FGetReturnBatchByBoxNumber(WhsCode, ItemCode, BoxNumber)
+    End Function
 
     'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
     '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine

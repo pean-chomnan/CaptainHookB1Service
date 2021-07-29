@@ -34,8 +34,8 @@ Public Interface IServices
     Function _AddIssueProduction(ByVal obj As List(Of ClassIssueProduction.OIGE)) As List(Of ReturnStatus)
     <OperationContract()>
     Function _AddReceiptFromProduction(ByVal obj As List(Of ClassReceiptFromProduction.OIGN), ByVal iCopyFrom As Integer) As List(Of ReturnStatus)
-
-
+    <OperationContract()>
+    Function _AddInventoryPosting(ByVal obj As List(Of ClassInventoryPosting.OIQR)) As List(Of ReturnStatus)
 
 
 
@@ -138,10 +138,11 @@ Public Interface IServices
     Function _GetProductionOrderListForIssueProduction() As ReturnGetListOfOWORforIssueForProduction
     <OperationContract()>
     Function _GetLoadProductionOrderToIssueLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnGetListOfIssueComponent
-    '<OperationContract()>
-    'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
-    '<OperationContract()>
-    'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
+    <OperationContract()>
+    Function _GetBatchByBatchNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BatchNo As String) As ReturnBatchNumber
+    <OperationContract()>
+    Function _GetBatchByBoxNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As ReturnBatchByBoxNumber
+
     '<OperationContract()>
     'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
     '<OperationContract()>

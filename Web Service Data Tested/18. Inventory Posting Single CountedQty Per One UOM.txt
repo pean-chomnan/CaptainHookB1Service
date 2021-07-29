@@ -1,0 +1,124 @@
+
+        Dim a As String
+
+        ' =========== Add Ineventory Transfer By Batch & Serial ========'
+
+        Dim OIQRs As New List(Of ServiceReference1.ClassInventoryPostingOIQR)
+        Dim OIQR As New ServiceReference1.ClassInventoryPostingOIQR
+        Dim OIQRLs As New List(Of ServiceReference1.ClassInventoryPostingLine)
+        Dim OIQRL As New ServiceReference1.ClassInventoryPostingLine
+        Dim ls_Serials As New List(Of ServiceReference1.ClassInventoryPostingSerialNumbers)
+        Dim Serial As New ServiceReference1.ClassInventoryPostingSerialNumbers
+        Dim ls_result As List(Of ServiceReference1.ReturnStatus)
+        Dim ls_Batchs As New List(Of ServiceReference1.ClassInventoryPostingBatchNumbers)
+        Dim Batch As New ServiceReference1.ClassInventoryPostingBatchNumbers
+        Dim ibar As New ServiceReference1.ItemMasterData.CodeBars
+
+        OIQR = New ServiceReference1.ClassInventoryPostingOIQR
+
+        OIQR.Series = 2885
+        OIQR.PostingDate = "2021-07-28"
+        OIQR.CountDate = "2021-07-28"
+        OIQR.CountTime = "11:10"
+        OIQR.PriceSouce = 1
+        OIQR.PriceList = 7
+        OIQR.WebDocNum = "12333"
+        OIQR.Ref2 = "Ref2-001"
+        OIQR.Remark = "Comm Posting"
+        OIQR.JournalRemark = "Journal Remark"
+        For i As Integer = 1 To 1
+            If i = 1 Then  ' Row Number 1
+                OIQRL.ItemCode = "1IGGC0006"
+                OIQRL.WhsCode = "03.HKT05"
+                OIQRL.BinCode = 52
+                OIQRL.CountedQuantity = 3
+                '    OIQRL.VarianceQty = 1
+                OIQRL.Price = 200
+                OIQRL.Remark = "Remark"
+
+                OIQRL.ProjectCode = ""
+                OIQRL.FirmCode = 1
+                OIQRL.CardCode = ""
+                OIQRL.NagativeBin = "Y"
+
+                OIQRL.UomCode = "Pack"
+
+                OIQRL.CogsCode = "CSM"
+                OIQRL.CogsCode2 = "DP02"
+
+                '==== Selected Batch ===='
+
+                ' Setup Batch Line 1
+                Batch.Batch = "BX001"
+                Batch.Quantity = -1
+                ls_Batchs.Add(Batch)
+                Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+
+                ' Setup Batch Line 1
+                Batch.Batch = "BX002"
+                Batch.Quantity = -1
+                ls_Batchs.Add(Batch)
+                Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+
+                ' Setup Batch Line 1
+                Batch.Batch = "BX003"
+                Batch.Quantity = -1
+                ls_Batchs.Add(Batch)
+                Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+
+                '==== END Selected Batch ===='
+                '==== Create New Batch   ===='
+                Batch.Batch = "BY001"
+                Batch.ManufacturerSerialNumber = "BNM-001"
+                Batch.ManufacturingDate = "2021-07-21"
+                Batch.Notes = "Btch Notes"
+                Batch.Location = "Locat Batch"
+                Batch.ReceptionDate = "2021-07-21"
+                Batch.AdmissionDate = "2021-07-21"
+                Batch.ExpirationDate = "2021-07-21"
+                Batch.ACT_WeightOnBatch = 123
+                Batch.CompanyAddress = "Com addr"
+                Batch.BarCodeBoxNumber = "BarCodeb0xNum"
+                Batch.Smoking = "Smoking Udf"
+                Batch.Quantity = 1
+
+                ls_Batchs.Add(Batch)
+                Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+
+                '' Setup Serial Line 2
+                Batch.Batch = "BY002"
+                Batch.ManufacturerSerialNumber = "BNM-001"
+                Batch.ManufacturingDate = "2021-07-21"
+                Batch.Notes = "Btch Notes"
+                Batch.Location = "Locat Batch"
+                Batch.ReceptionDate = "2021-07-21"
+                Batch.AdmissionDate = "2021-07-21"
+                Batch.ExpirationDate = "2021-07-21"
+                Batch.ACT_WeightOnBatch = 123
+                Batch.CompanyAddress = "Com addr"
+                Batch.BarCodeBoxNumber = "BarCodeb0xNum"
+                Batch.Smoking = "Smoking Udf"
+                Batch.Quantity = 2
+                ls_Batchs.Add(Batch)
+                Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+                '==== END Create New Batch ===='
+
+                OIQRL.ls_Batch = ls_Batchs.ToArray
+                ls_Batchs.Clear()
+                Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+
+            Else 'Row Number 2
+
+
+            End If
+
+            OIQRLs.Add(OIQRL)
+            OIQRL = Nothing
+            OIQRL = New ServiceReference1.ClassInventoryPostingLine
+        Next
+
+        OIQR.Lines = OIQRLs.ToArray
+        OIQRs.Add(OIQR)
+        ls_result = Client._AddInventoryPosting(OIQRs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg

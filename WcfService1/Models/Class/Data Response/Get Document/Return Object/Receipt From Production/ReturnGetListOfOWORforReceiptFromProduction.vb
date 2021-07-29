@@ -33,7 +33,7 @@ Public Class OWORforReceiptFromProduction
     Public Property StockAvaible As Double
     Public Property CmpltQty As Double
     Public Property RjctQty As Double
-
+    Public Property Expirydate As Integer
 End Class
 
 Public Class GetListOfOWORforReceiptFromProduction
@@ -44,10 +44,9 @@ Public Class GetListOfOWORforReceiptFromProduction
             Dim oRs As SAPbobsCOM.Recordset = Nothing
             Dim strSql As String = ""
             Dim _DBNAME As String = System.Configuration.ConfigurationManager.AppSettings("CompanyDB")
-
             Dim _type As Integer = 0
-
             Dim oLoginService As New LoginServiceWebRef
+
             If oLoginService.lErrCode = 0 Then
                 oCompany = oLoginService.Company
                 oRs = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset)
@@ -80,7 +79,8 @@ Public Class GetListOfOWORforReceiptFromProduction
                         .OnOrder = oRs.Fields.Item("OnOrder").Value,
                         .StockAvaible = oRs.Fields.Item("StockAvaible").Value,
                         .CmpltQty = oRs.Fields.Item("CmpltQty").Value,
-                        .RjctQty = oRs.Fields.Item("RjctQty").Value
+                        .RjctQty = oRs.Fields.Item("RjctQty").Value,
+                        .Expirydate = oRs.Fields.Item("Expirydate").Value
                     })
                     oRs.MoveNext()
                 Loop

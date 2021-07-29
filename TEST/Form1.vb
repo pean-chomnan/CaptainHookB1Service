@@ -244,81 +244,245 @@ Public Class Form1
 
         'a = ls_result(0).ErrirMsg
 
+        '''Get BatchNumber
+        'Dim ls_Res As New ServiceReference1.ReturnGetListOfReturnComponent()
+        'Dim arr As List(Of Integer)
+        'arr.Add(1)
+        'arr.Add(2)
+        'arr.Add(3)
+        'arr.Add(4)
+
+        'ls_Res = Client._GetLoadIssueForProductionToReceiptFromProductionLine(arr.ToArray)
+        'Dim i As Integer
+        'i = ls_Res.ls_data.Count
+
+
+        ''''Get BatchNumber By BoxNumber
+        'Dim ls_Res As New ServiceReference1.ReturnBatchByBoxNumber
+        'ls_Res = Client._GetBatchByBoxNumber("03.HKT05", "1IGSTIOD", "1")
+        'Dim i As Integer
+        'i = ls_Res.ls_data.Count
+        'i = i
+
+
+        'Public Sub TestGetSO()
+        '    'Get Sales Order
+        '    Dim serviceClient As New ServiceReference1.ServicesClient
+        '    Dim serviceResponse As New ServiceReference1.ReturnAvailableSerialBatch
+        '    serviceResponse = serviceClient._GetLoadProductionOrderThatAvaibableForReceiptFromProduction()
+        '    Dim listOfServiceSalesOrder As New List(Of ServiceReference1.SalesOrder)
+
+        '    Dim dt_ReceiptFromProductionHeader As DataTable
+        '    dt_ReceiptFromProductionHeader = New DataTable("Table")
+        '    dt_ReceiptFromProductionHeader.Columns.Add("DocEntry", System.Type.GetType("System.Integer")) 'Item Code
+        '    dt_ReceiptFromProductionHeader.Columns.Add("DocNum", System.Type.GetType("System.Integer")) 'Item Name
+        '    dt_ReceiptFromProductionHeader.Columns.Add("SeriesName", System.Type.GetType("System.String")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("Type", System.Type.GetType("System.String")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("PostDate", System.Type.GetType("System.Date")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("DueDate", System.Type.GetType("System.Date")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("ProductNo", System.Type.GetType("System.String")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("ProdName", System.Type.GetType("System.String")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("Comments", System.Type.GetType("System.String")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("StartDate", System.Type.GetType("System.Date")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("Priority", System.Type.GetType("System.Decimal")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("Status", System.Type.GetType("System.String")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("Warehouse", System.Type.GetType("System.String")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("OcrCode", System.Type.GetType("System.String")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("OcrCode2", System.Type.GetType("System.String")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("PlannedQty", System.Type.GetType("System.Decimal")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("AvaibleReceipt", System.Type.GetType("System.Decimal")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("OnHand", System.Type.GetType("System.Decimal")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("IsCommited", System.Type.GetType("System.Decimal")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("OnOrder", System.Type.GetType("System.Decimal")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("StockAvaible", System.Type.GetType("System.Decimal")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("CmpltQty", System.Type.GetType("System.Decimal")) 'Quantity
+        '    dt_ReceiptFromProductionHeader.Columns.Add("RjctQty", System.Type.GetType("System.Decimal")) 'Quantity
+
+        '    'If serviceResponse.ErrCode = 0 Then
+        '    '    'Get Data Success
+        '    '    listOfServiceSalesOrder = serviceResponse.ls_data.ToList
+        '    '    Dim RowDetail As DataRow
+        '    '    For Each tmpSO As ServiceReference1.SalesOrder In listOfServiceSalesOrder
+
+        '    '        'Header Bind data to Form (Header)
+        '    '        Dim txtCardCode As String
+        '    '        Dim txtCarName As String
+        '    '        Dim txtDocDate As String
+        '    '        Dim txtDocDueDate As String
+        '    '        Dim txtTaxDate As String
+        '    '        txtCardCode = tmpSO.CardCode
+        '    '        txtCarName = tmpSO.CardName
+        '    '        txtDocDate = tmpSO.DocDate
+        '    '        txtDocDueDate = tmpSO.DocDueDate
+        '    '        txtTaxDate = tmpSO.TaxDate
+
+        '    '        RowDetail = dt_DeliveryLine.NewRow
+        '    '        RowDetail.Item("ItemCode") = tmpSO.ItemCode
+        '    '        RowDetail.Item("ItemName") = ""
+        '    '        RowDetail.Item("ItemName") = tmpSO.Quantity
+
+        '    '    Next
+
+        '    '    dt_DeliveryLine.AcceptChanges()
+
+        '    '    ' Add Data Scource to Data Grid/List View
+        '    '    ' DataGridView.DataSource = dt_DeliveryLine
+
+
+        '    '    'Rename Field and and invisible some columns on data/List View
+
+        '    'Else
+        '    '    'Get Data Error
+        '    '    MessageBox.Show(serviceResponse.ErrMsg)
+
+        '    'End If
+
+        'End Sub
+
+        '======================== xxxx ========================='
+
+        'Dim a As String
+        'Dim OIQRs As New List(Of ServiceReference1.ClassInventoryPostingOIQR)
+        'Dim OIQR As New ServiceReference1.ClassInventoryPostingOIQR
+        'Dim OIQRLs As New List(Of ServiceReference1.ClassInventoryPostingLine)
+        'Dim OIQRL As New ServiceReference1.ClassInventoryPostingLine
+        'Dim ls_Serials As New List(Of ServiceReference1.ClassInventoryPostingSerialNumbers)
+        'Dim Serial As New ServiceReference1.ClassInventoryPostingSerialNumbers
+        'Dim ls_result As List(Of ServiceReference1.ReturnStatus)
+        'Dim ls_Batchs As New List(Of ServiceReference1.ClassInventoryPostingBatchNumbers)
+        'Dim Batch As New ServiceReference1.ClassInventoryPostingBatchNumbers
+        'Dim ibar As New ServiceReference1.ItemMasterData.CodeBars
+
+        'Dim CountUoms As New List(Of ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs)
+        'Dim CountUom As New ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs
+
+
+        'OIQR = New ServiceReference1.ClassInventoryPostingOIQR
+
+        'OIQR.Series = 2885
+        'OIQR.PostingDate = "2021-07-28"
+        'OIQR.CountDate = "2021-07-28"
+        'OIQR.CountTime = "11:10"
+        'OIQR.PriceSouce = 1
+        'OIQR.PriceList = 7
+        'OIQR.WebDocNum = "12333"
+        'OIQR.Ref2 = "Ref2-001"
+        'OIQR.Remark = "Comm Posting"
+        'OIQR.JournalRemark = "Journal Remark"
+        'For i As Integer = 1 To 1
+        '    If i = 1 Then  ' Row Number 1
+        '        OIQRL.ItemCode = "1IGGC0006"
+        '        OIQRL.WhsCode = "03.HKT05"
+        '        OIQRL.BinCode = 52
+        '        OIQRL.CountedQuantity = 22
+
+        '        'Counted Multiple Uom
+
+        '        CountUom.BarCode = "1IGS-B002"
+        '        CountUom.UomCode = "Pack"
+        '        CountUom.UomCountedQty = 2
+        '        CountUom.CountedQty = 2
+        '        CountUoms.Add(CountUom)
+        '        CountUom = New ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs
+
+        '        ' UOM Line 2
+        '        CountUom.BarCode = ""
+        '        CountUom.UomCode = "20Pack"
+        '        CountUom.UomCountedQty = 1
+        '        CountUom.CountedQty = 20  ' 1Qty=20Pack
+        '        CountUoms.Add(CountUom)
+        '        CountUom = New ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs
+
+        '        OIQRL.ls_InventoryPostingLineUoMs = CountUoms.ToArray
+
+        '        '    OIQRL.VarianceQty = 1
+        '        OIQRL.Price = 200
+        '        OIQRL.Remark = "Remark"
+
+        '        OIQRL.ProjectCode = ""
+        '        OIQRL.FirmCode = 1
+        '        OIQRL.CardCode = ""
+        '        OIQRL.NagativeBin = "Y"
+        '        OIQRL.UomCode = "Pack"
+        '        OIQRL.CogsCode = "CSM"
+        '        OIQRL.CogsCode2 = "DP02"
+
+        '        '==== Selected Batch ===='
+
+        '        ' Setup Batch Line 1
+        '        Batch.Batch = "BX001"
+        '        Batch.Quantity = -1
+        '        ls_Batchs.Add(Batch)
+        '        Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+
+        '        ' Setup Batch Line 1
+        '        Batch.Batch = "BX002"
+        '        Batch.Quantity = -2
+        '        ls_Batchs.Add(Batch)
+        '        Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+
+        '        '==== END Selected Batch ===='
+        '        '==== Create New Batch   ===='
+        '        Batch.Batch = "BY004"
+        '        Batch.ManufacturerSerialNumber = "BNM-BY005"
+        '        Batch.ManufacturingDate = "2021-07-21"
+        '        Batch.Notes = "Btch Notes"
+        '        Batch.Location = "Locat Batch"
+        '        Batch.ReceptionDate = "2021-07-21"
+        '        Batch.AdmissionDate = "2021-07-21"
+        '        Batch.ExpirationDate = "2021-07-21"
+        '        Batch.ACT_WeightOnBatch = 123
+        '        Batch.CompanyAddress = "Com addr"
+        '        Batch.BarCodeBoxNumber = "BarCodeb0xNum"
+        '        Batch.Smoking = "Smoking Udf"
+        '        Batch.Quantity = 10
+
+        '        ls_Batchs.Add(Batch)
+        '        Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+
+        '        '' Setup Serial Line 2
+        '        Batch.Batch = "BY005"
+        '        Batch.ManufacturerSerialNumber = "BNM-BY005"
+        '        Batch.ManufacturingDate = "2021-07-21"
+        '        Batch.Notes = "Btch Notes"
+        '        Batch.Location = "Locat Batch"
+        '        Batch.ReceptionDate = "2021-07-21"
+        '        Batch.AdmissionDate = "2021-07-21"
+        '        Batch.ExpirationDate = "2021-07-21"
+        '        Batch.ACT_WeightOnBatch = 123
+        '        Batch.CompanyAddress = "Com addr"
+        '        Batch.BarCodeBoxNumber = "BarCodeb0xNum"
+        '        Batch.Smoking = "Smoking Udf"
+        '        Batch.Quantity = 12
+        '        ls_Batchs.Add(Batch)
+        '        Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+        '        '==== END Create New Batch ===='
+
+        '        OIQRL.ls_Batch = ls_Batchs.ToArray
+        '        ls_Batchs.Clear()
+        '        Batch = New ServiceReference1.ClassInventoryPostingBatchNumbers
+
+        '    Else 'Row Number 2
+
+
+        '    End If
+
+        '    OIQRLs.Add(OIQRL)
+        '    OIQRL = Nothing
+        '    OIQRL = New ServiceReference1.ClassInventoryPostingLine
+        'Next
+
+        'OIQR.Lines = OIQRLs.ToArray
+        'OIQRs.Add(OIQR)
+        'ls_result = Client._AddInventoryPosting(OIQRs.ToArray).ToList
+
+        'a = ls_result(0).ErrirMsg
+
+
 
 
     End Sub
 
-    Public Sub TestGetSO()
-        'Get Sales Order
-        Dim serviceClient As New ServiceReference1.ServicesClient
-        Dim serviceResponse As New ServiceReference1.ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction
-        serviceResponse = serviceClient._GetLoadProductionOrderThatAvaibableForReceiptFromProduction()
-        Dim listOfServiceSalesOrder As New List(Of ServiceReference1.SalesOrder)
-
-        Dim dt_ReceiptFromProductionHeader As DataTable
-        dt_ReceiptFromProductionHeader = New DataTable("Table")
-        dt_ReceiptFromProductionHeader.Columns.Add("DocEntry", System.Type.GetType("System.Integer")) 'Item Code
-        dt_ReceiptFromProductionHeader.Columns.Add("DocNum", System.Type.GetType("System.Integer")) 'Item Name
-        dt_ReceiptFromProductionHeader.Columns.Add("SeriesName", System.Type.GetType("System.String")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("Type", System.Type.GetType("System.String")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("PostDate", System.Type.GetType("System.Date")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("DueDate", System.Type.GetType("System.Date")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("ProductNo", System.Type.GetType("System.String")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("ProdName", System.Type.GetType("System.String")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("Comments", System.Type.GetType("System.String")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("StartDate", System.Type.GetType("System.Date")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("Priority", System.Type.GetType("System.Decimal")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("Status", System.Type.GetType("System.String")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("Warehouse", System.Type.GetType("System.String")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("OcrCode", System.Type.GetType("System.String")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("OcrCode2", System.Type.GetType("System.String")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("PlannedQty", System.Type.GetType("System.Decimal")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("AvaibleReceipt", System.Type.GetType("System.Decimal")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("OnHand", System.Type.GetType("System.Decimal")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("IsCommited", System.Type.GetType("System.Decimal")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("OnOrder", System.Type.GetType("System.Decimal")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("StockAvaible", System.Type.GetType("System.Decimal")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("CmpltQty", System.Type.GetType("System.Decimal")) 'Quantity
-        dt_ReceiptFromProductionHeader.Columns.Add("RjctQty", System.Type.GetType("System.Decimal")) 'Quantity
-
-        If serviceResponse.ErrCode = 0 Then
-            'Get Data Success
-            listOfServiceSalesOrder = serviceResponse.ls_data.ToList
-            Dim RowDetail As DataRow
-            For Each tmpSO As ServiceReference1.SalesOrder In listOfServiceSalesOrder
-
-                'Header Bind data to Form (Header)
-                Dim txtCardCode As String
-                Dim txtCarName As String
-                Dim txtDocDate As String
-                Dim txtDocDueDate As String
-                Dim txtTaxDate As String
-                txtCardCode = tmpSO.CardCode
-                txtCarName = tmpSO.CardName
-                txtDocDate = tmpSO.DocDate
-                txtDocDueDate = tmpSO.DocDueDate
-                txtTaxDate = tmpSO.TaxDate
-
-                RowDetail = dt_DeliveryLine.NewRow
-                RowDetail.Item("ItemCode") = tmpSO.ItemCode
-                RowDetail.Item("ItemName") = ""
-                RowDetail.Item("ItemName") = tmpSO.Quantity
-
-            Next
-
-            dt_DeliveryLine.AcceptChanges()
-
-            ' Add Data Scource to Data Grid/List View
-            ' DataGridView.DataSource = dt_DeliveryLine
 
 
-            'Rename Field and and invisible some columns on data/List View
-
-        Else
-            'Get Data Error
-            MessageBox.Show(serviceResponse.ErrMsg)
-
-        End If
-
-    End Sub
 End Class

@@ -9864,6 +9864,1281 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ClassInventoryPosting.OIQR", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class ClassInventoryPostingOIQR
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CountDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CountTimeField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private DocEntryField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private DocNumField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private JournalRemarkField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private LinesField() As ServiceReference1.ClassInventoryPostingLine
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private PostingDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private PriceListField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private PriceSouceField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Ref2Field As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private RemarkField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SeriesField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private WebDocNumField As Integer
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CountDate() As Date
+            Get
+                Return Me.CountDateField
+            End Get
+            Set
+                If (Me.CountDateField.Equals(value) <> true) Then
+                    Me.CountDateField = value
+                    Me.RaisePropertyChanged("CountDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CountTime() As Date
+            Get
+                Return Me.CountTimeField
+            End Get
+            Set
+                If (Me.CountTimeField.Equals(value) <> true) Then
+                    Me.CountTimeField = value
+                    Me.RaisePropertyChanged("CountTime")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property DocEntry() As Integer
+            Get
+                Return Me.DocEntryField
+            End Get
+            Set
+                If (Me.DocEntryField.Equals(value) <> true) Then
+                    Me.DocEntryField = value
+                    Me.RaisePropertyChanged("DocEntry")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property DocNum() As Integer
+            Get
+                Return Me.DocNumField
+            End Get
+            Set
+                If (Me.DocNumField.Equals(value) <> true) Then
+                    Me.DocNumField = value
+                    Me.RaisePropertyChanged("DocNum")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property JournalRemark() As String
+            Get
+                Return Me.JournalRemarkField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.JournalRemarkField, value) <> true) Then
+                    Me.JournalRemarkField = value
+                    Me.RaisePropertyChanged("JournalRemark")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Lines() As ServiceReference1.ClassInventoryPostingLine()
+            Get
+                Return Me.LinesField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.LinesField, value) <> true) Then
+                    Me.LinesField = value
+                    Me.RaisePropertyChanged("Lines")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property PostingDate() As Date
+            Get
+                Return Me.PostingDateField
+            End Get
+            Set
+                If (Me.PostingDateField.Equals(value) <> true) Then
+                    Me.PostingDateField = value
+                    Me.RaisePropertyChanged("PostingDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property PriceList() As Integer
+            Get
+                Return Me.PriceListField
+            End Get
+            Set
+                If (Me.PriceListField.Equals(value) <> true) Then
+                    Me.PriceListField = value
+                    Me.RaisePropertyChanged("PriceList")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property PriceSouce() As Integer
+            Get
+                Return Me.PriceSouceField
+            End Get
+            Set
+                If (Me.PriceSouceField.Equals(value) <> true) Then
+                    Me.PriceSouceField = value
+                    Me.RaisePropertyChanged("PriceSouce")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Ref2() As String
+            Get
+                Return Me.Ref2Field
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.Ref2Field, value) <> true) Then
+                    Me.Ref2Field = value
+                    Me.RaisePropertyChanged("Ref2")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Remark() As String
+            Get
+                Return Me.RemarkField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.RemarkField, value) <> true) Then
+                    Me.RemarkField = value
+                    Me.RaisePropertyChanged("Remark")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Series() As Integer
+            Get
+                Return Me.SeriesField
+            End Get
+            Set
+                If (Me.SeriesField.Equals(value) <> true) Then
+                    Me.SeriesField = value
+                    Me.RaisePropertyChanged("Series")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property WebDocNum() As Integer
+            Get
+                Return Me.WebDocNumField
+            End Get
+            Set
+                If (Me.WebDocNumField.Equals(value) <> true) Then
+                    Me.WebDocNumField = value
+                    Me.RaisePropertyChanged("WebDocNum")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ClassInventoryPosting.Line", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class ClassInventoryPostingLine
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BarCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BaseEntryField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BaseLineField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BaseTypeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BinCodeField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CardCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CogsCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CogsCode2Field As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CogsCode3Field As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CogsCode4Field As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CogsCode5Field As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CountedQuantityField As Double
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private DocEntryField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private FirmCodeField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ItemCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private LineNumField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private NagativeBinField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private PriceField As Double
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ProjectCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private RemarkField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SupplierCatalogNoField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private UomCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private VarianceQtyField As Double
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private WhsCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ls_BatchField() As ServiceReference1.ClassInventoryPostingBatchNumbers
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ls_InventoryPostingLineUoMsField() As ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ls_SerialField() As ServiceReference1.ClassInventoryPostingSerialNumbers
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BarCode() As String
+            Get
+                Return Me.BarCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BarCodeField, value) <> true) Then
+                    Me.BarCodeField = value
+                    Me.RaisePropertyChanged("BarCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BaseEntry() As String
+            Get
+                Return Me.BaseEntryField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BaseEntryField, value) <> true) Then
+                    Me.BaseEntryField = value
+                    Me.RaisePropertyChanged("BaseEntry")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BaseLine() As String
+            Get
+                Return Me.BaseLineField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BaseLineField, value) <> true) Then
+                    Me.BaseLineField = value
+                    Me.RaisePropertyChanged("BaseLine")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BaseType() As String
+            Get
+                Return Me.BaseTypeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BaseTypeField, value) <> true) Then
+                    Me.BaseTypeField = value
+                    Me.RaisePropertyChanged("BaseType")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BinCode() As Integer
+            Get
+                Return Me.BinCodeField
+            End Get
+            Set
+                If (Me.BinCodeField.Equals(value) <> true) Then
+                    Me.BinCodeField = value
+                    Me.RaisePropertyChanged("BinCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CardCode() As String
+            Get
+                Return Me.CardCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CardCodeField, value) <> true) Then
+                    Me.CardCodeField = value
+                    Me.RaisePropertyChanged("CardCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CogsCode() As String
+            Get
+                Return Me.CogsCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CogsCodeField, value) <> true) Then
+                    Me.CogsCodeField = value
+                    Me.RaisePropertyChanged("CogsCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CogsCode2() As String
+            Get
+                Return Me.CogsCode2Field
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CogsCode2Field, value) <> true) Then
+                    Me.CogsCode2Field = value
+                    Me.RaisePropertyChanged("CogsCode2")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CogsCode3() As String
+            Get
+                Return Me.CogsCode3Field
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CogsCode3Field, value) <> true) Then
+                    Me.CogsCode3Field = value
+                    Me.RaisePropertyChanged("CogsCode3")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CogsCode4() As String
+            Get
+                Return Me.CogsCode4Field
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CogsCode4Field, value) <> true) Then
+                    Me.CogsCode4Field = value
+                    Me.RaisePropertyChanged("CogsCode4")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CogsCode5() As String
+            Get
+                Return Me.CogsCode5Field
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CogsCode5Field, value) <> true) Then
+                    Me.CogsCode5Field = value
+                    Me.RaisePropertyChanged("CogsCode5")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CountedQuantity() As Double
+            Get
+                Return Me.CountedQuantityField
+            End Get
+            Set
+                If (Me.CountedQuantityField.Equals(value) <> true) Then
+                    Me.CountedQuantityField = value
+                    Me.RaisePropertyChanged("CountedQuantity")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property DocEntry() As String
+            Get
+                Return Me.DocEntryField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.DocEntryField, value) <> true) Then
+                    Me.DocEntryField = value
+                    Me.RaisePropertyChanged("DocEntry")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property FirmCode() As Integer
+            Get
+                Return Me.FirmCodeField
+            End Get
+            Set
+                If (Me.FirmCodeField.Equals(value) <> true) Then
+                    Me.FirmCodeField = value
+                    Me.RaisePropertyChanged("FirmCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ItemCode() As String
+            Get
+                Return Me.ItemCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ItemCodeField, value) <> true) Then
+                    Me.ItemCodeField = value
+                    Me.RaisePropertyChanged("ItemCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property LineNum() As String
+            Get
+                Return Me.LineNumField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.LineNumField, value) <> true) Then
+                    Me.LineNumField = value
+                    Me.RaisePropertyChanged("LineNum")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property NagativeBin() As String
+            Get
+                Return Me.NagativeBinField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.NagativeBinField, value) <> true) Then
+                    Me.NagativeBinField = value
+                    Me.RaisePropertyChanged("NagativeBin")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Price() As Double
+            Get
+                Return Me.PriceField
+            End Get
+            Set
+                If (Me.PriceField.Equals(value) <> true) Then
+                    Me.PriceField = value
+                    Me.RaisePropertyChanged("Price")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ProjectCode() As String
+            Get
+                Return Me.ProjectCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ProjectCodeField, value) <> true) Then
+                    Me.ProjectCodeField = value
+                    Me.RaisePropertyChanged("ProjectCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Remark() As String
+            Get
+                Return Me.RemarkField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.RemarkField, value) <> true) Then
+                    Me.RemarkField = value
+                    Me.RaisePropertyChanged("Remark")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property SupplierCatalogNo() As String
+            Get
+                Return Me.SupplierCatalogNoField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SupplierCatalogNoField, value) <> true) Then
+                    Me.SupplierCatalogNoField = value
+                    Me.RaisePropertyChanged("SupplierCatalogNo")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property UomCode() As String
+            Get
+                Return Me.UomCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.UomCodeField, value) <> true) Then
+                    Me.UomCodeField = value
+                    Me.RaisePropertyChanged("UomCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property VarianceQty() As Double
+            Get
+                Return Me.VarianceQtyField
+            End Get
+            Set
+                If (Me.VarianceQtyField.Equals(value) <> true) Then
+                    Me.VarianceQtyField = value
+                    Me.RaisePropertyChanged("VarianceQty")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property WhsCode() As String
+            Get
+                Return Me.WhsCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.WhsCodeField, value) <> true) Then
+                    Me.WhsCodeField = value
+                    Me.RaisePropertyChanged("WhsCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ls_Batch() As ServiceReference1.ClassInventoryPostingBatchNumbers()
+            Get
+                Return Me.ls_BatchField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ls_BatchField, value) <> true) Then
+                    Me.ls_BatchField = value
+                    Me.RaisePropertyChanged("ls_Batch")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ls_InventoryPostingLineUoMs() As ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs()
+            Get
+                Return Me.ls_InventoryPostingLineUoMsField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ls_InventoryPostingLineUoMsField, value) <> true) Then
+                    Me.ls_InventoryPostingLineUoMsField = value
+                    Me.RaisePropertyChanged("ls_InventoryPostingLineUoMs")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ls_Serial() As ServiceReference1.ClassInventoryPostingSerialNumbers()
+            Get
+                Return Me.ls_SerialField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ls_SerialField, value) <> true) Then
+                    Me.ls_SerialField = value
+                    Me.RaisePropertyChanged("ls_Serial")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ClassInventoryPosting.BatchNumbers", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class ClassInventoryPostingBatchNumbers
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ACT_WeightOnBatchField As Double
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private AdmissionDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private AvailableQtyField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BarCodeBoxNumberField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BatchField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CompanyAddressField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ExpirationDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private LocationField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ManufacturerSerialNumberField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ManufacturingDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private NotesField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private QuantityField As Double
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ReceptionDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SmokingField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ACT_WeightOnBatch() As Double
+            Get
+                Return Me.ACT_WeightOnBatchField
+            End Get
+            Set
+                If (Me.ACT_WeightOnBatchField.Equals(value) <> true) Then
+                    Me.ACT_WeightOnBatchField = value
+                    Me.RaisePropertyChanged("ACT_WeightOnBatch")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property AdmissionDate() As Date
+            Get
+                Return Me.AdmissionDateField
+            End Get
+            Set
+                If (Me.AdmissionDateField.Equals(value) <> true) Then
+                    Me.AdmissionDateField = value
+                    Me.RaisePropertyChanged("AdmissionDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property AvailableQty() As String
+            Get
+                Return Me.AvailableQtyField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.AvailableQtyField, value) <> true) Then
+                    Me.AvailableQtyField = value
+                    Me.RaisePropertyChanged("AvailableQty")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BarCodeBoxNumber() As String
+            Get
+                Return Me.BarCodeBoxNumberField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BarCodeBoxNumberField, value) <> true) Then
+                    Me.BarCodeBoxNumberField = value
+                    Me.RaisePropertyChanged("BarCodeBoxNumber")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Batch() As String
+            Get
+                Return Me.BatchField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BatchField, value) <> true) Then
+                    Me.BatchField = value
+                    Me.RaisePropertyChanged("Batch")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CompanyAddress() As String
+            Get
+                Return Me.CompanyAddressField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CompanyAddressField, value) <> true) Then
+                    Me.CompanyAddressField = value
+                    Me.RaisePropertyChanged("CompanyAddress")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ExpirationDate() As Date
+            Get
+                Return Me.ExpirationDateField
+            End Get
+            Set
+                If (Me.ExpirationDateField.Equals(value) <> true) Then
+                    Me.ExpirationDateField = value
+                    Me.RaisePropertyChanged("ExpirationDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Location() As String
+            Get
+                Return Me.LocationField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.LocationField, value) <> true) Then
+                    Me.LocationField = value
+                    Me.RaisePropertyChanged("Location")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ManufacturerSerialNumber() As String
+            Get
+                Return Me.ManufacturerSerialNumberField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ManufacturerSerialNumberField, value) <> true) Then
+                    Me.ManufacturerSerialNumberField = value
+                    Me.RaisePropertyChanged("ManufacturerSerialNumber")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ManufacturingDate() As Date
+            Get
+                Return Me.ManufacturingDateField
+            End Get
+            Set
+                If (Me.ManufacturingDateField.Equals(value) <> true) Then
+                    Me.ManufacturingDateField = value
+                    Me.RaisePropertyChanged("ManufacturingDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Notes() As String
+            Get
+                Return Me.NotesField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.NotesField, value) <> true) Then
+                    Me.NotesField = value
+                    Me.RaisePropertyChanged("Notes")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Quantity() As Double
+            Get
+                Return Me.QuantityField
+            End Get
+            Set
+                If (Me.QuantityField.Equals(value) <> true) Then
+                    Me.QuantityField = value
+                    Me.RaisePropertyChanged("Quantity")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ReceptionDate() As Date
+            Get
+                Return Me.ReceptionDateField
+            End Get
+            Set
+                If (Me.ReceptionDateField.Equals(value) <> true) Then
+                    Me.ReceptionDateField = value
+                    Me.RaisePropertyChanged("ReceptionDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Smoking() As String
+            Get
+                Return Me.SmokingField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SmokingField, value) <> true) Then
+                    Me.SmokingField = value
+                    Me.RaisePropertyChanged("Smoking")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ClassInventoryPosting.InventoryPostingLineUoMs", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class ClassInventoryPostingInventoryPostingLineUoMs
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BarCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CountedQtyField As Double
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private UomCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private UomCountedQtyField As Double
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BarCode() As String
+            Get
+                Return Me.BarCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BarCodeField, value) <> true) Then
+                    Me.BarCodeField = value
+                    Me.RaisePropertyChanged("BarCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CountedQty() As Double
+            Get
+                Return Me.CountedQtyField
+            End Get
+            Set
+                If (Me.CountedQtyField.Equals(value) <> true) Then
+                    Me.CountedQtyField = value
+                    Me.RaisePropertyChanged("CountedQty")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property UomCode() As String
+            Get
+                Return Me.UomCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.UomCodeField, value) <> true) Then
+                    Me.UomCodeField = value
+                    Me.RaisePropertyChanged("UomCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property UomCountedQty() As Double
+            Get
+                Return Me.UomCountedQtyField
+            End Get
+            Set
+                If (Me.UomCountedQtyField.Equals(value) <> true) Then
+                    Me.UomCountedQtyField = value
+                    Me.RaisePropertyChanged("UomCountedQty")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ClassInventoryPosting.SerialNumbers", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class ClassInventoryPostingSerialNumbers
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ACT_WeightOnBatchField As Double
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BarCodeBoxNumberField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CompanyAddressField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ExpirationDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private LocationField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ManufactureDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ManufacturerSerialNumberField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private NoteField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private QuantityField As Double
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ReceptionDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SerialNumberField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SmokingField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ACT_WeightOnBatch() As Double
+            Get
+                Return Me.ACT_WeightOnBatchField
+            End Get
+            Set
+                If (Me.ACT_WeightOnBatchField.Equals(value) <> true) Then
+                    Me.ACT_WeightOnBatchField = value
+                    Me.RaisePropertyChanged("ACT_WeightOnBatch")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BarCodeBoxNumber() As String
+            Get
+                Return Me.BarCodeBoxNumberField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BarCodeBoxNumberField, value) <> true) Then
+                    Me.BarCodeBoxNumberField = value
+                    Me.RaisePropertyChanged("BarCodeBoxNumber")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CompanyAddress() As String
+            Get
+                Return Me.CompanyAddressField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.CompanyAddressField, value) <> true) Then
+                    Me.CompanyAddressField = value
+                    Me.RaisePropertyChanged("CompanyAddress")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ExpirationDate() As Date
+            Get
+                Return Me.ExpirationDateField
+            End Get
+            Set
+                If (Me.ExpirationDateField.Equals(value) <> true) Then
+                    Me.ExpirationDateField = value
+                    Me.RaisePropertyChanged("ExpirationDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Location() As String
+            Get
+                Return Me.LocationField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.LocationField, value) <> true) Then
+                    Me.LocationField = value
+                    Me.RaisePropertyChanged("Location")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ManufactureDate() As Date
+            Get
+                Return Me.ManufactureDateField
+            End Get
+            Set
+                If (Me.ManufactureDateField.Equals(value) <> true) Then
+                    Me.ManufactureDateField = value
+                    Me.RaisePropertyChanged("ManufactureDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ManufacturerSerialNumber() As String
+            Get
+                Return Me.ManufacturerSerialNumberField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ManufacturerSerialNumberField, value) <> true) Then
+                    Me.ManufacturerSerialNumberField = value
+                    Me.RaisePropertyChanged("ManufacturerSerialNumber")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Note() As String
+            Get
+                Return Me.NoteField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.NoteField, value) <> true) Then
+                    Me.NoteField = value
+                    Me.RaisePropertyChanged("Note")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Quantity() As Double
+            Get
+                Return Me.QuantityField
+            End Get
+            Set
+                If (Me.QuantityField.Equals(value) <> true) Then
+                    Me.QuantityField = value
+                    Me.RaisePropertyChanged("Quantity")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ReceptionDate() As Date
+            Get
+                Return Me.ReceptionDateField
+            End Get
+            Set
+                If (Me.ReceptionDateField.Equals(value) <> true) Then
+                    Me.ReceptionDateField = value
+                    Me.RaisePropertyChanged("ReceptionDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property SerialNumber() As String
+            Get
+                Return Me.SerialNumberField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SerialNumberField, value) <> true) Then
+                    Me.SerialNumberField = value
+                    Me.RaisePropertyChanged("SerialNumber")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Smoking() As String
+            Get
+                Return Me.SmokingField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SmokingField, value) <> true) Then
+                    Me.SmokingField = value
+                    Me.RaisePropertyChanged("Smoking")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="PackingClass.ClassPacking", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
     Partial Public Class PackingClassClassPacking
@@ -11387,6 +12662,16 @@ Namespace ServiceReference1
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassReceiptFromProductionBatchNumbers)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassReceiptFromProductionSerialNumbers())),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassReceiptFromProductionSerialNumbers)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingOIQR())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingOIQR)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingLine())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingLine)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingBatchNumbers())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingBatchNumbers)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingSerialNumbers())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingSerialNumbers)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.PackingClassClassPacking())),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.PackingClassClassPacking)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.PackingClassClassPackingResponse)),  _
@@ -11501,21 +12786,25 @@ Namespace ServiceReference1
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnItemOnHandPerWhsOrBIN)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ItemOnHandPerWhsOrBIN())),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ItemOnHandPerWhsOrBIN)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnLoadProductionOrderToIssueLine)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.LisOfAvailableIssueLineFromProductionOrder())),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.LisOfAvailableIssueLineFromProductionOrder)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.LoadProductionOrderThatAvaibableForReceiptFromProduction())),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.LoadProductionOrderThatAvaibableForReceiptFromProduction)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProduction)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.LoadIssueForProductionToReceiptFromProduction())),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.LoadIssueForProductionToReceiptFromProduction)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProductionLine)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.LoadIssueForProductionToReceiptFromProductionLine())),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.LoadIssueForProductionToReceiptFromProductionLine)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnProductionOrderListForIssueProduction)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ProductionOrderListForIssueProduction())),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ProductionOrderListForIssueProduction))>  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnGetListOfIssueComponent)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.IssueComponent())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.IssueComponent)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnGetListOfOWORforReceiptFromProduction)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.OWORforReceiptFromProduction())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.OWORforReceiptFromProduction)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnGetListOfOWORforReturnComponent)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.OWORforReturnComponent())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.OWORforReturnComponent)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnGetListOfReturnComponent)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnComponent())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnComponent)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnGetListOfOWORforIssueForProduction)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.OWORforIssueForProduction())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.OWORforIssueForProduction)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnBatchNumber)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.BatchNumber())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.BatchNumber)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ReturnBatchByBoxNumber))>  _
     Partial Public Class HouseBankAccountCode
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
@@ -17247,9 +18536,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnLoadProductionOrderToIssueLine", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnGetListOfIssueComponent", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class ReturnLoadProductionOrderToIssueLine
+    Partial Public Class ReturnGetListOfIssueComponent
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -17263,7 +18552,7 @@ Namespace ServiceReference1
         Private ErrMsgField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ls_dataField() As ServiceReference1.LisOfAvailableIssueLineFromProductionOrder
+        Private ls_dataField() As ServiceReference1.IssueComponent
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -17302,7 +18591,7 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ls_data() As ServiceReference1.LisOfAvailableIssueLineFromProductionOrder()
+        Public Property ls_data() As ServiceReference1.IssueComponent()
             Get
                 Return Me.ls_dataField
             End Get
@@ -17326,9 +18615,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="LisOfAvailableIssueLineFromProductionOrder", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="IssueComponent", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class LisOfAvailableIssueLineFromProductionOrder
+    Partial Public Class IssueComponent
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -17349,6 +18638,9 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private EndDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ExpiryDateField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private IsCommitedField As Double
@@ -17481,6 +18773,19 @@ Namespace ServiceReference1
                 If (Me.EndDateField.Equals(value) <> true) Then
                     Me.EndDateField = value
                     Me.RaisePropertyChanged("EndDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ExpiryDate() As Integer
+            Get
+                Return Me.ExpiryDateField
+            End Get
+            Set
+                If (Me.ExpiryDateField.Equals(value) <> true) Then
+                    Me.ExpiryDateField = value
+                    Me.RaisePropertyChanged("ExpiryDate")
                 End If
             End Set
         End Property
@@ -17757,9 +19062,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnGetListOfOWORforReceiptFromProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction
+    Partial Public Class ReturnGetListOfOWORforReceiptFromProduction
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -17773,7 +19078,7 @@ Namespace ServiceReference1
         Private ErrMsgField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ls_dataField() As ServiceReference1.LoadProductionOrderThatAvaibableForReceiptFromProduction
+        Private ls_dataField() As ServiceReference1.OWORforReceiptFromProduction
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -17812,7 +19117,7 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ls_data() As ServiceReference1.LoadProductionOrderThatAvaibableForReceiptFromProduction()
+        Public Property ls_data() As ServiceReference1.OWORforReceiptFromProduction()
             Get
                 Return Me.ls_dataField
             End Get
@@ -17836,9 +19141,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="LoadProductionOrderThatAvaibableForReceiptFromProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="OWORforReceiptFromProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class LoadProductionOrderThatAvaibableForReceiptFromProduction
+    Partial Public Class OWORforReceiptFromProduction
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -17862,6 +19167,9 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private DueDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ExpirydateField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private IsCommitedField As Double
@@ -18007,6 +19315,19 @@ Namespace ServiceReference1
                 If (Me.DueDateField.Equals(value) <> true) Then
                     Me.DueDateField = value
                     Me.RaisePropertyChanged("DueDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Expirydate() As Integer
+            Get
+                Return Me.ExpirydateField
+            End Get
+            Set
+                If (Me.ExpirydateField.Equals(value) <> true) Then
+                    Me.ExpirydateField = value
+                    Me.RaisePropertyChanged("Expirydate")
                 End If
             End Set
         End Property
@@ -18283,9 +19604,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnLoadIssueForProductionToReceiptFromProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnGetListOfOWORforReturnComponent", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class ReturnLoadIssueForProductionToReceiptFromProduction
+    Partial Public Class ReturnGetListOfOWORforReturnComponent
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -18299,7 +19620,7 @@ Namespace ServiceReference1
         Private ErrMsgField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ls_dataField() As ServiceReference1.LoadIssueForProductionToReceiptFromProduction
+        Private ls_dataField() As ServiceReference1.OWORforReturnComponent
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -18338,7 +19659,7 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ls_data() As ServiceReference1.LoadIssueForProductionToReceiptFromProduction()
+        Public Property ls_data() As ServiceReference1.OWORforReturnComponent()
             Get
                 Return Me.ls_dataField
             End Get
@@ -18362,9 +19683,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="LoadIssueForProductionToReceiptFromProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="OWORforReturnComponent", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class LoadIssueForProductionToReceiptFromProduction
+    Partial Public Class OWORforReturnComponent
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -18382,6 +19703,9 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private DueDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ExpirydateField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PostDateField As Date
@@ -18456,6 +19780,19 @@ Namespace ServiceReference1
                 If (Me.DueDateField.Equals(value) <> true) Then
                     Me.DueDateField = value
                     Me.RaisePropertyChanged("DueDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Expirydate() As Integer
+            Get
+                Return Me.ExpirydateField
+            End Get
+            Set
+                If (Me.ExpirydateField.Equals(value) <> true) Then
+                    Me.ExpirydateField = value
+                    Me.RaisePropertyChanged("Expirydate")
                 End If
             End Set
         End Property
@@ -18537,9 +19874,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnLoadIssueForProductionToReceiptFromProductionLine", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnGetListOfReturnComponent", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class ReturnLoadIssueForProductionToReceiptFromProductionLine
+    Partial Public Class ReturnGetListOfReturnComponent
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -18553,7 +19890,7 @@ Namespace ServiceReference1
         Private ErrMsgField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ls_dataField() As ServiceReference1.LoadIssueForProductionToReceiptFromProductionLine
+        Private ls_dataField() As ServiceReference1.ReturnComponent
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -18592,7 +19929,7 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ls_data() As ServiceReference1.LoadIssueForProductionToReceiptFromProductionLine()
+        Public Property ls_data() As ServiceReference1.ReturnComponent()
             Get
                 Return Me.ls_dataField
             End Get
@@ -18616,9 +19953,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="LoadIssueForProductionToReceiptFromProductionLine", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnComponent", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class LoadIssueForProductionToReceiptFromProductionLine
+    Partial Public Class ReturnComponent
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -18639,6 +19976,9 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private EndDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ExpirydateField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private IsCommitedField As Double
@@ -18771,6 +20111,19 @@ Namespace ServiceReference1
                 If (Me.EndDateField.Equals(value) <> true) Then
                     Me.EndDateField = value
                     Me.RaisePropertyChanged("EndDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Expirydate() As Integer
+            Get
+                Return Me.ExpirydateField
+            End Get
+            Set
+                If (Me.ExpirydateField.Equals(value) <> true) Then
+                    Me.ExpirydateField = value
+                    Me.RaisePropertyChanged("Expirydate")
                 End If
             End Set
         End Property
@@ -19047,9 +20400,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnProductionOrderListForIssueProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnGetListOfOWORforIssueForProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class ReturnProductionOrderListForIssueProduction
+    Partial Public Class ReturnGetListOfOWORforIssueForProduction
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -19063,7 +20416,7 @@ Namespace ServiceReference1
         Private ErrMsgField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ls_dataField() As ServiceReference1.ProductionOrderListForIssueProduction
+        Private ls_dataField() As ServiceReference1.OWORforIssueForProduction
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -19102,7 +20455,7 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ls_data() As ServiceReference1.ProductionOrderListForIssueProduction()
+        Public Property ls_data() As ServiceReference1.OWORforIssueForProduction()
             Get
                 Return Me.ls_dataField
             End Get
@@ -19126,9 +20479,9 @@ Namespace ServiceReference1
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="ProductionOrderListForIssueProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="OWORforIssueForProduction", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
      System.SerializableAttribute()>  _
-    Partial Public Class ProductionOrderListForIssueProduction
+    Partial Public Class OWORforIssueForProduction
         Inherits Object
         Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
         
@@ -19146,6 +20499,9 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private DueDateField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ExpiryDateField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PostDateField As Date
@@ -19226,6 +20582,19 @@ Namespace ServiceReference1
                 If (Me.DueDateField.Equals(value) <> true) Then
                     Me.DueDateField = value
                     Me.RaisePropertyChanged("DueDate")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ExpiryDate() As Integer
+            Get
+                Return Me.ExpiryDateField
+            End Get
+            Set
+                If (Me.ExpiryDateField.Equals(value) <> true) Then
+                    Me.ExpiryDateField = value
+                    Me.RaisePropertyChanged("ExpiryDate")
                 End If
             End Set
         End Property
@@ -19317,6 +20686,211 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.TypeField, value) <> true) Then
                     Me.TypeField = value
                     Me.RaisePropertyChanged("Type")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnBatchNumber", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class ReturnBatchNumber
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ErrCodeField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ErrMsgField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ls_dataField() As ServiceReference1.BatchNumber
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ErrCode() As Integer
+            Get
+                Return Me.ErrCodeField
+            End Get
+            Set
+                If (Me.ErrCodeField.Equals(value) <> true) Then
+                    Me.ErrCodeField = value
+                    Me.RaisePropertyChanged("ErrCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ErrMsg() As String
+            Get
+                Return Me.ErrMsgField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ErrMsgField, value) <> true) Then
+                    Me.ErrMsgField = value
+                    Me.RaisePropertyChanged("ErrMsg")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ls_data() As ServiceReference1.BatchNumber()
+            Get
+                Return Me.ls_dataField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ls_dataField, value) <> true) Then
+                    Me.ls_dataField = value
+                    Me.RaisePropertyChanged("ls_data")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="BatchNumber", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class BatchNumber
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BatchNoField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BatchNo() As String
+            Get
+                Return Me.BatchNoField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BatchNoField, value) <> true) Then
+                    Me.BatchNoField = value
+                    Me.RaisePropertyChanged("BatchNo")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ReturnBatchByBoxNumber", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class ReturnBatchByBoxNumber
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ErrCodeField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ErrMsgField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ls_dataField() As ServiceReference1.BatchNumber
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ErrCode() As Integer
+            Get
+                Return Me.ErrCodeField
+            End Get
+            Set
+                If (Me.ErrCodeField.Equals(value) <> true) Then
+                    Me.ErrCodeField = value
+                    Me.RaisePropertyChanged("ErrCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ErrMsg() As String
+            Get
+                Return Me.ErrMsgField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ErrMsgField, value) <> true) Then
+                    Me.ErrMsgField = value
+                    Me.RaisePropertyChanged("ErrMsg")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ls_data() As ServiceReference1.BatchNumber()
+            Get
+                Return Me.ls_dataField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ls_dataField, value) <> true) Then
+                    Me.ls_dataField = value
+                    Me.RaisePropertyChanged("ls_data")
                 End If
             End Set
         End Property
@@ -19424,6 +20998,12 @@ Namespace ServiceReference1
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_AddReceiptFromProduction", ReplyAction:="http://tempuri.org/IServices/_AddReceiptFromProductionResponse")>  _
         Function _AddReceiptFromProductionAsync(ByVal obj() As ServiceReference1.ClassReceiptFromProductionOIGN, ByVal iCopyFrom As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnStatus())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_AddInventoryPosting", ReplyAction:="http://tempuri.org/IServices/_AddInventoryPostingResponse")>  _
+        Function _AddInventoryPosting(ByVal obj() As ServiceReference1.ClassInventoryPostingOIQR) As ServiceReference1.ReturnStatus()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_AddInventoryPosting", ReplyAction:="http://tempuri.org/IServices/_AddInventoryPostingResponse")>  _
+        Function _AddInventoryPostingAsync(ByVal obj() As ServiceReference1.ClassInventoryPostingOIQR) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnStatus())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_myClass", ReplyAction:="http://tempuri.org/IServices/_myClassResponse")>  _
         Function _myClass() As Boolean
@@ -19685,51 +21265,63 @@ Namespace ServiceReference1
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLisOfAvailableIssueLineFromProductionOrder", ReplyAction:="http://tempuri.org/IServices/_GetLisOfAvailableIssueLineFromProductionOrderRespon"& _ 
             "se")>  _
-        Function _GetLisOfAvailableIssueLineFromProductionOrder(ByVal ProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnLoadProductionOrderToIssueLine
+        Function _GetLisOfAvailableIssueLineFromProductionOrder(ByVal ProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnGetListOfIssueComponent
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLisOfAvailableIssueLineFromProductionOrder", ReplyAction:="http://tempuri.org/IServices/_GetLisOfAvailableIssueLineFromProductionOrderRespon"& _ 
             "se")>  _
-        Function _GetLisOfAvailableIssueLineFromProductionOrderAsync(ByVal ProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadProductionOrderToIssueLine)
+        Function _GetLisOfAvailableIssueLineFromProductionOrderAsync(ByVal ProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfIssueComponent)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLoadProductionOrderThatAvaibableForReceiptFromPr"& _ 
             "oduction", ReplyAction:="http://tempuri.org/IServices/_GetLoadProductionOrderThatAvaibableForReceiptFromPr"& _ 
             "oductionResponse")>  _
-        Function _GetLoadProductionOrderThatAvaibableForReceiptFromProduction() As ServiceReference1.ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction
+        Function _GetLoadProductionOrderThatAvaibableForReceiptFromProduction() As ServiceReference1.ReturnGetListOfOWORforReceiptFromProduction
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLoadProductionOrderThatAvaibableForReceiptFromPr"& _ 
             "oduction", ReplyAction:="http://tempuri.org/IServices/_GetLoadProductionOrderThatAvaibableForReceiptFromPr"& _ 
             "oductionResponse")>  _
-        Function _GetLoadProductionOrderThatAvaibableForReceiptFromProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction)
+        Function _GetLoadProductionOrderThatAvaibableForReceiptFromProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfOWORforReceiptFromProduction)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLoadIssueForProductionToReceiptFromProduction", ReplyAction:="http://tempuri.org/IServices/_GetLoadIssueForProductionToReceiptFromProductionRes"& _ 
             "ponse")>  _
-        Function _GetLoadIssueForProductionToReceiptFromProduction() As ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProduction
+        Function _GetLoadIssueForProductionToReceiptFromProduction() As ServiceReference1.ReturnGetListOfOWORforReturnComponent
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLoadIssueForProductionToReceiptFromProduction", ReplyAction:="http://tempuri.org/IServices/_GetLoadIssueForProductionToReceiptFromProductionRes"& _ 
             "ponse")>  _
-        Function _GetLoadIssueForProductionToReceiptFromProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProduction)
+        Function _GetLoadIssueForProductionToReceiptFromProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfOWORforReturnComponent)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLoadIssueForProductionToReceiptFromProductionLin"& _ 
             "e", ReplyAction:="http://tempuri.org/IServices/_GetLoadIssueForProductionToReceiptFromProductionLin"& _ 
             "eResponse")>  _
-        Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProductionLine
+        Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnGetListOfReturnComponent
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLoadIssueForProductionToReceiptFromProductionLin"& _ 
             "e", ReplyAction:="http://tempuri.org/IServices/_GetLoadIssueForProductionToReceiptFromProductionLin"& _ 
             "eResponse")>  _
-        Function _GetLoadIssueForProductionToReceiptFromProductionLineAsync(ByVal ListOfProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProductionLine)
+        Function _GetLoadIssueForProductionToReceiptFromProductionLineAsync(ByVal ListOfProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfReturnComponent)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetProductionOrderListForIssueProduction", ReplyAction:="http://tempuri.org/IServices/_GetProductionOrderListForIssueProductionResponse")>  _
-        Function _GetProductionOrderListForIssueProduction() As ServiceReference1.ReturnProductionOrderListForIssueProduction
+        Function _GetProductionOrderListForIssueProduction() As ServiceReference1.ReturnGetListOfOWORforIssueForProduction
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetProductionOrderListForIssueProduction", ReplyAction:="http://tempuri.org/IServices/_GetProductionOrderListForIssueProductionResponse")>  _
-        Function _GetProductionOrderListForIssueProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnProductionOrderListForIssueProduction)
+        Function _GetProductionOrderListForIssueProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfOWORforIssueForProduction)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLoadProductionOrderToIssueLine", ReplyAction:="http://tempuri.org/IServices/_GetLoadProductionOrderToIssueLineResponse")>  _
-        Function _GetLoadProductionOrderToIssueLine(ByVal ListOfProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnLoadProductionOrderToIssueLine
+        Function _GetLoadProductionOrderToIssueLine(ByVal ListOfProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnGetListOfIssueComponent
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetLoadProductionOrderToIssueLine", ReplyAction:="http://tempuri.org/IServices/_GetLoadProductionOrderToIssueLineResponse")>  _
-        Function _GetLoadProductionOrderToIssueLineAsync(ByVal ListOfProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadProductionOrderToIssueLine)
+        Function _GetLoadProductionOrderToIssueLineAsync(ByVal ListOfProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfIssueComponent)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetBatchByBatchNumber", ReplyAction:="http://tempuri.org/IServices/_GetBatchByBatchNumberResponse")>  _
+        Function _GetBatchByBatchNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BatchNo As String) As ServiceReference1.ReturnBatchNumber
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetBatchByBatchNumber", ReplyAction:="http://tempuri.org/IServices/_GetBatchByBatchNumberResponse")>  _
+        Function _GetBatchByBatchNumberAsync(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BatchNo As String) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnBatchNumber)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetBatchByBoxNumber", ReplyAction:="http://tempuri.org/IServices/_GetBatchByBoxNumberResponse")>  _
+        Function _GetBatchByBoxNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As ServiceReference1.ReturnBatchByBoxNumber
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServices/_GetBatchByBoxNumber", ReplyAction:="http://tempuri.org/IServices/_GetBatchByBoxNumberResponse")>  _
+        Function _GetBatchByBoxNumberAsync(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnBatchByBoxNumber)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -19881,6 +21473,14 @@ Namespace ServiceReference1
         
         Public Function _AddReceiptFromProductionAsync(ByVal obj() As ServiceReference1.ClassReceiptFromProductionOIGN, ByVal iCopyFrom As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnStatus()) Implements ServiceReference1.IServices._AddReceiptFromProductionAsync
             Return MyBase.Channel._AddReceiptFromProductionAsync(obj, iCopyFrom)
+        End Function
+        
+        Public Function _AddInventoryPosting(ByVal obj() As ServiceReference1.ClassInventoryPostingOIQR) As ServiceReference1.ReturnStatus() Implements ServiceReference1.IServices._AddInventoryPosting
+            Return MyBase.Channel._AddInventoryPosting(obj)
+        End Function
+        
+        Public Function _AddInventoryPostingAsync(ByVal obj() As ServiceReference1.ClassInventoryPostingOIQR) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnStatus()) Implements ServiceReference1.IServices._AddInventoryPostingAsync
+            Return MyBase.Channel._AddInventoryPostingAsync(obj)
         End Function
         
         Public Function _myClass() As Boolean Implements ServiceReference1.IServices._myClass
@@ -20227,52 +21827,68 @@ Namespace ServiceReference1
             Return MyBase.Channel._GetGetItemOnHandPerWhsOrBINAsync(ItemCode, Warehouse, BinCode)
         End Function
         
-        Public Function _GetLisOfAvailableIssueLineFromProductionOrder(ByVal ProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnLoadProductionOrderToIssueLine Implements ServiceReference1.IServices._GetLisOfAvailableIssueLineFromProductionOrder
+        Public Function _GetLisOfAvailableIssueLineFromProductionOrder(ByVal ProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnGetListOfIssueComponent Implements ServiceReference1.IServices._GetLisOfAvailableIssueLineFromProductionOrder
             Return MyBase.Channel._GetLisOfAvailableIssueLineFromProductionOrder(ProductionOrderDocEntry)
         End Function
         
-        Public Function _GetLisOfAvailableIssueLineFromProductionOrderAsync(ByVal ProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadProductionOrderToIssueLine) Implements ServiceReference1.IServices._GetLisOfAvailableIssueLineFromProductionOrderAsync
+        Public Function _GetLisOfAvailableIssueLineFromProductionOrderAsync(ByVal ProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfIssueComponent) Implements ServiceReference1.IServices._GetLisOfAvailableIssueLineFromProductionOrderAsync
             Return MyBase.Channel._GetLisOfAvailableIssueLineFromProductionOrderAsync(ProductionOrderDocEntry)
         End Function
         
-        Public Function _GetLoadProductionOrderThatAvaibableForReceiptFromProduction() As ServiceReference1.ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction Implements ServiceReference1.IServices._GetLoadProductionOrderThatAvaibableForReceiptFromProduction
+        Public Function _GetLoadProductionOrderThatAvaibableForReceiptFromProduction() As ServiceReference1.ReturnGetListOfOWORforReceiptFromProduction Implements ServiceReference1.IServices._GetLoadProductionOrderThatAvaibableForReceiptFromProduction
             Return MyBase.Channel._GetLoadProductionOrderThatAvaibableForReceiptFromProduction
         End Function
         
-        Public Function _GetLoadProductionOrderThatAvaibableForReceiptFromProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction) Implements ServiceReference1.IServices._GetLoadProductionOrderThatAvaibableForReceiptFromProductionAsync
+        Public Function _GetLoadProductionOrderThatAvaibableForReceiptFromProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfOWORforReceiptFromProduction) Implements ServiceReference1.IServices._GetLoadProductionOrderThatAvaibableForReceiptFromProductionAsync
             Return MyBase.Channel._GetLoadProductionOrderThatAvaibableForReceiptFromProductionAsync
         End Function
         
-        Public Function _GetLoadIssueForProductionToReceiptFromProduction() As ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProduction Implements ServiceReference1.IServices._GetLoadIssueForProductionToReceiptFromProduction
+        Public Function _GetLoadIssueForProductionToReceiptFromProduction() As ServiceReference1.ReturnGetListOfOWORforReturnComponent Implements ServiceReference1.IServices._GetLoadIssueForProductionToReceiptFromProduction
             Return MyBase.Channel._GetLoadIssueForProductionToReceiptFromProduction
         End Function
         
-        Public Function _GetLoadIssueForProductionToReceiptFromProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProduction) Implements ServiceReference1.IServices._GetLoadIssueForProductionToReceiptFromProductionAsync
+        Public Function _GetLoadIssueForProductionToReceiptFromProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfOWORforReturnComponent) Implements ServiceReference1.IServices._GetLoadIssueForProductionToReceiptFromProductionAsync
             Return MyBase.Channel._GetLoadIssueForProductionToReceiptFromProductionAsync
         End Function
         
-        Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProductionLine Implements ServiceReference1.IServices._GetLoadIssueForProductionToReceiptFromProductionLine
+        Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnGetListOfReturnComponent Implements ServiceReference1.IServices._GetLoadIssueForProductionToReceiptFromProductionLine
             Return MyBase.Channel._GetLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)
         End Function
         
-        Public Function _GetLoadIssueForProductionToReceiptFromProductionLineAsync(ByVal ListOfProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProductionLine) Implements ServiceReference1.IServices._GetLoadIssueForProductionToReceiptFromProductionLineAsync
+        Public Function _GetLoadIssueForProductionToReceiptFromProductionLineAsync(ByVal ListOfProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfReturnComponent) Implements ServiceReference1.IServices._GetLoadIssueForProductionToReceiptFromProductionLineAsync
             Return MyBase.Channel._GetLoadIssueForProductionToReceiptFromProductionLineAsync(ListOfProductionOrderDocEntry)
         End Function
         
-        Public Function _GetProductionOrderListForIssueProduction() As ServiceReference1.ReturnProductionOrderListForIssueProduction Implements ServiceReference1.IServices._GetProductionOrderListForIssueProduction
+        Public Function _GetProductionOrderListForIssueProduction() As ServiceReference1.ReturnGetListOfOWORforIssueForProduction Implements ServiceReference1.IServices._GetProductionOrderListForIssueProduction
             Return MyBase.Channel._GetProductionOrderListForIssueProduction
         End Function
         
-        Public Function _GetProductionOrderListForIssueProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnProductionOrderListForIssueProduction) Implements ServiceReference1.IServices._GetProductionOrderListForIssueProductionAsync
+        Public Function _GetProductionOrderListForIssueProductionAsync() As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfOWORforIssueForProduction) Implements ServiceReference1.IServices._GetProductionOrderListForIssueProductionAsync
             Return MyBase.Channel._GetProductionOrderListForIssueProductionAsync
         End Function
         
-        Public Function _GetLoadProductionOrderToIssueLine(ByVal ListOfProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnLoadProductionOrderToIssueLine Implements ServiceReference1.IServices._GetLoadProductionOrderToIssueLine
+        Public Function _GetLoadProductionOrderToIssueLine(ByVal ListOfProductionOrderDocEntry() As Integer) As ServiceReference1.ReturnGetListOfIssueComponent Implements ServiceReference1.IServices._GetLoadProductionOrderToIssueLine
             Return MyBase.Channel._GetLoadProductionOrderToIssueLine(ListOfProductionOrderDocEntry)
         End Function
         
-        Public Function _GetLoadProductionOrderToIssueLineAsync(ByVal ListOfProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnLoadProductionOrderToIssueLine) Implements ServiceReference1.IServices._GetLoadProductionOrderToIssueLineAsync
+        Public Function _GetLoadProductionOrderToIssueLineAsync(ByVal ListOfProductionOrderDocEntry() As Integer) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnGetListOfIssueComponent) Implements ServiceReference1.IServices._GetLoadProductionOrderToIssueLineAsync
             Return MyBase.Channel._GetLoadProductionOrderToIssueLineAsync(ListOfProductionOrderDocEntry)
+        End Function
+        
+        Public Function _GetBatchByBatchNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BatchNo As String) As ServiceReference1.ReturnBatchNumber Implements ServiceReference1.IServices._GetBatchByBatchNumber
+            Return MyBase.Channel._GetBatchByBatchNumber(WhsCode, ItemCode, BatchNo)
+        End Function
+        
+        Public Function _GetBatchByBatchNumberAsync(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BatchNo As String) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnBatchNumber) Implements ServiceReference1.IServices._GetBatchByBatchNumberAsync
+            Return MyBase.Channel._GetBatchByBatchNumberAsync(WhsCode, ItemCode, BatchNo)
+        End Function
+        
+        Public Function _GetBatchByBoxNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As ServiceReference1.ReturnBatchByBoxNumber Implements ServiceReference1.IServices._GetBatchByBoxNumber
+            Return MyBase.Channel._GetBatchByBoxNumber(WhsCode, ItemCode, BoxNumber)
+        End Function
+        
+        Public Function _GetBatchByBoxNumberAsync(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As System.Threading.Tasks.Task(Of ServiceReference1.ReturnBatchByBoxNumber) Implements ServiceReference1.IServices._GetBatchByBoxNumberAsync
+            Return MyBase.Channel._GetBatchByBoxNumberAsync(WhsCode, ItemCode, BoxNumber)
         End Function
     End Class
 End Namespace

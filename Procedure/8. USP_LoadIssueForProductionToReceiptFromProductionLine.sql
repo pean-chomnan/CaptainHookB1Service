@@ -28,7 +28,8 @@ AS
 			T0."OcrCode2",
 			T0."OcrCode3",
 			T0."OcrCode4",
-			T0."OcrCode5"
+			T0."OcrCode5",
+			IFNULL(T5."U_Expirydate",0) As "Expirydate"
 		FROM CAPTAINHOOK_PRD."OWOR" T0 
 			INNER JOIN CAPTAINHOOK_PRD."WOR1" T1 ON T0."DocEntry" = T1."DocEntry" 
 			INNER JOIN CAPTAINHOOK_PRD."B1_DocItemView" T2 ON T1."ItemType" = T2."DocItemType" AND T1."ItemCode" = T2."DocItemCode" 

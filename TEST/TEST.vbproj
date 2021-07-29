@@ -153,6 +153,12 @@
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnBarCode.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnBatchByBoxNumber.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnBatchNumber.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnBinCode.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -183,6 +189,21 @@
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnFirmCode.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnGetListOfIssueComponent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnGetListOfOWORforIssueForProduction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnGetListOfOWORforReceiptFromProduction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnGetListOfOWORforReturnComponent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnGetListOfReturnComponent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnHouseBankAccount.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -207,18 +228,6 @@
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnListOfSalesOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProduction.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProductionLine.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnLoadProductionOrderThatAvaibableForReceiptFromProduction.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnLoadProductionOrderToIssueLine.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnOrderInterval.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -229,9 +238,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnPriceList.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnProductionOrderListForIssueProduction.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnPurchaseOrder.datasource">
