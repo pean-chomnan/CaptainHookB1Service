@@ -43,18 +43,28 @@
         Public Property CogsCode3 As String
         Public Property CogsCode4 As String
         Public Property CogsCode5 As String
-        Public Property ls_Batch As List(Of BatchNumbers)
-        Public Property ls_Serial As List(Of SerialNumbers)
+        Public Property ListOfBatch As List(Of BatchNumbers)
+        Public Property ListOfSerial As List(Of SerialNumbers)
+        Public Property ListOfToBinLocation As List(Of BinLocation)
     End Class
 
 
     Public Class BatchNumbers
         Public Property Batch As String
         Public Property Quantity As Double
+
+        Public Property ListOfFromBinLocation As List(Of BinLocation)
+        Public Property ListOfToBinLocation As List(Of BinLocation)
+
     End Class
     Public Class SerialNumbers
         Public Property SerialNumber As String
 
+    End Class
+
+    Public Class BinLocation
+        Public Property BinEntry As String
+        Public Property Quantity As Long
     End Class
 
 End Class

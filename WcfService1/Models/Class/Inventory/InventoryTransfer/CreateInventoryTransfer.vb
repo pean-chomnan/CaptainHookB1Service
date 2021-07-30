@@ -4,163 +4,153 @@
     Private _sErrMsg As String
     Dim _DBNAME As String = System.Configuration.ConfigurationManager.AppSettings("CompanyDB")
 
-    Public Function Send(ByVal obj As List(Of ClassInventoryTransfer.OWTR)) As List(Of ReturnStatus)
+    Public Function Send(ByVal listOfInventoryTransfer As List(Of ClassInventoryTransfer.OWTR)) As List(Of ReturnStatus)
 
         '  Dim Utilities As New UtilitiesFunction
         Dim ls_returnstatus As New List(Of ReturnStatus)
         Dim myClasss As New myClassOfFuntion
         Dim returnstatus As ReturnStatus
-        Dim OWTR As SAPbobsCOM.StockTransfer = Nothing
-        Dim RetVal As Integer = 0
-        Dim xDocEntry As Integer = 0
-        Dim ErrLine As New List(Of String)
-        Dim sline As Boolean = False
-        Dim Manag As String = ""
-        Dim ItemSetpBy As Integer
+        Dim B1InventoryTransfer As SAPbobsCOM.StockTransfer
+        Dim RetVal As Integer
+        Dim listOfErrLine As List(Of String)
 
         Try
             Dim oLoginService As New LoginServiceWebRef
             If oLoginService.lErrCode = 0 Then
                 oCompany = oLoginService.Company
-                OWTR = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oStockTransfer)
-                '    Dim OWTR As SAPbobsCOM.StockTransfer = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oStockTransfer)
-                Dim i As Integer = 0
-                Dim x As Integer = 0
+                B1InventoryTransfer = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oStockTransfer)
+                Dim iIndex_Header As Integer = 0
+                Do While iIndex_Header < listOfInventoryTransfer.Count
+                    If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""OWTR"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & listOfInventoryTransfer(iIndex_Header).WebDocNum, oCompany) = 0 Then
 
-                Do While i < obj.Count
-                    'If myClasss.Has("U_WebDocNum", obj(i).WebDocNum, "OOWTR") = False Then
-                    If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""OWTR"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & obj(i).WebDocNum, oCompany) = 0 Then
-                        OWTR.Series = obj(i).Series
-                        OWTR.DocDate = obj(i).DocDate
-                        OWTR.TaxDate = obj(i).TaxDate
-                        OWTR.PriceList = obj(i).PriceListNum
-                        OWTR.CardCode = obj(i).CardCode
-                        If myClasss.ICaseString(obj(i).ContactPersonCode) > 0 Then
-                            OWTR.ContactPerson = obj(i).ContactPersonCode
+                        B1InventoryTransfer.Series = listOfInventoryTransfer(iIndex_Header).Series
+                        B1InventoryTransfer.DocDate = listOfInventoryTransfer(iIndex_Header).DocDate
+                        B1InventoryTransfer.TaxDate = listOfInventoryTransfer(iIndex_Header).TaxDate
+
+                        B1InventoryTransfer.FromWarehouse = listOfInventoryTransfer(iIndex_Header).FromWhs
+                        B1InventoryTransfer.ToWarehouse = listOfInventoryTransfer(iIndex_Header).ToWhs
+
+                        If listOfInventoryTransfer(iIndex_Header).SaleEmployee <> "" Then
+                            B1InventoryTransfer.SalesPersonCode = listOfInventoryTransfer(iIndex_Header).SaleEmployee
                         End If
 
-                        If myClasss.ICaseString(obj(i).ShipToCode) <> "" Then
-                            OWTR.ShipToCode = obj(i).ShipToCode
+                        B1InventoryTransfer.Comments = listOfInventoryTransfer(iIndex_Header).Comments
+
+                        If listOfInventoryTransfer(iIndex_Header).JournalRemark <> "" Then
+                            B1InventoryTransfer.JournalMemo = listOfInventoryTransfer(iIndex_Header).JournalRemark
                         End If
 
-                        OWTR.Address = obj(i).Address
-                        OWTR.FromWarehouse = obj(i).FromWhs
-                        OWTR.ToWarehouse = obj(i).ToWhs
-                        OWTR.SalesPersonCode = obj(i).SaleEmployee
-                        OWTR.Comments = obj(i).Comments
-                        OWTR.JournalMemo = obj(i).JournalRemark
-                        OWTR.UserFields.Fields.Item("U_WebDocNum").Value = obj(i).WebDocNum
-                        'OWTR.DocType = SAPbobsCOM.BoDocumentTypes.dDocument_Items
+                        B1InventoryTransfer.UserFields.Fields.Item("U_WebDocNum").Value = listOfInventoryTransfer(iIndex_Header).WebDocNum
 
-                        Dim j As Integer = 0
-                        For Each L In obj(i).Lines
-                            OWTR.Lines.ItemCode = L.ItemCode
-                            'OWTR.Lines.BarCode = L.BarCode Don't have
-                            OWTR.Lines.Quantity = L.Quantity
-                            OWTR.Lines.UnitPrice = L.Price
-                            '    OWTR.Lines.GrossPrice = L.GrossPrice
-                            OWTR.Lines.DiscountPercent = L.DiscPercent
-                            OWTR.Lines.FromWarehouseCode = L.FromWhs
-                            OWTR.Lines.WarehouseCode = L.ToWhs
-                            OWTR.Lines.Rate = L.Rate
+                        Dim iIndex_Line As Integer = 0
+                        listOfErrLine = New List(Of String)
+                        For Each inventoryTransferLine In listOfInventoryTransfer(iIndex_Header).Lines
+                            B1InventoryTransfer.Lines.ItemCode = inventoryTransferLine.ItemCode
+                            B1InventoryTransfer.Lines.Quantity = inventoryTransferLine.Quantity
 
-                            OWTR.Lines.DistributionRule = L.CogsCode   ' Distribution Rul 1 to 5
-                            OWTR.Lines.DistributionRule2 = L.CogsCode2
-                            OWTR.Lines.DistributionRule3 = L.CogsCode3
-                            OWTR.Lines.DistributionRule4 = L.CogsCode4
-                            OWTR.Lines.DistributionRule5 = L.CogsCode5
+                            B1InventoryTransfer.Lines.FromWarehouseCode = inventoryTransferLine.FromWhs
+                            B1InventoryTransfer.Lines.WarehouseCode = inventoryTransferLine.ToWhs
 
-                            ItemSetpBy = myClasss.ItemSetupBy(L.ItemCode)
-
-                            If ItemSetpBy = 1 Then
-                                Dim k As Integer = 0
-                                For Each B In obj(i).Lines(j).ls_Serial
-                                    If (B.SerialNumber <> "" Or B.SerialNumber <> Nothing) Then
-                                        OWTR.Lines.SerialNumbers.InternalSerialNumber = B.SerialNumber
-                                        OWTR.Lines.SerialNumbers.Add()
-                                        Manag = ""
-                                    Else
-                                        Manag = "Serial"
-                                    End If
-                                    k = k + 1
-                                Next
-                            ElseIf ItemSetpBy = 2 Then
-                                Dim k As Integer = 0
-                                For Each B In obj(i).Lines(j).ls_Batch
-                                    If (B.Batch <> "" Or B.Batch <> Nothing) And (B.Quantity <> Nothing Or B.Quantity <> 0) Then
-                                        'OWTR.Lines.BatchNumbers.SetCurrentLine(k)
-                                        OWTR.Lines.BatchNumbers.BatchNumber = B.Batch
-                                        OWTR.Lines.BatchNumbers.Quantity = B.Quantity
-                                        OWTR.Lines.BatchNumbers.Add()
-                                        Manag = ""
-                                    Else
-                                        Manag = "Batch"
-                                    End If
-                                    k = k + 1
-                                Next
+                            If inventoryTransferLine.CogsCode <> "" Then
+                                B1InventoryTransfer.Lines.DistributionRule = inventoryTransferLine.CogsCode
                             End If
 
-                            If myClasss.Has("ItemCode", L.ItemCode, "OITM") = True Then
-                                ErrLine.Add("Line " & j & ". Completed")
+                            If inventoryTransferLine.CogsCode2 <> "" Then
+                                B1InventoryTransfer.Lines.DistributionRule2 = inventoryTransferLine.CogsCode2
+                            End If
+
+                            If inventoryTransferLine.CogsCode3 <> "" Then
+                                B1InventoryTransfer.Lines.DistributionRule3 = inventoryTransferLine.CogsCode3
+                            End If
+
+                            If inventoryTransferLine.CogsCode4 <> "" Then
+                                B1InventoryTransfer.Lines.DistributionRule4 = inventoryTransferLine.CogsCode4
+                            End If
+
+                            If inventoryTransferLine.CogsCode5 <> "" Then
+                                B1InventoryTransfer.Lines.DistributionRule5 = inventoryTransferLine.CogsCode5
+                            End If
+
+                            If inventoryTransferLine.ListOfSerial IsNot Nothing Then 'Add Serial
+                                For Each oSerial In inventoryTransferLine.ListOfSerial
+                                    B1InventoryTransfer.Lines.SerialNumbers.InternalSerialNumber = oSerial.SerialNumber
+                                    B1InventoryTransfer.Lines.SerialNumbers.Add()
+                                Next
+                            ElseIf inventoryTransferLine.ListOfBatch IsNot Nothing Then 'Add Batch
+                                For Each oBatch In inventoryTransferLine.ListOfBatch
+                                    B1InventoryTransfer.Lines.BatchNumbers.BatchNumber = oBatch.Batch
+                                    B1InventoryTransfer.Lines.BatchNumbers.Quantity = oBatch.Quantity
+                                    B1InventoryTransfer.Lines.BatchNumbers.Add()
+
+                                    'Add ToBinLocation 
+                                    If oBatch.ListOfToBinLocation IsNot Nothing Then
+                                        Dim iIndex_Batch As Integer
+                                        For Each oToBin As ClassInventoryTransfer.BinLocation In oBatch.ListOfToBinLocation
+                                            B1InventoryTransfer.Lines.BinAllocations.BinActionType = SAPbobsCOM.BinActionTypeEnum.batToWarehouse
+                                            B1InventoryTransfer.Lines.BinAllocations.SerialAndBatchNumbersBaseLine = iIndex_Batch
+                                            B1InventoryTransfer.Lines.BinAllocations.Quantity = oToBin.Quantity
+                                            B1InventoryTransfer.Lines.BinAllocations.BinAbsEntry = oToBin.BinEntry
+                                            B1InventoryTransfer.Lines.BinAllocations.Add()
+                                            iIndex_Batch += 1
+                                        Next
+                                    End If
+                                Next
                             Else
-                                ErrLine.Add("Line " & j & ". Item Code: " & L.ItemCode & " don't have!")
-                                sline = True
+                                'Add ToBinLocation
+                                If inventoryTransferLine.ListOfToBinLocation IsNot Nothing Then
+                                    For Each oToBin As ClassInventoryTransfer.BinLocation In inventoryTransferLine.ListOfToBinLocation
+                                        B1InventoryTransfer.Lines.BinAllocations.BinActionType = SAPbobsCOM.BinActionTypeEnum.batToWarehouse
+                                        B1InventoryTransfer.Lines.BinAllocations.Quantity = oToBin.Quantity
+                                        B1InventoryTransfer.Lines.BinAllocations.BinAbsEntry = oToBin.BinEntry
+                                        B1InventoryTransfer.Lines.BinAllocations.Add()
+                                    Next
+                                End If
                             End If
-                            OWTR.Lines.Add()
-                            j = j + 1
+
+                            'Handle ItemCode
+                            If myClasss.Has("ItemCode", inventoryTransferLine.ItemCode, "OITM") = False Then
+                                listOfErrLine.Add("Line " & iIndex_Line & ". Item Code: " & inventoryTransferLine.ItemCode & " don't have!")
+                            End If
+                            B1InventoryTransfer.Lines.Add()
+                            iIndex_Line = iIndex_Line + 1
                         Next
 
-                        If Manag = "" Then
-                            If sline = False Then
-                                RetVal = OWTR.Add
-                                If RetVal <> 0 Then
-                                    'Write Error
-                                    oCompany.GetLastError(_lErrCode, _sErrMsg)
-                                    returnstatus = New ReturnStatus With {
-                                        .ErrirMsg = _sErrMsg,
-                                        .ErrorCode = _lErrCode,
-                                        .DocEntry = "",
-                                        .SAPDocNum = ""
-                                    }
-                                    '.RefDocNum = obj(i).RefDocNum,
-                                    ls_returnstatus.Add(returnstatus)
-                                Else
-                                    'Write successfully 
-                                    returnstatus = New ReturnStatus With {
-                                         .ErrirMsg = "Add Successfully",
-                                         .ErrorCode = 0,
-                                         .SAPDocNum = myClasss.Get_DocNum(oCompany.GetNewObjectKey(), "ORDR"),
-                                         .DocEntry = oCompany.GetNewObjectKey()
-                                    }
-                                    '.RefDocNum = obj(i).RefDocNum,
-                                    ls_returnstatus.Add(returnstatus)
 
-                                End If
-                            Else
-                                returnstatus = New ReturnStatus With {
-                                   .ErrirMsg = "Error Line ",
+                        If listOfErrLine.Count > 0 Then
+                            returnstatus = New ReturnStatus With {
+                                   .ErrirMsg = "WebDocNum: " & listOfInventoryTransfer(iIndex_Header).WebDocNum & "; Error Line ",
                                    .ErrorCode = 9999,
                                    .SAPDocNum = "",
                                    .DocEntry = "",
-                                   .ErrLine = ErrLine.ToList()
+                                   .ErrLine = listOfErrLine.ToList()
                                 }
-                                '.RefDocNum = obj(i).RefDocNum,
-                                ls_returnstatus.Add(returnstatus)
-                            End If
-                        Else
-                            returnstatus = New ReturnStatus With {
-                                .ErrirMsg = "Item Manage by " & Manag,
-                                .ErrorCode = 9999,
-                                .SAPDocNum = "",
-                                .DocEntry = ""
-                            }
-                            '.RefDocNum = obj(i).RefDocNum,
                             ls_returnstatus.Add(returnstatus)
-                        End If
+                        Else
+                            RetVal = B1InventoryTransfer.Add
+                            If RetVal <> 0 Then
+                                oCompany.GetLastError(_lErrCode, _sErrMsg)
+                                returnstatus = New ReturnStatus With {
+                                            .ErrirMsg = _sErrMsg,
+                                            .ErrorCode = _lErrCode,
+                                            .DocEntry = "",
+                                            .SAPDocNum = ""
+                                        }
+                                ls_returnstatus.Add(returnstatus)
+                            Else
+                                'Write successfully 
+                                returnstatus = New ReturnStatus With {
+                                             .ErrirMsg = "",
+                                             .ErrorCode = 0,
+                                             .SAPDocNum = myClasss.Get_DocNum(oCompany.GetNewObjectKey(), "OWTR"),
+                                             .DocEntry = oCompany.GetNewObjectKey()
+                                        }
+                                ls_returnstatus.Add(returnstatus)
 
+                            End If
+                        End If
                     Else
                         returnstatus = New ReturnStatus With {
-                            .ErrirMsg = "Duplicate WebDocNum : " & obj(i).WebDocNum,
+                            .ErrirMsg = "Duplicate WebDocNum : " & listOfInventoryTransfer(iIndex_Header).WebDocNum,
                             .ErrorCode = 9999,
                             .DocEntry = "",
                             .SAPDocNum = ""
@@ -168,7 +158,7 @@
                         ' .RefDocNum = obj(i).RefDocNum,
                         ls_returnstatus.Add(returnstatus)
                     End If
-                    i = i + 1
+                    iIndex_Header = iIndex_Header + 1
                 Loop
             Else
                 ' Login Error
@@ -178,7 +168,6 @@
                     .SAPDocNum = "",
                     .DocEntry = ""
                 }
-                '     .RefDocNum = "",
                 ls_returnstatus.Add(returnstatus)
             End If
         Catch ex As Exception
@@ -188,7 +177,6 @@
                 .SAPDocNum = "",
                 .DocEntry = ""
             }
-            '  .RefDocNum = "",
             ls_returnstatus.Add(returnstatus)
         End Try
         Return ls_returnstatus
