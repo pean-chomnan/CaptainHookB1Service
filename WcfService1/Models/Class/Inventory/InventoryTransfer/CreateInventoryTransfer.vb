@@ -71,19 +71,19 @@
                                 B1InventoryTransfer.Lines.DistributionRule5 = inventoryTransferLine.CogsCode5
                             End If
 
-                            If inventoryTransferLine.ListOfSerial IsNot Nothing Then 'Add Serial
+                            If inventoryTransferLine.ListOfSerial.Count > 0 Then 'Add Serial
                                 For Each oSerial In inventoryTransferLine.ListOfSerial
                                     B1InventoryTransfer.Lines.SerialNumbers.InternalSerialNumber = oSerial.SerialNumber
                                     B1InventoryTransfer.Lines.SerialNumbers.Add()
                                 Next
-                            ElseIf inventoryTransferLine.ListOfBatch IsNot Nothing Then 'Add Batch
+                            ElseIf inventoryTransferLine.ListOfBatch.Count > 0 Then 'Add Batch
                                 For Each oBatch In inventoryTransferLine.ListOfBatch
                                     B1InventoryTransfer.Lines.BatchNumbers.BatchNumber = oBatch.Batch
                                     B1InventoryTransfer.Lines.BatchNumbers.Quantity = oBatch.Quantity
                                     B1InventoryTransfer.Lines.BatchNumbers.Add()
 
                                     'Add ToBinLocation 
-                                    If oBatch.ListOfToBinLocation IsNot Nothing Then
+                                    If oBatch.ListOfToBinLocation.Count > 0 Then
                                         Dim iIndex_Batch As Integer
                                         For Each oToBin As ClassInventoryTransfer.BinLocation In oBatch.ListOfToBinLocation
                                             B1InventoryTransfer.Lines.BinAllocations.BinActionType = SAPbobsCOM.BinActionTypeEnum.batToWarehouse
@@ -97,7 +97,7 @@
                                 Next
                             Else
                                 'Add ToBinLocation
-                                If inventoryTransferLine.ListOfToBinLocation IsNot Nothing Then
+                                If inventoryTransferLine.ListOfToBinLocation.Count > 0 Then
                                     For Each oToBin As ClassInventoryTransfer.BinLocation In inventoryTransferLine.ListOfToBinLocation
                                         B1InventoryTransfer.Lines.BinAllocations.BinActionType = SAPbobsCOM.BinActionTypeEnum.batToWarehouse
                                         B1InventoryTransfer.Lines.BinAllocations.Quantity = oToBin.Quantity
@@ -111,8 +111,9 @@
                             If myClasss.Has("ItemCode", inventoryTransferLine.ItemCode, "OITM") = False Then
                                 listOfErrLine.Add("Line " & iIndex_Line & ". Item Code: " & inventoryTransferLine.ItemCode & " don't have!")
                             End If
+
                             B1InventoryTransfer.Lines.Add()
-                            iIndex_Line = iIndex_Line + 1
+                            iIndex_Line += 1
                         Next
 
 
@@ -158,7 +159,7 @@
                         ' .RefDocNum = obj(i).RefDocNum,
                         ls_returnstatus.Add(returnstatus)
                     End If
-                    iIndex_Header = iIndex_Header + 1
+                    iIndex_Header += 1
                 Loop
             Else
                 ' Login Error

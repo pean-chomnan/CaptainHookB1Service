@@ -19,7 +19,7 @@
         Public Property WebDocNum As Integer
         Public Property Comments As String
         Public Property JournalRemark As String
-        Public Property Lines As List(Of Line)
+        Public Property Lines As New List(Of Line)
     End Class
 
     Public Class Line
@@ -43,9 +43,9 @@
         Public Property CogsCode3 As String
         Public Property CogsCode4 As String
         Public Property CogsCode5 As String
-        Public Property ListOfBatch As List(Of BatchNumbers)
-        Public Property ListOfSerial As List(Of SerialNumbers)
-        Public Property ListOfToBinLocation As List(Of BinLocation)
+        Public Property ListOfBatch As New List(Of BatchNumbers)
+        Public Property ListOfSerial As New List(Of SerialNumbers)
+        Public Property ListOfToBinLocation As New List(Of BinLocation)
     End Class
 
 
@@ -53,8 +53,8 @@
         Public Property Batch As String
         Public Property Quantity As Double
 
-        Public Property ListOfFromBinLocation As List(Of BinLocation)
-        Public Property ListOfToBinLocation As List(Of BinLocation)
+        Public Property ListOfFromBinLocation As New List(Of BinLocation)
+        Public Property ListOfToBinLocation As New List(Of BinLocation)
 
     End Class
     Public Class SerialNumbers
