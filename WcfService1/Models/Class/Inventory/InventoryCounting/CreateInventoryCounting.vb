@@ -90,27 +90,44 @@
                                 'InvCountSerials = InvCountLine.InventoryCountingSerialNumbers.Add
 
                                 For Each B In header.Lines(j).ls_Serial
-                                    If (B.SerialNumber <> "" Or B.SerialNumber <> Nothing) Then
-                                        InvCountSerial = InvCountLine.InventoryCountingSerialNumbers.Add
-                                        InvCountSerial.InternalSerialNumber = B.SerialNumber
-                                        'InvCount.Lines.SerialNumbers.InternalSerialNumber = B.SerialNumber
-                                        'InvCountSerial.Add()
-
-                                        'InvCount.Lines.SerialNumbers.Add()
+                                    If B.SerialNumber <> Nothing And (B.ExpirationDate <> Nothing Or B.Location <> Nothing Or B.ManufactureDate <> Nothing Or B.ManufacturerSerialNumber <> Nothing Or B.Note <> Nothing Or B.ReceptionDate <> Nothing) Then
+                                        If (B.SerialNumber <> "" Or B.SerialNumber <> Nothing) Then
+                                            InvCountSerial = InvCountLine.InventoryCountingSerialNumbers.Add
+                                            InvCountSerial.InternalSerialNumber = B.SerialNumber
+                                            InvCountSerial.ManufacturerSerialNumber = B.ManufacturerSerialNumber
+                                            InvCountSerial.ExpiryDate = B.ExpirationDate
+                                            InvCountSerial.ManufactureDate = B.ManufactureDate
+                                            InvCountSerial.Notes = B.Note
+                                            InvCountSerial.Location = B.Location
+                                            InvCountSerial.ReceptionDate = B.ReceptionDate
+                                        End If
+                                    Else
+                                        If (B.SerialNumber <> "" Or B.SerialNumber <> Nothing) Then
+                                            InvCountSerial = InvCountLine.InventoryCountingSerialNumbers.Add
+                                            InvCountSerial.InternalSerialNumber = B.SerialNumber
+                                        End If
                                     End If
                                     k = k + 1
                                 Next
                             ElseIf ItemSetpBy = 2 Then
                                 Dim k As Integer = 0
                                 For Each B In obj(i).Lines(j).ls_Batch
-                                    If (B.Batch <> "" Or B.Batch <> Nothing) And (B.Quantity <> Nothing Or B.Quantity <> 0) Then
+                                    If B.Batch <> Nothing And (B.ExpirationDate <> Nothing Or B.Location <> Nothing Or B.ManufacturerSerialNumber <> Nothing Or B.Notes <> Nothing Or B.ReceptionDate <> Nothing) Then
                                         InvCountBatch = InvCountLine.InventoryCountingBatchNumbers.Add
                                         InvCountBatch.BatchNumber = B.Batch
                                         InvCountBatch.Quantity = B.Quantity
-                                        'InvCountBatch.
-                                        ''OIGN.Lines.BatchNumbers.SetCurrentLine(k)
-                                        'InvCount.Lines.BatchNumbers.BatchNumber = B.Batch
-                                        'InvCount.Lines.BatchNumbers.Add()
+                                        InvCountBatch.ManufacturerSerialNumber = B.ManufacturerSerialNumber
+                                        InvCountBatch.ManufactureDate = B.ManufacturingDate
+                                        InvCountBatch.Notes = B.Notes
+                                        InvCountBatch.Location = B.Location
+                                        InvCountBatch.AddmisionDate = B.AdmissionDate
+                                        InvCountBatch.ExpiryDate = B.ExpirationDate
+                                    Else
+                                        If (B.Batch <> "" Or B.Batch <> Nothing) And (B.Quantity <> Nothing Or B.Quantity <> 0) Then
+                                            InvCountBatch = InvCountLine.InventoryCountingBatchNumbers.Add
+                                            InvCountBatch.BatchNumber = B.Batch
+                                            InvCountBatch.Quantity = B.Quantity
+                                        End If
                                     End If
                                     k = k + 1
                                 Next

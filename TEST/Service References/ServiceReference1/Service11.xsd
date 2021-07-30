@@ -687,12 +687,13 @@
       <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ItemDescription" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LineNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListOfBatch" nillable="true" type="tns:ArrayOfClassInventoryTransfer.BatchNumbers" />
+      <xs:element minOccurs="0" name="ListOfSerial" nillable="true" type="tns:ArrayOfClassInventoryTransfer.SerialNumbers" />
+      <xs:element minOccurs="0" name="ListOfToBinLocation" nillable="true" type="tns:ArrayOfClassInventoryTransfer.BinLocation" />
       <xs:element minOccurs="0" name="Price" type="xs:double" />
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
       <xs:element minOccurs="0" name="Rate" type="xs:double" />
       <xs:element minOccurs="0" name="ToWhs" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ls_Batch" nillable="true" type="tns:ArrayOfClassInventoryTransfer.BatchNumbers" />
-      <xs:element minOccurs="0" name="ls_Serial" nillable="true" type="tns:ArrayOfClassInventoryTransfer.SerialNumbers" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ClassInventoryTransfer.Line" nillable="true" type="tns:ClassInventoryTransfer.Line" />
@@ -705,10 +706,25 @@
   <xs:complexType name="ClassInventoryTransfer.BatchNumbers">
     <xs:sequence>
       <xs:element minOccurs="0" name="Batch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListOfFromBinLocation" nillable="true" type="tns:ArrayOfClassInventoryTransfer.BinLocation" />
+      <xs:element minOccurs="0" name="ListOfToBinLocation" nillable="true" type="tns:ArrayOfClassInventoryTransfer.BinLocation" />
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ClassInventoryTransfer.BatchNumbers" nillable="true" type="tns:ClassInventoryTransfer.BatchNumbers" />
+  <xs:complexType name="ArrayOfClassInventoryTransfer.BinLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassInventoryTransfer.BinLocation" nillable="true" type="tns:ClassInventoryTransfer.BinLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClassInventoryTransfer.BinLocation" nillable="true" type="tns:ArrayOfClassInventoryTransfer.BinLocation" />
+  <xs:complexType name="ClassInventoryTransfer.BinLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BinEntry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClassInventoryTransfer.BinLocation" nillable="true" type="tns:ClassInventoryTransfer.BinLocation" />
   <xs:complexType name="ArrayOfClassInventoryTransfer.SerialNumbers">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassInventoryTransfer.SerialNumbers" nillable="true" type="tns:ClassInventoryTransfer.SerialNumbers" />
@@ -1061,37 +1077,10 @@
       <xs:element minOccurs="0" name="UomCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VarianceQty" type="xs:double" />
       <xs:element minOccurs="0" name="WhsCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ls_Batch" nillable="true" type="tns:ArrayOfClassInventoryPosting.BatchNumbers" />
       <xs:element minOccurs="0" name="ls_InventoryPostingLineUoMs" nillable="true" type="tns:ArrayOfClassInventoryPosting.InventoryPostingLineUoMs" />
-      <xs:element minOccurs="0" name="ls_Serial" nillable="true" type="tns:ArrayOfClassInventoryPosting.SerialNumbers" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ClassInventoryPosting.Line" nillable="true" type="tns:ClassInventoryPosting.Line" />
-  <xs:complexType name="ArrayOfClassInventoryPosting.BatchNumbers">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassInventoryPosting.BatchNumbers" nillable="true" type="tns:ClassInventoryPosting.BatchNumbers" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfClassInventoryPosting.BatchNumbers" nillable="true" type="tns:ArrayOfClassInventoryPosting.BatchNumbers" />
-  <xs:complexType name="ClassInventoryPosting.BatchNumbers">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ACT_WeightOnBatch" type="xs:double" />
-      <xs:element minOccurs="0" name="AdmissionDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="AvailableQty" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="BarCodeBoxNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Batch" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CompanyAddress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ManufacturerSerialNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ManufacturingDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Quantity" type="xs:double" />
-      <xs:element minOccurs="0" name="ReceptionDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Smoking" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ClassInventoryPosting.BatchNumbers" nillable="true" type="tns:ClassInventoryPosting.BatchNumbers" />
   <xs:complexType name="ArrayOfClassInventoryPosting.InventoryPostingLineUoMs">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassInventoryPosting.InventoryPostingLineUoMs" nillable="true" type="tns:ClassInventoryPosting.InventoryPostingLineUoMs" />
@@ -1107,29 +1096,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ClassInventoryPosting.InventoryPostingLineUoMs" nillable="true" type="tns:ClassInventoryPosting.InventoryPostingLineUoMs" />
-  <xs:complexType name="ArrayOfClassInventoryPosting.SerialNumbers">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassInventoryPosting.SerialNumbers" nillable="true" type="tns:ClassInventoryPosting.SerialNumbers" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfClassInventoryPosting.SerialNumbers" nillable="true" type="tns:ArrayOfClassInventoryPosting.SerialNumbers" />
-  <xs:complexType name="ClassInventoryPosting.SerialNumbers">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ACT_WeightOnBatch" type="xs:double" />
-      <xs:element minOccurs="0" name="BarCodeBoxNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CompanyAddress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ManufactureDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="ManufacturerSerialNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Quantity" type="xs:double" />
-      <xs:element minOccurs="0" name="ReceptionDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Smoking" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ClassInventoryPosting.SerialNumbers" nillable="true" type="tns:ClassInventoryPosting.SerialNumbers" />
   <xs:complexType name="ArrayOfPackingClass.ClassPacking">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="PackingClass.ClassPacking" nillable="true" type="tns:PackingClass.ClassPacking" />

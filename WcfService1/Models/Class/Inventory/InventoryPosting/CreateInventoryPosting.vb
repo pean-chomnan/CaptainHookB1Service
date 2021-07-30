@@ -140,64 +140,64 @@ Public Class CreateInventoryPosting
                             InvPostLine.CostingCode5 = Line.CogsCode5
                             ItemSetpBy = myClasss.ItemSetupBy(Line.ItemCode)
 
-                            If ItemSetpBy = 1 Then
-                                Dim k As Integer = 0
-                                For Each B In header.Lines(j).ls_Serial
-                                    If (B.SerialNumber <> "" Or B.SerialNumber <> Nothing) Then
-                                        If B.Quantity < 0 Then
-                                            InvPostSerial = InvPostLine.InventoryPostingSerialNumbers.Add
-                                            InvPostSerial.InternalSerialNumber = B.SerialNumber
-                                        Else
-                                            InvPostSerial = InvPostLine.InventoryPostingSerialNumbers.Add
-                                            InvPostSerial.InternalSerialNumber = B.SerialNumber
-                                            InvPostSerial.ManufacturerSerialNumber = B.ManufacturerSerialNumber
-                                            InvPostSerial.ExpiryDate = B.ExpirationDate
-                                            InvPostSerial.ManufactureDate = B.ManufactureDate
-                                            InvPostSerial.Notes = B.Note
-                                            InvPostSerial.Location = B.Location
-                                            InvPostSerial.ReceptionDate = B.ReceptionDate
+                            'If ItemSetpBy = 1 Then
+                            '    Dim k As Integer = 0
+                            '    For Each B In header.Lines(j).ls_Serial
+                            '        If (B.SerialNumber <> "" Or B.SerialNumber <> Nothing) Then
+                            '            If B.Quantity < 0 Then
+                            '                InvPostSerial = InvPostLine.InventoryPostingSerialNumbers.Add
+                            '                InvPostSerial.InternalSerialNumber = B.SerialNumber
+                            '            Else
+                            '                InvPostSerial = InvPostLine.InventoryPostingSerialNumbers.Add
+                            '                InvPostSerial.InternalSerialNumber = B.SerialNumber
+                            '                InvPostSerial.ManufacturerSerialNumber = B.ManufacturerSerialNumber
+                            '                InvPostSerial.ExpiryDate = B.ExpirationDate
+                            '                InvPostSerial.ManufactureDate = B.ManufactureDate
+                            '                InvPostSerial.Notes = B.Note
+                            '                InvPostSerial.Location = B.Location
+                            '                InvPostSerial.ReceptionDate = B.ReceptionDate
 
-                                            'InvPostSerial.UserFields.Fields.Item("U_ACT_WeightOnBatch").Value = B.ACT_WeightOnBatch
-                                            'InvPostSerial.UserFields.Fields.Item("U_CompanyAddress").Value = B.CompanyAddress
-                                            'InvPostSerial.UserFields.Fields.Item("U_BarCodeBoxNumber").Value = B.BarCodeBoxNumber
-                                            'InvPostSerial.UserFields.Fields.Item("U_SmokingSystem").Value = B.Smoking
-                                            InvPostSerial.u
-                                        End If
+                            '                'InvPostSerial.UserFields.Fields.Item("U_ACT_WeightOnBatch").Value = B.ACT_WeightOnBatch
+                            '                'InvPostSerial.UserFields.Fields.Item("U_CompanyAddress").Value = B.CompanyAddress
+                            '                'InvPostSerial.UserFields.Fields.Item("U_BarCodeBoxNumber").Value = B.BarCodeBoxNumber
+                            '                'InvPostSerial.UserFields.Fields.Item("U_SmokingSystem").Value = B.Smoking
+                            '                InvPostSerial.u
+                            '            End If
 
-                                    End If
-                                    k = k + 1
-                                Next
-                            ElseIf ItemSetpBy = 2 Then
-                                Dim k As Integer = 0
-                                For Each B In obj(i).Lines(j).ls_Batch
-                                    If (B.Batch <> "" Or B.Batch <> Nothing) And (B.Quantity <> Nothing Or B.Quantity <> 0) Then
-                                        If B.Quantity < 0 Then
-                                            InvPostBatch = InvPostLine.InventoryPostingBatchNumbers.Add
-                                            InvPostBatch.BatchNumber = B.Batch
-                                            InvPostBatch.Quantity = B.Quantity
-                                        Else
-                                            InvPostBatch = InvPostLine.InventoryPostingBatchNumbers.Add
-                                            InvPostBatch.BatchNumber = B.Batch
-                                            InvPostBatch.Quantity = B.Quantity
+                            '        End If
+                            '        k = k + 1
+                            '    Next
+                            'ElseIf ItemSetpBy = 2 Then
+                            '    Dim k As Integer = 0
+                            '    For Each B In obj(i).Lines(j).ls_Batch
+                            '        If (B.Batch <> "" Or B.Batch <> Nothing) And (B.Quantity <> Nothing Or B.Quantity <> 0) Then
+                            '            If B.Quantity < 0 Then
+                            '                InvPostBatch = InvPostLine.InventoryPostingBatchNumbers.Add
+                            '                InvPostBatch.BatchNumber = B.Batch
+                            '                InvPostBatch.Quantity = B.Quantity
+                            '            Else
+                            '                InvPostBatch = InvPostLine.InventoryPostingBatchNumbers.Add
+                            '                InvPostBatch.BatchNumber = B.Batch
+                            '                InvPostBatch.Quantity = B.Quantity
 
-                                            InvPostBatch.ManufacturerSerialNumber = B.ManufacturerSerialNumber
-                                            InvPostBatch.ManufactureDate = B.ManufacturingDate
-                                            InvPostBatch.Notes = B.Notes
-                                            InvPostBatch.Location = B.Location
-                                            InvPostBatch.AddmisionDate = B.AdmissionDate
-                                            InvPostBatch.ExpiryDate = B.ExpirationDate
+                            '                InvPostBatch.ManufacturerSerialNumber = B.ManufacturerSerialNumber
+                            '                InvPostBatch.ManufactureDate = B.ManufacturingDate
+                            '                InvPostBatch.Notes = B.Notes
+                            '                InvPostBatch.Location = B.Location
+                            '                InvPostBatch.AddmisionDate = B.AdmissionDate
+                            '                InvPostBatch.ExpiryDate = B.ExpirationDate
 
-                                            'InvPostBatch.Fields.Item("U_ACT_WeightOnBatch").Value = B.ACT_WeightOnBatch
-                                            'InvPostBatch.UserFields.Fields.Item("U_CompanyAddress").Value = B.CompanyAddress
-                                            'InvPostBatch.UserFields.Fields.Item("U_BarCodeBoxNumber").Value = B.BarCodeBoxNumber
-                                            'InvPostBatch.UserFields.Fields.Item("U_SmokingSystem").Value = B.Smoking
-                                        End If
+                            '                'InvPostBatch.Fields.Item("U_ACT_WeightOnBatch").Value = B.ACT_WeightOnBatch
+                            '                'InvPostBatch.UserFields.Fields.Item("U_CompanyAddress").Value = B.CompanyAddress
+                            '                'InvPostBatch.UserFields.Fields.Item("U_BarCodeBoxNumber").Value = B.BarCodeBoxNumber
+                            '                'InvPostBatch.UserFields.Fields.Item("U_SmokingSystem").Value = B.Smoking
+                            '            End If
 
-                                    End If
-                                    k = k + 1
-                                Next
+                            '        End If
+                            '        k = k + 1
+                            '    Next
 
-                            End If
+                            'End If
                             j = j + 1
                         Next
                         InvPostParam = PostService.Add(InvPost)

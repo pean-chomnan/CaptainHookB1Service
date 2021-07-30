@@ -257,13 +257,7 @@ Public Class Form1
         'i = ls_Res.ls_data.Count
 
 
-        ''''Get BatchNumber By BoxNumber
-        Dim ls_Res As New ServiceReference1.ReturnPurchaseOrder
-        ls_Res = Client._GetPurchaseOrder(212400001)
-        Dim i As Integer
-        i = ls_Res.ls_data.Count
-        i = i
-
+        '======================== xxxx ========================='
 
     End Sub
 End Class

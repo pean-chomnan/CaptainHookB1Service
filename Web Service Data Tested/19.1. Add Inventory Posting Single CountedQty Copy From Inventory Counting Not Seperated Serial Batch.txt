@@ -1,0 +1,61 @@
+
+
+        Dim a As String
+
+        ' =========== Add Ineventory Transfer By Batch & Serial ========'
+
+        Dim OIQRs As New List(Of ServiceReference1.ClassInventoryPostingOIQR)
+        Dim OIQR As New ServiceReference1.ClassInventoryPostingOIQR
+        Dim OIQRLs As New List(Of ServiceReference1.ClassInventoryPostingLine)
+        Dim OIQRL As New ServiceReference1.ClassInventoryPostingLine
+        Dim ls_result As List(Of ServiceReference1.ReturnStatus)
+        Dim ibar As New ServiceReference1.ItemMasterData.CodeBars
+
+        OIQR = New ServiceReference1.ClassInventoryPostingOIQR
+
+        OIQR.Series = 2585
+        OIQR.PostingDate = "2021-07-30"
+        OIQR.CountDate = "2021-07-30"
+        OIQR.CountTime = "11:10"
+        OIQR.PriceSouce = 1
+        OIQR.PriceList = 7
+        OIQR.WebDocNum = "12334"
+        OIQR.Ref2 = "Ref2-001"
+        OIQR.Remark = "Comm Posting"
+        OIQR.JournalRemark = "Journal Remark"
+        For i As Integer = 1 To 1
+            If i = 1 Then  ' Row Number 1
+                OIQRL.ItemCode = "1IGDL00000"
+                OIQRL.WhsCode = "03.HKT05"
+                OIQRL.BinCode = 53
+                OIQRL.CountedQuantity = 3
+                OIQRL.Price = 200
+                OIQRL.Remark = "Remark"
+
+                OIQRL.ProjectCode = "C001"
+                'OIQRL.FirmCode = -1
+                'OIQRL.CardCode = "C001"
+                'OIQRL.NagativeBin = "Y"
+                'OIQRL.UomCode = "Manual"
+
+                OIQRL.CogsCode = "CSM"
+                OIQRL.CogsCode2 = "DP02"
+
+                'Base Reference
+                OIQRL.BaseEntry = 40
+                OIQRL.BaseLine = 1
+                OIQRL.BaseType = "1470000065"  '213000001
+
+            Else 'Row Number 2
+
+            End If
+
+            OIQRLs.Add(OIQRL)
+            OIQRL = Nothing
+            OIQRL = New ServiceReference1.ClassInventoryPostingLine
+        Next
+
+        OIQR.Lines = OIQRLs.ToArray
+        OIQRs.Add(OIQR)
+        ls_result = Client._AddInventoryPosting(OIQRs.ToArray).ToList
+        a = ls_result(0).ErrirMsg
