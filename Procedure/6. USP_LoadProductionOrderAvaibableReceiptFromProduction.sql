@@ -24,7 +24,7 @@ BEGIN
 		T3."OnHand"-T3."IsCommited" As "StockAvaible",
 		T0."CmpltQty",
 		T0."RjctQty",
-		Ifnull(T2."U_Expirydate",0) As "Expirydate"
+		IFNULL(T2."U_Expirydate",0) As "Expirydate"
 	FROM CAPTAINHOOK_PRD."OWOR" T0 
 		INNER JOIN CAPTAINHOOK_PRD."NNM1" T1 ON T0."Series" = T1."Series" 
 		INNER JOIN CAPTAINHOOK_PRD."OITM" T2 ON T0."ItemCode"=T2."ItemCode" 		
@@ -37,7 +37,8 @@ END;
 
 --CALL CAPTAINHOOK_PRD."USP_LoadProductionOrderAvaibableReceiptFromProduction"()
 
---SELECT "U_Expirydate", * FROM "CAPTAINHOOK_PRD"."OITM" 
+SELECT  * FROM "CAPTAINHOOK_PRD"."OINC" WHERE "DocNum"=213000001
+
 
 
 

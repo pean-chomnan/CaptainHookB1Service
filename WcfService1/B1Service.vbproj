@@ -114,6 +114,7 @@
     <Compile Include="Models\Class\Data Response\Get Document\Return Object\Goods Receipts PO\ReturnListOfPurchaseDocument.vb" />
     <Compile Include="Models\Class\Data Response\Get Document\Return Object\Goods Receipts PO\ReturnPurchaseOrder.vb" />
     <Compile Include="Models\Class\Data Response\Get Document\Return Object\Inventory Counting\ReturnOnHandPerWhsOrBIN.vb" />
+    <Compile Include="Models\Class\Data Response\Get Document\Return Object\Inventory Posting\ReturnInventoryPosting.vb" />
     <Compile Include="Models\Class\Data Response\Get Document\Return Object\Inventory Transfer\ReturnShipTo.vb" />
     <Compile Include="Models\Class\Data Response\Get Document\Return Object\Inventory Transfer\ReturnShipToAddress.vb" />
     <Compile Include="Models\Class\Data Response\Get Document\Return Object\Issue For Production\ReturnGetListOfIssueComponent.vb" />

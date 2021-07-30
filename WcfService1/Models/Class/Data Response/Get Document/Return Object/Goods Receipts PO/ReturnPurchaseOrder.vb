@@ -33,6 +33,7 @@ Public Class PurchaseOrder
     Public Property OcrCode2 As String
     Public Property UomCode As String
     Public Property LineNum As Integer
+    Public Property ShipTo As String
 
 End Class
 
@@ -82,7 +83,8 @@ Public Class CReturnGetPurchaseOrder
                         .OcrCode = oRs.Fields.Item("OcrCode").Value.ToString.Trim,
                         .OcrCode2 = oRs.Fields.Item("OcrCode2").Value.ToString.Trim,
                         .UomCode = oRs.Fields.Item("UomCode").Value.ToString.Trim,
-                    .LineNum = oRs.Fields.Item("LineNum").Value
+                        .LineNum = oRs.Fields.Item("LineNum").Value,
+                        .ShipTo = oRs.Fields.Item("ShipTo").Value
                     })
                     oRs.MoveNext()
                 Loop
