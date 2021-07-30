@@ -29,6 +29,7 @@ Public Class CreateInventoryPosting
         Dim i As Integer = 0
         Dim j As Integer = 0
         Dim x As Integer = 0
+        Dim iBase As Boolean = False
         Dim dttime As New DateTime
         dttime = DateTime.Now
 
@@ -43,6 +44,18 @@ Public Class CreateInventoryPosting
                     If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""OIQR"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & header.WebDocNum, oCompany) = 0 Then
                         InvPost.Series = header.Series
                         InvPost.PostingDate = header.PostingDate
+                        For Each Line In header.Lines
+                            If Line.BaseEntry <> "" Or Line.BaseEntry <> 0 Then
+                                iBase = True
+                                Exit For
+                            End If
+                        Next
+
+                        If iBase = False Then
+                            InvPost.CountDate = header.CountDate
+                            InvPost.CountTime = header.CountTime
+                        End If
+
                         InvPost.CountDate = header.CountDate
                         InvPost.CountTime = header.CountTime
 
@@ -67,6 +80,7 @@ Public Class CreateInventoryPosting
                             InvPostLine.BarCode = Line.BarCode
                             InvPostLine.WarehouseCode = Line.WhsCode
                             InvPostLine.BinEntry = Line.BinCode
+                            InvPostLine.CountDate = header.PostingDate
 
                             If myClasss.ICaseNumber(Line.CountedQuantity) <> 0 Then
                                 InvPostLine.CountedQuantity = Line.CountedQuantity
@@ -107,6 +121,8 @@ Public Class CreateInventoryPosting
                                 InvPostLine.UoMCode = Line.UomCode
                             End If
 
+                            '   InvPostLine.UoMCode = Line.UomCode
+
                             If myClasss.ICaseListInventoryPosting(header.Lines(j).ls_InventoryPostingLineUoMs) <> 0 Then
                                 For Each U In header.Lines(j).ls_InventoryPostingLineUoMs
                                     InventoryPostingLineUoMs = InvPostLine.InventoryPostingLineUoMs.Add()
@@ -122,7 +138,6 @@ Public Class CreateInventoryPosting
                             InvPostLine.CostingCode3 = Line.CogsCode3
                             InvPostLine.CostingCode4 = Line.CogsCode4
                             InvPostLine.CostingCode5 = Line.CogsCode5
-
                             ItemSetpBy = myClasss.ItemSetupBy(Line.ItemCode)
 
                             If ItemSetpBy = 1 Then
@@ -146,7 +161,7 @@ Public Class CreateInventoryPosting
                                             'InvPostSerial.UserFields.Fields.Item("U_CompanyAddress").Value = B.CompanyAddress
                                             'InvPostSerial.UserFields.Fields.Item("U_BarCodeBoxNumber").Value = B.BarCodeBoxNumber
                                             'InvPostSerial.UserFields.Fields.Item("U_SmokingSystem").Value = B.Smoking
-
+                                            InvPostSerial.u
                                         End If
 
                                     End If

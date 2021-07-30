@@ -783,8 +783,20 @@
   <xs:element name="ArrayOfClassInventoryCounting.BatchNumbers" nillable="true" type="tns:ArrayOfClassInventoryCounting.BatchNumbers" />
   <xs:complexType name="ClassInventoryCounting.BatchNumbers">
     <xs:sequence>
+      <xs:element minOccurs="0" name="ACT_WeightOnBatch" type="xs:double" />
+      <xs:element minOccurs="0" name="AdmissionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AvailableQty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BarCodeBoxNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Batch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufacturerSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufacturingDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+      <xs:element minOccurs="0" name="ReceptionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Smoking" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ClassInventoryCounting.BatchNumbers" nillable="true" type="tns:ClassInventoryCounting.BatchNumbers" />
@@ -811,7 +823,18 @@
   <xs:element name="ArrayOfClassInventoryCounting.SerialNumbers" nillable="true" type="tns:ArrayOfClassInventoryCounting.SerialNumbers" />
   <xs:complexType name="ClassInventoryCounting.SerialNumbers">
     <xs:sequence>
+      <xs:element minOccurs="0" name="ACT_WeightOnBatch" type="xs:double" />
+      <xs:element minOccurs="0" name="BarCodeBoxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufactureDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ManufacturerSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+      <xs:element minOccurs="0" name="ReceptionDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Smoking" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ClassInventoryCounting.SerialNumbers" nillable="true" type="tns:ClassInventoryCounting.SerialNumbers" />
@@ -1718,6 +1741,7 @@
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
       <xs:element minOccurs="0" name="Series" type="xs:int" />
       <xs:element minOccurs="0" name="SeriesName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipTo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TaxDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="TotalBFDiscount" type="xs:double" />
       <xs:element minOccurs="0" name="UomCode" nillable="true" type="xs:string" />

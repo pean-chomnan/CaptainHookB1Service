@@ -1,7 +1,8 @@
 ALTER PROCEDURE CAPTAINHOOK_PRD."USP_GetPO"(IN DocNum INT)
 AS
 BEGIN
-	SELECT A."DocEntry",A."CardCode",A."CardName",
+	SELECT 
+		A."DocEntry",A."CardCode",A."CardName",
 		C."Name" As "ContactName",A."NumAtCard",A."CurSource",
 		A."Series",B."SeriesName",A."DocNum",A."DocDate",
 		A."DocDueDate",
@@ -14,7 +15,7 @@ BEGIN
 		D."Price",D."DiscPrcnt" As "LineDiscPrcnt",
 		D."VatGroup",D."OpenSum" As "LineTotal",
 		D."WhsCode",D."OcrCode",D."OcrCode2",
-		D."UomCode",D."LineNum"
+		D."UomCode",D."LineNum",A."Address2" As "ShipTo"
 	
 	FROM "CAPTAINHOOK_PRD"."OPOR" A 
 		LEFT OUTER JOIN "CAPTAINHOOK_PRD"."NNM1" B ON A."Series"=B."Series"
@@ -27,5 +28,5 @@ END;
 
 CALL CAPTAINHOOK_PRD."USP_GetPO"(212400001);
 
-CALL CAPTAINHOOK_PRD."USP_GetPO"(212400001)
+-- CALL CAPTAINHOOK_PRD."USP_GetPO"(212400001)
 

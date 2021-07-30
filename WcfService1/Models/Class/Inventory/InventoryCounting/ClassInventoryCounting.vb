@@ -39,18 +39,41 @@
 
     Public Class InventoryCountingLineUoMs
         Public Property BarCode As String
-        'Public Property UomEntry As Integer
         Public Property UomCode As String
         Public Property UomCountedQty As Double
         Public Property CountedQty As Double
-
     End Class
 
     Public Class BatchNumbers
         Public Property Batch As String
+        Public Property ManufacturerSerialNumber As String
+        Public Property ManufacturingDate As Date
+        Public Property Notes As String
+        Public Property Location As String
+        Public Property ReceptionDate As Date
+        Public Property AvailableQty As String
+        Public Property ExpirationDate As Date
+        Public Property AdmissionDate As Date
+        Public Property ACT_WeightOnBatch As Double
+        Public Property CompanyAddress As String
+        Public Property BarCodeBoxNumber As String
+        Public Property Smoking As String
         Public Property Quantity As Double
     End Class
+
     Public Class SerialNumbers
         Public Property SerialNumber As String
+        Public Property ManufacturerSerialNumber As String
+        Public Property ExpirationDate As Date
+        Public Property ManufactureDate As Date
+        Public Property Note As String
+        Public Property Location As String
+        Public Property ReceptionDate As Date
+        Public Property ACT_WeightOnBatch As Double
+        Public Property CompanyAddress As String
+        Public Property BarCodeBoxNumber As String
+        Public Property Smoking As String
+        Public Property Quantity As Double
+
     End Class
 End Class
