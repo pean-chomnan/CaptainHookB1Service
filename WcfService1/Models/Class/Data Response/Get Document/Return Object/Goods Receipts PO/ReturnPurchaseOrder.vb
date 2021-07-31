@@ -22,6 +22,7 @@ Public Class PurchaseOrder
     Public Property DiscSum As Double
     Public Property DocTotal As Double
     Public Property ItemCode As String
+    Public Property ItemName As String
     Public Property CodeBars As String
     Public Property Quantity As Double
     Public Property Price As Double
@@ -84,7 +85,8 @@ Public Class CReturnGetPurchaseOrder
                         .OcrCode2 = oRs.Fields.Item("OcrCode2").Value.ToString.Trim,
                         .UomCode = oRs.Fields.Item("UomCode").Value.ToString.Trim,
                         .LineNum = oRs.Fields.Item("LineNum").Value,
-                        .ShipTo = oRs.Fields.Item("ShipTo").Value
+                        .ShipTo = oRs.Fields.Item("ShipTo").Value,
+                        .ItemName = oRs.Fields.Item("Dscription").Value
                     })
                     oRs.MoveNext()
                 Loop
