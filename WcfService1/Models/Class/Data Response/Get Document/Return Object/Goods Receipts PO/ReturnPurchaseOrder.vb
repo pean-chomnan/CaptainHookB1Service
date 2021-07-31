@@ -1,7 +1,7 @@
 ﻿Public Class ReturnPurchaseOrder
     Public Property ErrCode As Integer
     Public Property ErrMsg As String
-    Public Property ls_data As List(Of PurchaseOrder)
+    Public Property ls_data As New List(Of PurchaseOrder)
 End Class
 
 Public Class PurchaseOrder
@@ -86,7 +86,7 @@ Public Class CReturnGetPurchaseOrder
                         .UomCode = oRs.Fields.Item("UomCode").Value.ToString.Trim,
                         .LineNum = oRs.Fields.Item("LineNum").Value,
                         .ShipTo = oRs.Fields.Item("ShipTo").Value,
-                        .ItemName = oRs.Fields.Item("Dscription").Value
+                        .ItemName = oRs.Fields.Item("ItemName").Value
                     })
                     oRs.MoveNext()
                 Loop
