@@ -42,8 +42,8 @@
         Public Property NagativeBin As String
         Public Property UomCode As String
         Public Property ls_InventoryPostingLineUoMs As List(Of InventoryPostingLineUoMs)
-        Public Property ls_Batch As List(Of BatchNumbers)
-        Public Property ls_Serial As List(Of SerialNumbers)
+        'Public Property ls_Batch As List(Of BatchNumbers)
+        'Public Property ls_Serial As List(Of SerialNumbers)
     End Class
 
     Public Class InventoryPostingLineUoMs
@@ -55,37 +55,38 @@
 
     End Class
 
-    Public Class BatchNumbers
-        Public Property Batch As String
-        Public Property ManufacturerSerialNumber As String
-        Public Property ManufacturingDate As Date
-        Public Property Notes As String
-        Public Property Location As String
-        Public Property ReceptionDate As Date
-        Public Property AvailableQty As String
-        Public Property ExpirationDate As Date
-        Public Property AdmissionDate As Date
-        Public Property ACT_WeightOnBatch As Double
-        Public Property CompanyAddress As String
-        Public Property BarCodeBoxNumber As String
-        Public Property Smoking As String
-        Public Property Quantity As Double
-    End Class
-    Public Class SerialNumbers
+    'Public Class BatchNumbers
+    '    Public Property Batch As String
+    '    Public Property ManufacturerSerialNumber As String
+    '    Public Property ManufacturingDate As Date
+    '    Public Property Notes As String
+    '    Public Property Location As String
+    '    Public Property ReceptionDate As Date
+    '    Public Property AvailableQty As String
+    '    Public Property ExpirationDate As Date
+    '    Public Property AdmissionDate As Date
+    '    Public Property ACT_WeightOnBatch As Double
+    '    Public Property CompanyAddress As String
+    '    Public Property BarCodeBoxNumber As String
+    '    Public Property Smoking As String
+    '    Public Property Quantity As Double
+    'End Class
+    'Public Class SerialNumbers
 
-        Public Property SerialNumber As String
-        Public Property ManufacturerSerialNumber As String
-        Public Property ExpirationDate As Date
-        Public Property ManufactureDate As Date
-        Public Property Note As String
-        Public Property Location As String
-        Public Property ReceptionDate As Date
-        Public Property ACT_WeightOnBatch As Double
-        Public Property CompanyAddress As String
-        Public Property BarCodeBoxNumber As String
-        Public Property Smoking As String
-        'Public Property BinAbsEntry As Integer
-        Public Property Quantity As Double
+    '    Public Property SerialNumber As String
+    '    Public Property ManufacturerSerialNumber As String
+    '    Public Property ExpirationDate As Date
+    '    Public Property ManufactureDate As Date
+    '    Public Property Note As String
+    '    Public Property Location As String
+    '    Public Property ReceptionDate As Date
+    '    Public Property ACT_WeightOnBatch As Double
+    '    Public Property CompanyAddress As String
+    '    Public Property BarCodeBoxNumber As String
+    '    Public Property Smoking As String
+    '    'Public Property BinAbsEntry As Integer
+    '    Public Property Quantity As Double
 
-    End Class
+    'End Class
+
 End Class

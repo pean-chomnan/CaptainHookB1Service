@@ -7177,6 +7177,15 @@ Namespace ServiceReference1
         Private LineNumField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ListOfBatchField() As ServiceReference1.ClassInventoryTransferBatchNumbers
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ListOfSerialField() As ServiceReference1.ClassInventoryTransferSerialNumbers
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ListOfToBinLocationField() As ServiceReference1.ClassInventoryTransferBinLocation
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PriceField As Double
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -7187,12 +7196,6 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ToWhsField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ls_BatchField() As ServiceReference1.ClassInventoryTransferBatchNumbers
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ls_SerialField() As ServiceReference1.ClassInventoryTransferSerialNumbers
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -7374,6 +7377,45 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ListOfBatch() As ServiceReference1.ClassInventoryTransferBatchNumbers()
+            Get
+                Return Me.ListOfBatchField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ListOfBatchField, value) <> true) Then
+                    Me.ListOfBatchField = value
+                    Me.RaisePropertyChanged("ListOfBatch")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ListOfSerial() As ServiceReference1.ClassInventoryTransferSerialNumbers()
+            Get
+                Return Me.ListOfSerialField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ListOfSerialField, value) <> true) Then
+                    Me.ListOfSerialField = value
+                    Me.RaisePropertyChanged("ListOfSerial")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ListOfToBinLocation() As ServiceReference1.ClassInventoryTransferBinLocation()
+            Get
+                Return Me.ListOfToBinLocationField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ListOfToBinLocationField, value) <> true) Then
+                    Me.ListOfToBinLocationField = value
+                    Me.RaisePropertyChanged("ListOfToBinLocation")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property Price() As Double
             Get
                 Return Me.PriceField
@@ -7425,32 +7467,6 @@ Namespace ServiceReference1
             End Set
         End Property
         
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ls_Batch() As ServiceReference1.ClassInventoryTransferBatchNumbers()
-            Get
-                Return Me.ls_BatchField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ls_BatchField, value) <> true) Then
-                    Me.ls_BatchField = value
-                    Me.RaisePropertyChanged("ls_Batch")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ls_Serial() As ServiceReference1.ClassInventoryTransferSerialNumbers()
-            Get
-                Return Me.ls_SerialField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ls_SerialField, value) <> true) Then
-                    Me.ls_SerialField = value
-                    Me.RaisePropertyChanged("ls_Serial")
-                End If
-            End Set
-        End Property
-        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
         
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
@@ -7476,6 +7492,12 @@ Namespace ServiceReference1
         Private BatchField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ListOfFromBinLocationField() As ServiceReference1.ClassInventoryTransferBinLocation
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ListOfToBinLocationField() As ServiceReference1.ClassInventoryTransferBinLocation
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private QuantityField As Double
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
@@ -7497,6 +7519,32 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.BatchField, value) <> true) Then
                     Me.BatchField = value
                     Me.RaisePropertyChanged("Batch")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ListOfFromBinLocation() As ServiceReference1.ClassInventoryTransferBinLocation()
+            Get
+                Return Me.ListOfFromBinLocationField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ListOfFromBinLocationField, value) <> true) Then
+                    Me.ListOfFromBinLocationField = value
+                    Me.RaisePropertyChanged("ListOfFromBinLocation")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ListOfToBinLocation() As ServiceReference1.ClassInventoryTransferBinLocation()
+            Get
+                Return Me.ListOfToBinLocationField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ListOfToBinLocationField, value) <> true) Then
+                    Me.ListOfToBinLocationField = value
+                    Me.RaisePropertyChanged("ListOfToBinLocation")
                 End If
             End Set
         End Property
@@ -7557,6 +7605,69 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.SerialNumberField, value) <> true) Then
                     Me.SerialNumberField = value
                     Me.RaisePropertyChanged("SerialNumber")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ClassInventoryTransfer.BinLocation", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class ClassInventoryTransferBinLocation
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BinEntryField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private QuantityField As Long
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BinEntry() As String
+            Get
+                Return Me.BinEntryField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.BinEntryField, value) <> true) Then
+                    Me.BinEntryField = value
+                    Me.RaisePropertyChanged("BinEntry")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Quantity() As Long
+            Get
+                Return Me.QuantityField
+            End Get
+            Set
+                If (Me.QuantityField.Equals(value) <> true) Then
+                    Me.QuantityField = value
+                    Me.RaisePropertyChanged("Quantity")
                 End If
             End Set
         End Property
@@ -10553,13 +10664,7 @@ Namespace ServiceReference1
         Private WhsCodeField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ls_BatchField() As ServiceReference1.ClassInventoryPostingBatchNumbers
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ls_InventoryPostingLineUoMsField() As ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ls_SerialField() As ServiceReference1.ClassInventoryPostingSerialNumbers
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -10884,19 +10989,6 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ls_Batch() As ServiceReference1.ClassInventoryPostingBatchNumbers()
-            Get
-                Return Me.ls_BatchField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ls_BatchField, value) <> true) Then
-                    Me.ls_BatchField = value
-                    Me.RaisePropertyChanged("ls_Batch")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property ls_InventoryPostingLineUoMs() As ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs()
             Get
                 Return Me.ls_InventoryPostingLineUoMsField
@@ -10905,274 +10997,6 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.ls_InventoryPostingLineUoMsField, value) <> true) Then
                     Me.ls_InventoryPostingLineUoMsField = value
                     Me.RaisePropertyChanged("ls_InventoryPostingLineUoMs")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ls_Serial() As ServiceReference1.ClassInventoryPostingSerialNumbers()
-            Get
-                Return Me.ls_SerialField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ls_SerialField, value) <> true) Then
-                    Me.ls_SerialField = value
-                    Me.RaisePropertyChanged("ls_Serial")
-                End If
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="ClassInventoryPosting.BatchNumbers", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
-     System.SerializableAttribute()>  _
-    Partial Public Class ClassInventoryPostingBatchNumbers
-        Inherits Object
-        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-        
-        <System.NonSerializedAttribute()>  _
-        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ACT_WeightOnBatchField As Double
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private AdmissionDateField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private AvailableQtyField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private BarCodeBoxNumberField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private BatchField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private CompanyAddressField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ExpirationDateField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private LocationField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ManufacturerSerialNumberField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ManufacturingDateField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private NotesField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private QuantityField As Double
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ReceptionDateField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private SmokingField As String
-        
-        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
-        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
-            Get
-                Return Me.extensionDataField
-            End Get
-            Set
-                Me.extensionDataField = value
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ACT_WeightOnBatch() As Double
-            Get
-                Return Me.ACT_WeightOnBatchField
-            End Get
-            Set
-                If (Me.ACT_WeightOnBatchField.Equals(value) <> true) Then
-                    Me.ACT_WeightOnBatchField = value
-                    Me.RaisePropertyChanged("ACT_WeightOnBatch")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property AdmissionDate() As Date
-            Get
-                Return Me.AdmissionDateField
-            End Get
-            Set
-                If (Me.AdmissionDateField.Equals(value) <> true) Then
-                    Me.AdmissionDateField = value
-                    Me.RaisePropertyChanged("AdmissionDate")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property AvailableQty() As String
-            Get
-                Return Me.AvailableQtyField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.AvailableQtyField, value) <> true) Then
-                    Me.AvailableQtyField = value
-                    Me.RaisePropertyChanged("AvailableQty")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property BarCodeBoxNumber() As String
-            Get
-                Return Me.BarCodeBoxNumberField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.BarCodeBoxNumberField, value) <> true) Then
-                    Me.BarCodeBoxNumberField = value
-                    Me.RaisePropertyChanged("BarCodeBoxNumber")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Batch() As String
-            Get
-                Return Me.BatchField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.BatchField, value) <> true) Then
-                    Me.BatchField = value
-                    Me.RaisePropertyChanged("Batch")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property CompanyAddress() As String
-            Get
-                Return Me.CompanyAddressField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.CompanyAddressField, value) <> true) Then
-                    Me.CompanyAddressField = value
-                    Me.RaisePropertyChanged("CompanyAddress")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ExpirationDate() As Date
-            Get
-                Return Me.ExpirationDateField
-            End Get
-            Set
-                If (Me.ExpirationDateField.Equals(value) <> true) Then
-                    Me.ExpirationDateField = value
-                    Me.RaisePropertyChanged("ExpirationDate")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Location() As String
-            Get
-                Return Me.LocationField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.LocationField, value) <> true) Then
-                    Me.LocationField = value
-                    Me.RaisePropertyChanged("Location")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ManufacturerSerialNumber() As String
-            Get
-                Return Me.ManufacturerSerialNumberField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ManufacturerSerialNumberField, value) <> true) Then
-                    Me.ManufacturerSerialNumberField = value
-                    Me.RaisePropertyChanged("ManufacturerSerialNumber")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ManufacturingDate() As Date
-            Get
-                Return Me.ManufacturingDateField
-            End Get
-            Set
-                If (Me.ManufacturingDateField.Equals(value) <> true) Then
-                    Me.ManufacturingDateField = value
-                    Me.RaisePropertyChanged("ManufacturingDate")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Notes() As String
-            Get
-                Return Me.NotesField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.NotesField, value) <> true) Then
-                    Me.NotesField = value
-                    Me.RaisePropertyChanged("Notes")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Quantity() As Double
-            Get
-                Return Me.QuantityField
-            End Get
-            Set
-                If (Me.QuantityField.Equals(value) <> true) Then
-                    Me.QuantityField = value
-                    Me.RaisePropertyChanged("Quantity")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ReceptionDate() As Date
-            Get
-                Return Me.ReceptionDateField
-            End Get
-            Set
-                If (Me.ReceptionDateField.Equals(value) <> true) Then
-                    Me.ReceptionDateField = value
-                    Me.RaisePropertyChanged("ReceptionDate")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Smoking() As String
-            Get
-                Return Me.SmokingField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.SmokingField, value) <> true) Then
-                    Me.SmokingField = value
-                    Me.RaisePropertyChanged("Smoking")
                 End If
             End Set
         End Property
@@ -11268,229 +11092,6 @@ Namespace ServiceReference1
                 If (Me.UomCountedQtyField.Equals(value) <> true) Then
                     Me.UomCountedQtyField = value
                     Me.RaisePropertyChanged("UomCountedQty")
-                End If
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="ClassInventoryPosting.SerialNumbers", [Namespace]:="http://schemas.datacontract.org/2004/07/WcfService1"),  _
-     System.SerializableAttribute()>  _
-    Partial Public Class ClassInventoryPostingSerialNumbers
-        Inherits Object
-        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-        
-        <System.NonSerializedAttribute()>  _
-        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ACT_WeightOnBatchField As Double
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private BarCodeBoxNumberField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private CompanyAddressField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ExpirationDateField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private LocationField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ManufactureDateField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ManufacturerSerialNumberField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private NoteField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private QuantityField As Double
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ReceptionDateField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private SerialNumberField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private SmokingField As String
-        
-        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
-        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
-            Get
-                Return Me.extensionDataField
-            End Get
-            Set
-                Me.extensionDataField = value
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ACT_WeightOnBatch() As Double
-            Get
-                Return Me.ACT_WeightOnBatchField
-            End Get
-            Set
-                If (Me.ACT_WeightOnBatchField.Equals(value) <> true) Then
-                    Me.ACT_WeightOnBatchField = value
-                    Me.RaisePropertyChanged("ACT_WeightOnBatch")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property BarCodeBoxNumber() As String
-            Get
-                Return Me.BarCodeBoxNumberField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.BarCodeBoxNumberField, value) <> true) Then
-                    Me.BarCodeBoxNumberField = value
-                    Me.RaisePropertyChanged("BarCodeBoxNumber")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property CompanyAddress() As String
-            Get
-                Return Me.CompanyAddressField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.CompanyAddressField, value) <> true) Then
-                    Me.CompanyAddressField = value
-                    Me.RaisePropertyChanged("CompanyAddress")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ExpirationDate() As Date
-            Get
-                Return Me.ExpirationDateField
-            End Get
-            Set
-                If (Me.ExpirationDateField.Equals(value) <> true) Then
-                    Me.ExpirationDateField = value
-                    Me.RaisePropertyChanged("ExpirationDate")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Location() As String
-            Get
-                Return Me.LocationField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.LocationField, value) <> true) Then
-                    Me.LocationField = value
-                    Me.RaisePropertyChanged("Location")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ManufactureDate() As Date
-            Get
-                Return Me.ManufactureDateField
-            End Get
-            Set
-                If (Me.ManufactureDateField.Equals(value) <> true) Then
-                    Me.ManufactureDateField = value
-                    Me.RaisePropertyChanged("ManufactureDate")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ManufacturerSerialNumber() As String
-            Get
-                Return Me.ManufacturerSerialNumberField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ManufacturerSerialNumberField, value) <> true) Then
-                    Me.ManufacturerSerialNumberField = value
-                    Me.RaisePropertyChanged("ManufacturerSerialNumber")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Note() As String
-            Get
-                Return Me.NoteField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.NoteField, value) <> true) Then
-                    Me.NoteField = value
-                    Me.RaisePropertyChanged("Note")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Quantity() As Double
-            Get
-                Return Me.QuantityField
-            End Get
-            Set
-                If (Me.QuantityField.Equals(value) <> true) Then
-                    Me.QuantityField = value
-                    Me.RaisePropertyChanged("Quantity")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ReceptionDate() As Date
-            Get
-                Return Me.ReceptionDateField
-            End Get
-            Set
-                If (Me.ReceptionDateField.Equals(value) <> true) Then
-                    Me.ReceptionDateField = value
-                    Me.RaisePropertyChanged("ReceptionDate")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property SerialNumber() As String
-            Get
-                Return Me.SerialNumberField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.SerialNumberField, value) <> true) Then
-                    Me.SerialNumberField = value
-                    Me.RaisePropertyChanged("SerialNumber")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Smoking() As String
-            Get
-                Return Me.SmokingField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.SmokingField, value) <> true) Then
-                    Me.SmokingField = value
-                    Me.RaisePropertyChanged("Smoking")
                 End If
             End Set
         End Property
@@ -13002,6 +12603,8 @@ Namespace ServiceReference1
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryTransferLine)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryTransferBatchNumbers())),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryTransferBatchNumbers)),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryTransferBinLocation())),  _
+     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryTransferBinLocation)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryTransferSerialNumbers())),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryTransferSerialNumbers)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryCountingOINC())),  _
@@ -13034,12 +12637,8 @@ Namespace ServiceReference1
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingOIQR)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingLine())),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingLine)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingBatchNumbers())),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingBatchNumbers)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs())),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingInventoryPostingLineUoMs)),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingSerialNumbers())),  _
-     System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.ClassInventoryPostingSerialNumbers)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.PackingClassClassPacking())),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.PackingClassClassPacking)),  _
      System.Runtime.Serialization.KnownTypeAttribute(GetType(ServiceReference1.PackingClassClassPackingResponse)),  _

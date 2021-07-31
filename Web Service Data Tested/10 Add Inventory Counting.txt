@@ -1,0 +1,74 @@
+Dim a As String
+
+        ' =========== Add Ineventory Transfer By Batch & Serial ========'
+
+        Dim OINCs As New List(Of ServiceReference1.ClassInventoryCountingOINC)
+        Dim OINC As New ServiceReference1.ClassInventoryCountingOINC
+        Dim OINCLs As New List(Of ServiceReference1.ClassInventoryCountingLine)
+        Dim OINCL As New ServiceReference1.ClassInventoryCountingLine
+        Dim ls_Serials As New List(Of ServiceReference1.ClassInventoryCountingSerialNumbers)
+        Dim Serial As New ServiceReference1.ClassInventoryCountingSerialNumbers
+        Dim ls_result As List(Of ServiceReference1.ReturnStatus)
+        Dim ls_Batchs As New List(Of ServiceReference1.ClassInventoryCountingBatchNumbers)
+        Dim Batch As New ServiceReference1.ClassInventoryCountingBatchNumbers
+        Dim ibar As New ServiceReference1.ItemMasterData.CodeBars
+
+        OINC = New ServiceReference1.ClassInventoryCountingOINC
+
+        OINC.CountingDate = "2021-07-30"
+        OINC.CountingTime = "11:30"
+        OINC.Series = 2677
+        OINC.Ref2 = "Ref2-001"
+        OINC.Comments = "Comm sss"
+
+        For i As Integer = 1 To 1
+            If i = 1 Then  ' Row Number 1              
+                OINCL.ItemCode = "1IGDL00000"
+                OINCL.BarCode = "1I-B001"
+                OINCL.Freeze = "Y"
+                OINCL.WhsCode = "03.HKT05"
+                OINCL.BinCode = 53 '"03.HKT05-SYSTEM-BIN-LOCATION"
+                OINCL.CountedQuantity = 3
+                OINCL.CogsCode = "CSM"
+                OINCL.CogsCode2 = "DP02"
+
+                ' Setup batch Line 1
+                Batch.Batch = "BBX1"
+                Batch.Quantity = 1
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference1.ClassInventoryCountingBatchNumbers
+
+                ' Setup batch Line 2
+                Batch.Batch = "BBX2"
+                Batch.Quantity = 1
+                ls_Batchs.Add(Batch)
+                Batch = Nothing
+                Batch = New ServiceReference1.ClassInventoryCountingBatchNumbers
+
+                ' Setup New Batch
+                Batch.Batch = "BBX001"
+                Batch.ExpirationDate = "2021-08-05"
+                Batch.ACT_WeightOnBatch = 200
+                Batch.Location = "Locat"
+                Batch.AdmissionDate = "2021-08-05"
+                Batch.CompanyAddress = "Company Address"
+                Batch.Smoking = "Smoking x"
+                Batch.Quantity = 1
+                ls_Batchs.Add(Batch)
+                OINCL.ls_Batch = ls_Batchs.ToArray
+                Batch = Nothing
+                Batch = New ServiceReference1.ClassInventoryCountingBatchNumbers
+
+            End If
+
+            OINCLs.Add(OINCL)
+            OINCL = Nothing
+            OINCL = New ServiceReference1.ClassInventoryCountingLine
+        Next
+
+        OINC.Lines = OINCLs.ToArray
+        OINCs.Add(OINC)
+        ls_result = Client._AddInventoryCounting(OINCs.ToArray).ToList
+
+        a = ls_result(0).ErrirMsg
