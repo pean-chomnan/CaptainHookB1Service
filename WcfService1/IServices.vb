@@ -143,6 +143,11 @@ Public Interface IServices
     <OperationContract()>
     Function _GetBatchByBoxNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As ReturnBatchByBoxNumber
 
+
+    <OperationContract()>
+    Function _GetBatchMaster(ByVal BatchNo As String) As ReturnBatchNumber
+
+
     '<OperationContract()>
     'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
     '<OperationContract()>

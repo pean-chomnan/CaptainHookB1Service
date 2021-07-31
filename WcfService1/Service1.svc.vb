@@ -6,6 +6,7 @@ Imports WcfService1
 
 Public Class Service1
     Implements IServices
+
     Public Sub New()
     End Sub
 
@@ -431,6 +432,13 @@ Public Class Service1
         Dim obj As New CReturnGetBatchNumber
         Return obj.FGetReturnBatchByBoxNumber(WhsCode, ItemCode, BoxNumber)
     End Function
+
+    Public Function _GetBatchMaster(BatchNo As String) As ReturnBatchNumber Implements IServices._GetBatchMaster
+        Dim obj As New CReturnGetBatchNo
+        Return obj.GetBatchMaster(BatchNo)
+    End Function
+
+    'Public Function _GetBatchMaster(BatchNumber As String)
 
     'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
     '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
