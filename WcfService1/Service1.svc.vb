@@ -438,6 +438,11 @@ Public Class Service1
         Return obj.GetBatchMaster(BatchNo)
     End Function
 
+    Public Function _GetBatchMasterByBox(BoxNo As String) As ReturnBatchNumber Implements IServices._GetBatchMasterByBox
+        Dim obj As New CReturnGetBatchNo
+        Return obj.GetBatchMasterByBox(BoxNo)
+    End Function
+
     'Public Function _GetBatchMaster(BatchNumber As String)
 
     'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine

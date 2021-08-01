@@ -147,6 +147,9 @@ Public Interface IServices
     <OperationContract()>
     Function _GetBatchMaster(ByVal BatchNo As String) As ReturnBatchNumber
 
+    <OperationContract()>
+    Function _GetBatchMasterByBox(ByVal BoxNo As String) As ReturnBatchNumber
+
 
     '<OperationContract()>
     'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder

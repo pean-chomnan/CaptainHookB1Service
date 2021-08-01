@@ -136,7 +136,7 @@
                                         If (B.Batch <> "" Or B.Batch <> Nothing) And (B.Quantity <> Nothing Or B.Quantity <> 0) Then
                                             'IGN.Lines.BatchNumbers.SetCurrentLine(k)
                                             IGN.Lines.BatchNumbers.BatchNumber = B.Batch
-                                            IGN.Lines.BatchNumbers.ManufacturerSerialNumber = B.ManufacturerSerialNumber
+                                            'IGN.Lines.BatchNumbers.ManufacturerSerialNumber = B.ManufacturerSerialNumber
                                             IGN.Lines.BatchNumbers.ManufacturingDate = B.ManufacturingDate
                                             IGN.Lines.BatchNumbers.Notes = B.Notes
                                             IGN.Lines.BatchNumbers.Location = B.Location
@@ -148,7 +148,7 @@
                                             IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_ACT_WeightOnBatch").Value = B.ACT_WeightOnBatch
                                             IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_CompanyAddress").Value = B.CompanyAddress
                                             IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_BarCodeBoxNumber").Value = B.BarCodeBoxNumber
-                                            IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_SmokingSystem").Value = B.Smoking
+                                            IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_SmokingSystem").Value = "B.Smoking"
                                             'IGN.Lines.BatchNumbers.BaseLineNumber = L.Baseline
 
                                             IGN.Lines.BatchNumbers.Add()
