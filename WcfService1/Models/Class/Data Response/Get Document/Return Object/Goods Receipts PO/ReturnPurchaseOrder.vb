@@ -1,7 +1,7 @@
 ﻿Public Class ReturnPurchaseOrder
     Public Property ErrCode As Integer
     Public Property ErrMsg As String
-    Public Property ls_data As List(Of PurchaseOrder)
+    Public Property ls_data As New List(Of PurchaseOrder)
 End Class
 
 Public Class PurchaseOrder
@@ -22,6 +22,7 @@ Public Class PurchaseOrder
     Public Property DiscSum As Double
     Public Property DocTotal As Double
     Public Property ItemCode As String
+    Public Property ItemName As String
     Public Property CodeBars As String
     Public Property Quantity As Double
     Public Property Price As Double
@@ -84,7 +85,8 @@ Public Class CReturnGetPurchaseOrder
                         .OcrCode2 = oRs.Fields.Item("OcrCode2").Value.ToString.Trim,
                         .UomCode = oRs.Fields.Item("UomCode").Value.ToString.Trim,
                         .LineNum = oRs.Fields.Item("LineNum").Value,
-                        .ShipTo = oRs.Fields.Item("ShipTo").Value
+                        .ShipTo = oRs.Fields.Item("ShipTo").Value,
+                        .ItemName = oRs.Fields.Item("ItemName").Value
                     })
                     oRs.MoveNext()
                 Loop
