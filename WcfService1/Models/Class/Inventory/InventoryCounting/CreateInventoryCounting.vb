@@ -147,6 +147,7 @@
                                 .DocEntry = InvCountParam.DocumentEntry
                             }
                             ls_returnstatus.Add(returnstatus)
+                            Dim xx As Integer = 0
                         Else
                             returnstatus = New ReturnStatus With {
                                 .ErrirMsg = "Add Successfully",
