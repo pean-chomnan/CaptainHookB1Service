@@ -71,7 +71,7 @@
                                             IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_ACT_WeightOnBatch").Value = B.ACT_WeightOnBatch
                                             IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_CompanyAddress").Value = B.CompanyAddress
                                             IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_BarCodeBoxNumber").Value = B.BarCodeBoxNumber
-                                            IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_SmokingSystem").Value = B.Smoking
+                                            IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_SmokingSystem").Value = "B.Smoking"
                                             IGN.Lines.SerialNumbers.Add()
 
                                             If myClasss.GetValFromQueryOCompany("SELECT ""BinActivat"" FROM ""CAPTAINHOOK_PRD"".""OWHS"" WHERE ""WhsCode""='" & L.Warehouse & "'", oCompany) = "Y" Then
@@ -145,10 +145,10 @@
                                             IGN.Lines.BatchNumbers.AddmisionDate = B.AdmissionDate
                                             IGN.Lines.BatchNumbers.ExpiryDate = B.ExpirationDate
 
-                                            IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_ACT_WeightOnBatch").Value = B.ACT_WeightOnBatch
-                                            IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_CompanyAddress").Value = B.CompanyAddress
-                                            IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_BarCodeBoxNumber").Value = B.BarCodeBoxNumber
-                                            IGN.Lines.SerialNumbers.UserFields.Fields.Item("U_SmokingSystem").Value = "B.Smoking"
+                                            IGN.Lines.BatchNumbers.UserFields.Fields.Item("U_ACT_WeightOnBatch").Value = B.ACT_WeightOnBatch
+                                            IGN.Lines.BatchNumbers.UserFields.Fields.Item("U_CompanyAddress").Value = B.CompanyAddress
+                                            IGN.Lines.BatchNumbers.UserFields.Fields.Item("U_BarCodeBoxNumber").Value = B.BarCodeBoxNumber
+                                            IGN.Lines.BatchNumbers.UserFields.Fields.Item("U_SmokingSystem").Value = B.BarCodeBoxNumber
                                             'IGN.Lines.BatchNumbers.BaseLineNumber = L.Baseline
 
                                             IGN.Lines.BatchNumbers.Add()
