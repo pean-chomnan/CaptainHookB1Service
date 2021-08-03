@@ -445,25 +445,25 @@ Public Class Service1
 
     'Public Function _GetBatchMaster(BatchNumber As String)
 
-    'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
-    '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
-    '    Return obj.FGetReturnLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)
-    'End Function
+    Public Function _GetListOfInventoryCounting() As ReturnListOfInventoryCountin Implements IServices._GetListOfInventoryCounting
+        Dim obj As New CReturnGetListOfInventoryCountin
+        Return obj.FGetReturnListOfInventoryCountin()
+    End Function
 
-    'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
-    '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
-    '    Return obj.FGetReturnLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)
-    'End Function
+    Public Function _GetListOfInventoryCountingLine(ByVal ls_InventoryCounting As List(Of Integer)) As ReturnListOfInventoryCountingLine Implements IServices._GetListOfInventoryCountingLine
+        Dim obj As New CReturnGetListOfInventoryCountingLine
+        Return obj.FGetListOfInventoryCountingLine(ls_InventoryCounting)
+    End Function
 
-    'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
-    '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
-    '    Return obj.FGetReturnLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)
-    'End Function
+    Public Function _GetProjectCode() As ReturnProjectCode Implements IServices._GetProjectCode
+        Dim obj As New CReturnProjectCode
+        Return obj.FGetProjectCode()
+    End Function
 
-    'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
-    '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
-    '    Return obj.FGetReturnLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)
-    'End Function
+    Public Function _GetManufacturer() As ReturnManufacturer Implements IServices._GetManufacturer
+        Dim obj As New CReturnManufacturer
+        Return obj.FGetManufacturer
+    End Function
 
     'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
     '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine

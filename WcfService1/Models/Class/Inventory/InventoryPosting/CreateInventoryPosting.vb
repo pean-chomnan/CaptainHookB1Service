@@ -59,7 +59,7 @@ Public Class CreateInventoryPosting
                         InvPost.CountDate = header.CountDate
                         InvPost.CountTime = header.CountTime
 
-                        If header.PriceSouce = 1 Then
+                        If header.PriceSouce = 1 Then ' Price List
                             InvPost.PriceSource = InventoryPostingPriceSourceEnum.ippsByPriceList
                             InvPost.PriceList = header.PriceList
                         ElseIf header.PriceSouce = 2 Then
