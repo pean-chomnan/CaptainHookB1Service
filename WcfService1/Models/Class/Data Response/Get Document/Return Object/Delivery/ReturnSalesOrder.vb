@@ -33,6 +33,13 @@ Public Class SalesOrder
     Public Property OcrCode2 As String
     Public Property UomCode As String
     Public Property LineNum As Integer
+    Public Property SlpCode As String
+    Public Property SlpName As String
+    Public Property Remark As String
+    Public Property WhsName As String
+    Public Property ItemName As String
+    Public Property ItemType As String
+
 
 End Class
 
@@ -82,7 +89,13 @@ Public Class CReturnGetSalesOrder
                         .OcrCode = oRs.Fields.Item("OcrCode").Value.ToString.Trim,
                         .OcrCode2 = oRs.Fields.Item("OcrCode2").Value.ToString.Trim,
                         .UomCode = oRs.Fields.Item("UomCode").Value.ToString.Trim,
-                    .LineNum = oRs.Fields.Item("LineNum").Value
+                        .LineNum = oRs.Fields.Item("LineNum").Value,
+                        .SlpCode = oRs.Fields.Item("SlpCode").Value.ToString.Trim,
+                        .SlpName = oRs.Fields.Item("SlpName").Value.ToString.Trim,
+                        .Remark = oRs.Fields.Item("Comments").Value.ToString.Trim,
+                        .ItemName = oRs.Fields.Item("ItemName").Value.ToString.Trim,
+                        .WhsName = oRs.Fields.Item("WhsName").Value.ToString.Trim,
+                        .ItemType = oRs.Fields.Item("ItemType").Value.ToString.Trim
                     })
                     oRs.MoveNext()
                 Loop

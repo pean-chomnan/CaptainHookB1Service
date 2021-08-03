@@ -35,6 +35,12 @@ Public Class PurchaseOrder
     Public Property UomCode As String
     Public Property LineNum As Integer
     Public Property ShipTo As String
+    Public Property ItemType As String
+    Public Property SlpCode As String
+    Public Property SlpName As String
+    Public Property Remark As String
+    Public Property WhsName As String
+
 
 End Class
 
@@ -86,7 +92,12 @@ Public Class CReturnGetPurchaseOrder
                         .UomCode = oRs.Fields.Item("UomCode").Value.ToString.Trim,
                         .LineNum = oRs.Fields.Item("LineNum").Value,
                         .ShipTo = oRs.Fields.Item("ShipTo").Value,
-                        .ItemName = oRs.Fields.Item("ItemName").Value
+                        .ItemName = oRs.Fields.Item("ItemName").Value,
+                        .ItemType = oRs.Fields.Item("ItemType").Value.ToString.Trim,
+                        .SlpCode = oRs.Fields.Item("SlpCode").Value.ToString.Trim,
+                        .SlpName = oRs.Fields.Item("SlpName").Value.ToString.Trim,
+                        .WhsName = oRs.Fields.Item("WhsName").Value.ToString.Trim,
+                        .Remark = oRs.Fields.Item("Comments").Value.ToString.Trim
                     })
                     oRs.MoveNext()
                 Loop
