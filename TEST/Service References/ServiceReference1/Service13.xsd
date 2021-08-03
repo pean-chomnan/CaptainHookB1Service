@@ -905,4 +905,82 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="_GetBatchMaster">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BatchNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBatchMasterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBatchMasterResult" nillable="true" type="q83:ReturnBatchNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBatchMasterByBox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BoxNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetBatchMasterByBoxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetBatchMasterByBoxResult" nillable="true" type="q84:ReturnBatchNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetListOfInventoryCounting">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetListOfInventoryCountingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetListOfInventoryCountingResult" nillable="true" type="q85:ReturnListOfInventoryCountin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetListOfInventoryCountingLine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ls_InventoryCounting" nillable="true" type="q86:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetListOfInventoryCountingLineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetListOfInventoryCountingLineResult" nillable="true" type="q87:ReturnListOfInventoryCountingLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetProjectCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetProjectCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetProjectCodeResult" nillable="true" type="q88:ReturnProjectCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetManufacturer">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetManufacturerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetManufacturerResult" nillable="true" type="q89:ReturnManufacturer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

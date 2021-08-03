@@ -142,15 +142,18 @@ Public Interface IServices
     Function _GetBatchByBatchNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BatchNo As String) As ReturnBatchNumber
     <OperationContract()>
     Function _GetBatchByBoxNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As ReturnBatchByBoxNumber
-
-
     <OperationContract()>
     Function _GetBatchMaster(ByVal BatchNo As String) As ReturnBatchNumber
-
     <OperationContract()>
     Function _GetBatchMasterByBox(ByVal BoxNo As String) As ReturnBatchNumber
-
-
+    <OperationContract()>
+    Function _GetListOfInventoryCounting() As ReturnListOfInventoryCountin
+    <OperationContract()>
+    Function _GetListOfInventoryCountingLine(ByVal ls_InventoryCounting As List(Of Integer)) As ReturnListOfInventoryCountingLine
+    <OperationContract()>
+    Function _GetProjectCode() As ReturnProjectCode
+    <OperationContract()>
+    Function _GetManufacturer() As ReturnManufacturer
     '<OperationContract()>
     'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
     '<OperationContract()>
@@ -159,7 +162,12 @@ Public Interface IServices
     'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
     '<OperationContract()>
     'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
-
+    '<OperationContract()>
+    'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
+    '<OperationContract()>
+    'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
+    '<OperationContract()>
+    'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
     'PurchaseOrder
 End Interface
 

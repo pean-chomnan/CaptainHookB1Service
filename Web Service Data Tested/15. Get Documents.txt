@@ -234,6 +234,43 @@
         Dim i As Integer
         i = ls_Res.ls_data.Count
 
+	'Get ListOfInventoryCountin
+        Dim ls_Res1 As New ServiceReference1.ReturnListOfInventoryCountin
+        ls_Res1 = Client._GetListOfInventoryCounting
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i
+	
+	' Get Load Inventory Counting Line
+        Dim ls_Res As New ServiceReference1.ReturnListOfInventoryCountingLine
+        Dim ls_DocEntry As New List(Of Integer)
 
+        ls_DocEntry.Add(7)
+        ls_DocEntry.Add(37)
+        ls_DocEntry.Add(38)
 
+        ls_Res = Client._GetListOfInventoryCountingLine(ls_DocEntry.ToArray)
+        Dim i As Integer
+        i = ls_Res.ls_data.Count
+        i = i
 
+	' Get Inventory Posting Project Code
+        Dim ls_Res1 As New ServiceReference1.ReturnProjectCode
+        ls_Res1 = Client._GetProjectCode()
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i
+	
+	'Get Project Code
+        Dim ls_Res1 As New ServiceReference1.ReturnProjectCode
+        ls_Res1 = Client._GetProjectCode()
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i
+
+	'Get Manufaturer
+        Dim ls_Res1 As New ServiceReference1.ReturnManufacturer
+        ls_Res1 = Client._GetManufacturer
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i

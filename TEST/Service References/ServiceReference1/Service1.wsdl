@@ -410,6 +410,42 @@
   <wsdl:message name="IServices__GetBatchByBoxNumber_OutputMessage">
     <wsdl:part name="parameters" element="tns:_GetBatchByBoxNumberResponse" />
   </wsdl:message>
+  <wsdl:message name="IServices__GetBatchMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:_GetBatchMaster" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetBatchMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:_GetBatchMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetBatchMasterByBox_InputMessage">
+    <wsdl:part name="parameters" element="tns:_GetBatchMasterByBox" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetBatchMasterByBox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:_GetBatchMasterByBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetListOfInventoryCounting_InputMessage">
+    <wsdl:part name="parameters" element="tns:_GetListOfInventoryCounting" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetListOfInventoryCounting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:_GetListOfInventoryCountingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetListOfInventoryCountingLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:_GetListOfInventoryCountingLine" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetListOfInventoryCountingLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:_GetListOfInventoryCountingLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetProjectCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:_GetProjectCode" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetProjectCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:_GetProjectCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetManufacturer_InputMessage">
+    <wsdl:part name="parameters" element="tns:_GetManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="IServices__GetManufacturer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:_GetManufacturerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServices">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IServices/GetData" message="tns:IServices_GetData_InputMessage" />
@@ -678,6 +714,30 @@
     <wsdl:operation name="_GetBatchByBoxNumber">
       <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetBatchByBoxNumber" message="tns:IServices__GetBatchByBoxNumber_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetBatchByBoxNumberResponse" message="tns:IServices__GetBatchByBoxNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="_GetBatchMaster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetBatchMaster" message="tns:IServices__GetBatchMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetBatchMasterResponse" message="tns:IServices__GetBatchMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="_GetBatchMasterByBox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetBatchMasterByBox" message="tns:IServices__GetBatchMasterByBox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetBatchMasterByBoxResponse" message="tns:IServices__GetBatchMasterByBox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="_GetListOfInventoryCounting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetListOfInventoryCounting" message="tns:IServices__GetListOfInventoryCounting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetListOfInventoryCountingResponse" message="tns:IServices__GetListOfInventoryCounting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="_GetListOfInventoryCountingLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetListOfInventoryCountingLine" message="tns:IServices__GetListOfInventoryCountingLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetListOfInventoryCountingLineResponse" message="tns:IServices__GetListOfInventoryCountingLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="_GetProjectCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetProjectCode" message="tns:IServices__GetProjectCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetProjectCodeResponse" message="tns:IServices__GetProjectCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="_GetManufacturer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/_GetManufacturer" message="tns:IServices__GetManufacturer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/_GetManufacturerResponse" message="tns:IServices__GetManufacturer_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServices" type="tns:IServices">
@@ -1278,6 +1338,60 @@
     </wsdl:operation>
     <wsdl:operation name="_GetBatchByBoxNumber">
       <soap:operation soapAction="http://tempuri.org/IServices/_GetBatchByBoxNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_GetBatchMaster">
+      <soap:operation soapAction="http://tempuri.org/IServices/_GetBatchMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_GetBatchMasterByBox">
+      <soap:operation soapAction="http://tempuri.org/IServices/_GetBatchMasterByBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_GetListOfInventoryCounting">
+      <soap:operation soapAction="http://tempuri.org/IServices/_GetListOfInventoryCounting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_GetListOfInventoryCountingLine">
+      <soap:operation soapAction="http://tempuri.org/IServices/_GetListOfInventoryCountingLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_GetProjectCode">
+      <soap:operation soapAction="http://tempuri.org/IServices/_GetProjectCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_GetManufacturer">
+      <soap:operation soapAction="http://tempuri.org/IServices/_GetManufacturer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
