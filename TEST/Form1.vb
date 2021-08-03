@@ -41,11 +41,11 @@ Public Class Form1
         '======= GET DELIVERY AND DOCUMENT=========
 
         'Get 
-        Dim ls_Res1 As New ServiceReference1.ReturnManufacturer
-        ls_Res1 = Client._GetManufacturer
-        Dim i As Integer
-        i = ls_Res1.ls_data.Count
-        i = i
+        ' Dim ls_Res1 As New ServiceReference1.ReturnManufacturer
+        'ls_Res1 = Client._GetManufacturer
+        'Dim i As Integer
+        'i = ls_Res1.ls_data.Count
+        'i = i
 
         ' '' Get
         'Dim ls_Res As New ServiceReference1.ReturnLoadIssueForProductionToReceiptFromProductionLine
@@ -89,8 +89,46 @@ Public Class Form1
 
         '======================== xxxx ========================='
 
+        'Get Return Load Production Order That Avaibable For ReceiptFromProduction
+        Dim ls_Res1 As New ServiceReference1.ReturnGetListOfOWORforReceiptFromProduction
+        ls_Res1 = Client._GetLoadProductionOrderThatAvaibableForReceiptFromProduction
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i
 
+        'Get Load Issue For Production To Receipt From Production
+        Dim ls_Res2 As New ServiceReference1.ReturnGetListOfOWORforReturnComponent
+        ls_Res2 = Client._GetLoadIssueForProductionToReceiptFromProduction
+        i = ls_Res2.ls_data.Count
+        i = i
 
+        '' Get Load Issue For Production To Receipt From Production Line
+        Dim ls_Res3 As New ServiceReference1.ReturnGetListOfReturnComponent
+        Dim ls_DocEntry As New List(Of Integer)
+        ls_DocEntry.Add(14)
+        ls_DocEntry.Add(15)
+        ls_DocEntry.Add(16)
+        ls_Res3 = Client._GetLoadIssueForProductionToReceiptFromProductionLine(ls_DocEntry.ToArray)
+        i = ls_Res3.ls_data.Count
+        i = i
+
+        'Get Production Order List For Issue Production
+        Dim ls_Res5 As New ServiceReference1.ReturnGetListOfOWORforIssueForProduction
+        ls_Res5 = Client._GetProductionOrderListForIssueProduction
+        i = ls_Res1.ls_data.Count
+        i = i
+
+        '' Get Load Production Order To Issue Line
+        Dim ls_Res As New ServiceReference1.ReturnGetListOfIssueComponent
+        Dim ls_DocEntry11 As New List(Of Integer)
+
+        ls_DocEntry11.Add(14)
+        ls_DocEntry11.Add(15)
+        ls_DocEntry11.Add(16)
+
+        ls_Res = Client._GetLoadProductionOrderToIssueLine(ls_DocEntry.ToArray)
+        i = ls_Res.ls_data.Count
+        i = i
 
 
     End Sub

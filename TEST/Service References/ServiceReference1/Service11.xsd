@@ -2048,6 +2048,8 @@
       <xs:element minOccurs="0" name="OnOrder" type="xs:double" />
       <xs:element minOccurs="0" name="PlannedQty" type="xs:double" />
       <xs:element minOccurs="0" name="SeqNum" type="xs:int" />
+      <xs:element minOccurs="0" name="Series" type="xs:int" />
+      <xs:element minOccurs="0" name="SeriesName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="StockAvaible" type="xs:double" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
@@ -2092,6 +2094,7 @@
       <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductNo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RjctQty" type="xs:double" />
+      <xs:element minOccurs="0" name="Series" type="xs:int" />
       <xs:element minOccurs="0" name="SeriesName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
@@ -2125,6 +2128,7 @@
       <xs:element minOccurs="0" name="PostDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" type="xs:int" />
       <xs:element minOccurs="0" name="SeriesName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -2168,6 +2172,8 @@
       <xs:element minOccurs="0" name="OnOrder" type="xs:double" />
       <xs:element minOccurs="0" name="PlannedQty" type="xs:double" />
       <xs:element minOccurs="0" name="SeqNum" type="xs:int" />
+      <xs:element minOccurs="0" name="Series" type="xs:int" />
+      <xs:element minOccurs="0" name="SeriesName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="StockAvaible" type="xs:double" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />

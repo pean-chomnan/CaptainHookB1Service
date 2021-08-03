@@ -5,6 +5,8 @@
 End Class
 
 Public Class IssueComponent
+    Public Property Series As Integer
+    Public Property SeriesName As String
     Public Property DocEntry As Integer
     Public Property DocNum As Integer
     Public Property ItemCode As String
@@ -63,6 +65,8 @@ Public Class GetListOfIssueComponent
                 oRs.DoQuery(strSql)
                 Do While Not oRs.EoF
                     ls.Add(New IssueComponent With {
+                        .Series = oRs.Fields.Item("Series").Value,
+                        .SeriesName = oRs.Fields.Item("SeriesName").Value,
                         .DocEntry = oRs.Fields.Item("DocEntry").Value,
                         .DocNum = oRs.Fields.Item("DocNum").Value,
                         .ItemCode = oRs.Fields.Item("ItemCode").Value,

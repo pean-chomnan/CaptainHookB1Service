@@ -18702,6 +18702,12 @@ Namespace ServiceReference1
         Private SeqNumField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SeriesField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SeriesNameField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private StartDateField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -19010,6 +19016,32 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Series() As Integer
+            Get
+                Return Me.SeriesField
+            End Get
+            Set
+                If (Me.SeriesField.Equals(value) <> true) Then
+                    Me.SeriesField = value
+                    Me.RaisePropertyChanged("Series")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property SeriesName() As String
+            Get
+                Return Me.SeriesNameField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SeriesNameField, value) <> true) Then
+                    Me.SeriesNameField = value
+                    Me.RaisePropertyChanged("SeriesName")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property StartDate() As Date
             Get
                 Return Me.StartDateField
@@ -19223,6 +19255,9 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private RjctQtyField As Double
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SeriesField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private SeriesNameField As String
@@ -19526,6 +19561,19 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Series() As Integer
+            Get
+                Return Me.SeriesField
+            End Get
+            Set
+                If (Me.SeriesField.Equals(value) <> true) Then
+                    Me.SeriesField = value
+                    Me.RaisePropertyChanged("Series")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property SeriesName() As String
             Get
                 Return Me.SeriesNameField
@@ -19728,6 +19776,9 @@ Namespace ServiceReference1
         Private ProductNoField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SeriesField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private SeriesNameField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -19843,6 +19894,19 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.ProductNoField, value) <> true) Then
                     Me.ProductNoField = value
                     Me.RaisePropertyChanged("ProductNo")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Series() As Integer
+            Get
+                Return Me.SeriesField
+            End Get
+            Set
+                If (Me.SeriesField.Equals(value) <> true) Then
+                    Me.SeriesField = value
+                    Me.RaisePropertyChanged("Series")
                 End If
             End Set
         End Property
@@ -20038,6 +20102,12 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private SeqNumField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SeriesField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SeriesNameField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private StartDateField As Date
@@ -20343,6 +20413,32 @@ Namespace ServiceReference1
                 If (Me.SeqNumField.Equals(value) <> true) Then
                     Me.SeqNumField = value
                     Me.RaisePropertyChanged("SeqNum")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Series() As Integer
+            Get
+                Return Me.SeriesField
+            End Get
+            Set
+                If (Me.SeriesField.Equals(value) <> true) Then
+                    Me.SeriesField = value
+                    Me.RaisePropertyChanged("Series")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property SeriesName() As String
+            Get
+                Return Me.SeriesNameField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SeriesNameField, value) <> true) Then
+                    Me.SeriesNameField = value
+                    Me.RaisePropertyChanged("SeriesName")
                 End If
             End Set
         End Property

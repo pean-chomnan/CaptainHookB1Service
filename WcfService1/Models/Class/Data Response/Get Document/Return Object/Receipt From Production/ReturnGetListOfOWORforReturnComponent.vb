@@ -7,6 +7,7 @@ End Class
 Public Class OWORforReturnComponent
     Public Property DocEntry As Integer
     Public Property DocNum As Integer
+    Public Property Series As Integer
     Public Property SeriesName As String
     Public Property Type As String
     Public Property PostDate As Date
@@ -38,6 +39,7 @@ Public Class GetListOfOWORforReturnComponent
                     ls.Add(New OWORforReturnComponent With {
                         .DocEntry = oRs.Fields.Item("DocEntry").Value,
                         .DocNum = oRs.Fields.Item("DocNum").Value,
+                        .Series = oRs.Fields.Item("Series").Value,
                         .SeriesName = oRs.Fields.Item("SeriesName").Value.ToString.Trim,
                         .Type = oRs.Fields.Item("Type").Value.ToString.Trim,
                         .PostDate = oRs.Fields.Item("PostDate").Value,

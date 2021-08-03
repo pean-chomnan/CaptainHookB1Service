@@ -7,7 +7,7 @@ End Class
 Public Class OWORforReceiptFromProduction
     Public Property DocEntry As Integer
     Public Property DocNum As Integer
-    ' Public Property Series As Integer
+    Public Property Series As Integer
     Public Property SeriesName As String
     Public Property Type As String
     Public Property PostDate As Date
@@ -56,6 +56,7 @@ Public Class GetListOfOWORforReceiptFromProduction
                     ls.Add(New OWORforReceiptFromProduction With {
                         .DocEntry = oRs.Fields.Item("DocEntry").Value,
                         .DocNum = oRs.Fields.Item("DocNum").Value,
+                        .Series = oRs.Fields.Item("Series").Value,
                         .SeriesName = oRs.Fields.Item("SeriesName").Value.ToString.Trim,
                         .Type = oRs.Fields.Item("Type").Value.ToString.Trim,
                         .PostDate = oRs.Fields.Item("PostDate").Value,

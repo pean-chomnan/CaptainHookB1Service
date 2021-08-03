@@ -9,6 +9,8 @@ AS
 		Create LOCAL TEMPORARY COLUMN TABLE #TB_POEntry AS(Select * from :POEntry);
 		
 		SELECT 
+			T0."Series",
+			T7."SeriesName",
 			T0."DocEntry",T0."DocNum", 
 			T1."LineNum", 
 			T2."DocItemCode" As "ItemCode", 
@@ -37,6 +39,7 @@ AS
 			LEFT OUTER JOIN CAPTAINHOOK_PRD."ORST" T4 ON T3."StgEntry" = T4."AbsEntry" 
 			INNER JOIN CAPTAINHOOK_PRD."OITM" T5 ON T1."ItemCode"=T5."ItemCode" 
 			INNER JOIN CAPTAINHOOK_PRD."OITW" T6 ON T1."ItemCode"=T6."ItemCode" AND T1."wareHouse"=T6."WhsCode"
+			INNER JOIN CAPTAINHOOK_PRD."NNM1" T7 ON T0."Series"=T7."Series"
 		WHERE T1."IssueType" = ('M') AND T0."DocEntry" IN(SELECT VAL FROM #TB_POEntry)
 			AND (((T0."Type" = ('S') OR T0."Type" = ('P')) AND T1."IssuedQty" > (0)) OR (T0."Type" = ('D') 
 			AND T1."PlannedQty" > T1."IssuedQty")) 

@@ -4,6 +4,7 @@ AS
 BEGIN 
 	SELECT Distinct
 		T0."DocEntry", T0."DocNum", 
+		T0."Series",
 		T1."SeriesName", T0."Type", 
 		T0."PostDate",
 		T0."DueDate", T0."ItemCode" As "ProductNo", 
@@ -37,7 +38,7 @@ END;
 
 --CALL CAPTAINHOOK_PRD."USP_LoadProductionOrderAvaibableReceiptFromProduction"()
 
-SELECT  * FROM "CAPTAINHOOK_PRD"."OINC" WHERE "DocNum"=213000001
+-- SELECT  * FROM "CAPTAINHOOK_PRD"."OINC" WHERE "DocNum"=213000001
 
 
 
