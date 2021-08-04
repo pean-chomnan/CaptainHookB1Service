@@ -26,9 +26,8 @@
                         .WeightOnBatch = oRs.Fields.Item("WeightOnBatch").Value.ToString.Trim,
                         .CompanyAddress = oRs.Fields.Item("U_CompanyAddress").Value.ToString.Trim,
                         .BarCodeBoxNumber = oRs.Fields.Item("U_BarCodeBoxNumber").Value.ToString.Trim,
-                        .SmokingSystem = oRs.Fields.Item("U_SmokingSystem").Value.ToString.Trim,
-                        .Type = oRs.Fields.Item("Type").Value.ToString.Trim
-                        })
+                        .SmokingSystem = oRs.Fields.Item("U_SmokingSystem").Value.ToString.Trim
+                    })
                     oRs.MoveNext()
                 Loop
                 Return (New PackingClass.ClassPackingResponse With {
@@ -70,7 +69,7 @@
             If oLoginService.lErrCode = 0 Then
                 oCompany = oLoginService.Company
                 For i As Integer = 0 To ipaObj.Count - 1
-                    If ipaObj(i).Type.ToLower = "serial" Then
+                    If myclas.ItemSetupBy(ipaObj(i).ItemCode) = 1 Then
                         strSql = "UPDATE " & _DBNAME & ".""OSRN""  SET ""U_BarCodeBoxNumber""='" & ipaObj(i).BarCodeBoxNumber & "' WHERE ""ItemCode""='" & ipaObj(i).ItemCode & "' AND ""DistNumber""='" & ipaObj(i).DistNumber & "'"
                         myclas.AddUpdateQueryOCompany(strSql, oCompany)
                         ReturnStatus = New ReturnStatus With {
@@ -78,7 +77,7 @@
                             .ErrirMsg = "Update Serial " & ipaObj(i).DistNumber & " BarCode BoxNumber successfully!!"
                         }
                         ls_returnstatus.Add(ReturnStatus)
-                    ElseIf ipaObj(i).Type.ToLower = "batch" Then
+                    ElseIf myclas.ItemSetupBy(ipaObj(i).ItemCode) = 2 Then
                         strSql = "UPDATE " & _DBNAME & ".""OBTN""  SET ""U_BarCodeBoxNumber""='" & ipaObj(i).BarCodeBoxNumber & "' WHERE ""ItemCode""='" & ipaObj(i).ItemCode & "' AND ""DistNumber""='" & ipaObj(i).DistNumber & "'"
                         myclas.AddUpdateQueryOCompany(strSql, oCompany)
                         ReturnStatus = New ReturnStatus With {

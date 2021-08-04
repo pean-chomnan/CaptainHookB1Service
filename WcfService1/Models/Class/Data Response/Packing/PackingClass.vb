@@ -14,7 +14,7 @@
         Public Property CompanyAddress As String
         Public Property BarCodeBoxNumber As String
         Public Property SmokingSystem As String
-        Public Property Type As String
+        '    Public Property Type As String
     End Class
 End Class
 

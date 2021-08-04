@@ -3,10 +3,10 @@ Public Class Form1
     Dim Client As New ServiceReference1.ServicesClient
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'Dim ls_result As ServiceReference3.GetMasterResponse
+        'Dim ls_result As ServiceReference1.GetMasterResponse
         ' ls_result = Client._GetSimple("1")
-        'Dim ls_result As ServiceReference3.ClassPackingResponse
-        'Dim cl As ServiceReference3.classget
+        'Dim ls_result As ServiceReference1.ClassPackingResponse
+        'Dim cl As ServiceReference1.classget
 
         'Client._TEST_GETFUNC("Welcome")
         'Client._GetSimple("1")
@@ -25,14 +25,14 @@ Public Class Form1
         'ls_Res = ls_Res
 
         'Get CardCode Search
-        'Dim ls_Res As New ServiceReference3.ReturnPriceList
+        'Dim ls_Res As New ServiceReference1.ReturnPriceList
         'ls_Res = Client._GetPriceList
         'Dim i As Integer
         'i = ls_Res.ls_data.Count
         'i = i
 
         ''Get ItemCode Like both(ItemCode,ItemName) 50 Rows
-        'Dim ls_Res As New ServiceReference3.ReturnItemCode
+        'Dim ls_Res As New ServiceReference1.ReturnItemCode
         'ls_Res = Client._GetItemCode("Ch")
         'Dim i As Integer
         'i = ls_Res.ls_data.Count
@@ -88,47 +88,33 @@ Public Class Form1
 
 
         '======================== xxxx ========================='
+        Dim ls_Packing As New List(Of ServiceReference1.PackingClassClassPacking)
+        Dim Packing As New ServiceReference1.PackingClassClassPacking
+        Dim ReturnSt As New List(Of ServiceReference1.ReturnStatus)
 
-        'Get Return Load Production Order That Avaibable For ReceiptFromProduction
-        Dim ls_Res1 As New ServiceReference1.ReturnGetListOfOWORforReceiptFromProduction
-        ls_Res1 = Client._GetLoadProductionOrderThatAvaibableForReceiptFromProduction
-        Dim i As Integer
-        i = ls_Res1.ls_data.Count
-        i = i
+        'Batch PO20082008009-00003
+        Packing.ItemCode = "4GT0100"
+        Packing.DistNumber = "PO20082008009-00003"
+        Packing.BarCodeBoxNumber = "BX004"
+        ls_Packing.Add(Packing)
+        Packing = New ServiceReference1.PackingClassClassPacking
 
-        'Get Load Issue For Production To Receipt From Production
-        Dim ls_Res2 As New ServiceReference1.ReturnGetListOfOWORforReturnComponent
-        ls_Res2 = Client._GetLoadIssueForProductionToReceiptFromProduction
-        i = ls_Res2.ls_data.Count
-        i = i
+        'Batch BX008
+        Packing.ItemCode = "4GT0100"
+        Packing.DistNumber = "BX008"
+        Packing.BarCodeBoxNumber = "BX004"
+        ls_Packing.Add(Packing)
+        Packing = New ServiceReference1.PackingClassClassPacking
 
-        '' Get Load Issue For Production To Receipt From Production Line
-        Dim ls_Res3 As New ServiceReference1.ReturnGetListOfReturnComponent
-        Dim ls_DocEntry As New List(Of Integer)
-        ls_DocEntry.Add(14)
-        ls_DocEntry.Add(15)
-        ls_DocEntry.Add(16)
-        ls_Res3 = Client._GetLoadIssueForProductionToReceiptFromProductionLine(ls_DocEntry.ToArray)
-        i = ls_Res3.ls_data.Count
-        i = i
+        'Batch SC-00022
+        Packing.ItemCode = "4GT0100"
+        Packing.DistNumber = "4B002"
+        Packing.BarCodeBoxNumber = "BX004"
+        ls_Packing.Add(Packing)
+        Packing = New ServiceReference1.PackingClassClassPacking
+        ReturnSt = Client._UpdateUDFBorCodeBoxNumber(ls_Packing.ToArray).ToList '(ls_Packing.ToList).
 
-        'Get Production Order List For Issue Production
-        Dim ls_Res5 As New ServiceReference1.ReturnGetListOfOWORforIssueForProduction
-        ls_Res5 = Client._GetProductionOrderListForIssueProduction
-        i = ls_Res1.ls_data.Count
-        i = i
-
-        '' Get Load Production Order To Issue Line
-        Dim ls_Res As New ServiceReference1.ReturnGetListOfIssueComponent
-        Dim ls_DocEntry11 As New List(Of Integer)
-
-        ls_DocEntry11.Add(14)
-        ls_DocEntry11.Add(15)
-        ls_DocEntry11.Add(16)
-
-        ls_Res = Client._GetLoadProductionOrderToIssueLine(ls_DocEntry.ToArray)
-        i = ls_Res.ls_data.Count
-        i = i
+        MsgBox("Total Batch Updated:" & ReturnSt.Count & ReturnSt.Item(0).ErrirMsg)
 
 
     End Sub

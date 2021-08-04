@@ -1112,7 +1112,6 @@
       <xs:element minOccurs="0" name="LotNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MnfSerial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SmokingSystem" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeightOnBatch" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
@@ -1698,6 +1697,7 @@
       <xs:element minOccurs="0" name="DocTotal" type="xs:double" />
       <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LineDiscPrcnt" type="xs:double" />
       <xs:element minOccurs="0" name="LineNum" type="xs:int" />
       <xs:element minOccurs="0" name="LineTotal" type="xs:double" />
@@ -1706,14 +1706,18 @@
       <xs:element minOccurs="0" name="OcrCode2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Price" type="xs:double" />
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Series" type="xs:int" />
       <xs:element minOccurs="0" name="SeriesName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ShipTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SlpCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SlpName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TaxDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="TotalBFDiscount" type="xs:double" />
       <xs:element minOccurs="0" name="UomCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VatGroup" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WhsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhsName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PurchaseOrder" nillable="true" type="tns:PurchaseOrder" />
@@ -1801,6 +1805,8 @@
       <xs:element minOccurs="0" name="DocNum" type="xs:int" />
       <xs:element minOccurs="0" name="DocTotal" type="xs:double" />
       <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LineDiscPrcnt" type="xs:double" />
       <xs:element minOccurs="0" name="LineNum" type="xs:int" />
       <xs:element minOccurs="0" name="LineTotal" type="xs:double" />
@@ -1809,13 +1815,17 @@
       <xs:element minOccurs="0" name="OcrCode2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Price" type="xs:double" />
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Series" type="xs:int" />
       <xs:element minOccurs="0" name="SeriesName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SlpCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SlpName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TaxDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="TotalBFDiscount" type="xs:double" />
       <xs:element minOccurs="0" name="UomCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VatGroup" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WhsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhsName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SalesOrder" nillable="true" type="tns:SalesOrder" />

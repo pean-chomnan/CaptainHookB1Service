@@ -11142,9 +11142,6 @@ Namespace ServiceReference1
         Private SmokingSystemField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private TypeField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private WeightOnBatchField As Double
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
@@ -11257,19 +11254,6 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.SmokingSystemField, value) <> true) Then
                     Me.SmokingSystemField = value
                     Me.RaisePropertyChanged("SmokingSystem")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Type() As String
-            Get
-                Return Me.TypeField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.TypeField, value) <> true) Then
-                    Me.TypeField = value
-                    Me.RaisePropertyChanged("Type")
                 End If
             End Set
         End Property
@@ -15534,6 +15518,9 @@ Namespace ServiceReference1
         Private ItemNameField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ItemTypeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private LineDiscPrcntField As Double
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -15558,6 +15545,9 @@ Namespace ServiceReference1
         Private QuantityField As Double
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private RemarkField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private SeriesField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -15565,6 +15555,12 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ShipToField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SlpCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SlpNameField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private TaxDateField As Date
@@ -15580,6 +15576,9 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private WhsCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private WhsNameField As String
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -15774,6 +15773,19 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ItemType() As String
+            Get
+                Return Me.ItemTypeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ItemTypeField, value) <> true) Then
+                    Me.ItemTypeField = value
+                    Me.RaisePropertyChanged("ItemType")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property LineDiscPrcnt() As Double
             Get
                 Return Me.LineDiscPrcntField
@@ -15878,6 +15890,19 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Remark() As String
+            Get
+                Return Me.RemarkField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.RemarkField, value) <> true) Then
+                    Me.RemarkField = value
+                    Me.RaisePropertyChanged("Remark")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property Series() As Integer
             Get
                 Return Me.SeriesField
@@ -15912,6 +15937,32 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.ShipToField, value) <> true) Then
                     Me.ShipToField = value
                     Me.RaisePropertyChanged("ShipTo")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property SlpCode() As String
+            Get
+                Return Me.SlpCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SlpCodeField, value) <> true) Then
+                    Me.SlpCodeField = value
+                    Me.RaisePropertyChanged("SlpCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property SlpName() As String
+            Get
+                Return Me.SlpNameField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SlpNameField, value) <> true) Then
+                    Me.SlpNameField = value
+                    Me.RaisePropertyChanged("SlpName")
                 End If
             End Set
         End Property
@@ -15977,6 +16028,19 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.WhsCodeField, value) <> true) Then
                     Me.WhsCodeField = value
                     Me.RaisePropertyChanged("WhsCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property WhsName() As String
+            Get
+                Return Me.WhsNameField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.WhsNameField, value) <> true) Then
+                    Me.WhsNameField = value
+                    Me.RaisePropertyChanged("WhsName")
                 End If
             End Set
         End Property
@@ -16613,6 +16677,12 @@ Namespace ServiceReference1
         Private ItemCodeField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ItemNameField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ItemTypeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private LineDiscPrcntField As Double
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -16637,10 +16707,19 @@ Namespace ServiceReference1
         Private QuantityField As Double
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private RemarkField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private SeriesField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private SeriesNameField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SlpCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SlpNameField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private TaxDateField As Date
@@ -16656,6 +16735,9 @@ Namespace ServiceReference1
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private WhsCodeField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private WhsNameField As String
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -16837,6 +16919,32 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ItemName() As String
+            Get
+                Return Me.ItemNameField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ItemNameField, value) <> true) Then
+                    Me.ItemNameField = value
+                    Me.RaisePropertyChanged("ItemName")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ItemType() As String
+            Get
+                Return Me.ItemTypeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ItemTypeField, value) <> true) Then
+                    Me.ItemTypeField = value
+                    Me.RaisePropertyChanged("ItemType")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property LineDiscPrcnt() As Double
             Get
                 Return Me.LineDiscPrcntField
@@ -16941,6 +17049,19 @@ Namespace ServiceReference1
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Remark() As String
+            Get
+                Return Me.RemarkField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.RemarkField, value) <> true) Then
+                    Me.RemarkField = value
+                    Me.RaisePropertyChanged("Remark")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property Series() As Integer
             Get
                 Return Me.SeriesField
@@ -16962,6 +17083,32 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.SeriesNameField, value) <> true) Then
                     Me.SeriesNameField = value
                     Me.RaisePropertyChanged("SeriesName")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property SlpCode() As String
+            Get
+                Return Me.SlpCodeField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SlpCodeField, value) <> true) Then
+                    Me.SlpCodeField = value
+                    Me.RaisePropertyChanged("SlpCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property SlpName() As String
+            Get
+                Return Me.SlpNameField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.SlpNameField, value) <> true) Then
+                    Me.SlpNameField = value
+                    Me.RaisePropertyChanged("SlpName")
                 End If
             End Set
         End Property
@@ -17027,6 +17174,19 @@ Namespace ServiceReference1
                 If (Object.ReferenceEquals(Me.WhsCodeField, value) <> true) Then
                     Me.WhsCodeField = value
                     Me.RaisePropertyChanged("WhsCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property WhsName() As String
+            Get
+                Return Me.WhsNameField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.WhsNameField, value) <> true) Then
+                    Me.WhsNameField = value
+                    Me.RaisePropertyChanged("WhsName")
                 End If
             End Set
         End Property
