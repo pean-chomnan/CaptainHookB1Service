@@ -274,3 +274,22 @@
         Dim i As Integer
         i = ls_Res1.ls_data.Count
         i = i
+	
+	'Get Avaibl Stock
+        Dim ls_Res1 As New ServiceReference1.ReturnAvaibleStock
+        ls_Res1 = Client._GetAvaibleStock("1IGSTIOD", "03.HKT05")
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i
+
+	'Get Avaibl Stock Batch
+        Dim ls_Res1 As New ServiceReference1.ReturnAvaibleStockBatch
+        ls_Res1 = Client._GetAvaibleStockBatch("1IGSG0000", "03.HKT05", "2021070610003")
+        Dim i As Integer
+        i = ls_Res1.ls_data.Count
+        i = i
+
+
+
+
+

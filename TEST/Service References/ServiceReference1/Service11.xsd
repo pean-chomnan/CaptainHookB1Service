@@ -2381,4 +2381,62 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Manufacturer" nillable="true" type="tns:Manufacturer" />
+  <xs:complexType name="ReturnAvaibleStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ls_data" nillable="true" type="tns:ArrayOfAvaibleStock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnAvaibleStock" nillable="true" type="tns:ReturnAvaibleStock" />
+  <xs:complexType name="ArrayOfAvaibleStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AvaibleStock" nillable="true" type="tns:AvaibleStock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvaibleStock" nillable="true" type="tns:ArrayOfAvaibleStock" />
+  <xs:complexType name="AvaibleStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+      <xs:element minOccurs="0" name="Warehouse" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvaibleStock" nillable="true" type="tns:AvaibleStock" />
+  <xs:complexType name="ReturnAvaibleStockBatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ls_data" nillable="true" type="tns:ArrayOfAvaibleStockBatch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnAvaibleStockBatch" nillable="true" type="tns:ReturnAvaibleStockBatch" />
+  <xs:complexType name="ArrayOfAvaibleStockBatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AvaibleStockBatch" nillable="true" type="tns:AvaibleStockBatch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvaibleStockBatch" nillable="true" type="tns:ArrayOfAvaibleStockBatch" />
+  <xs:complexType name="AvaibleStockBatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACT_WeightOnBatch" type="xs:double" />
+      <xs:element minOccurs="0" name="BarCodeBoxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Batch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiredDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MnfDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MnfSerial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+      <xs:element minOccurs="0" name="SmokingSystem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warehouse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WarehouseName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvaibleStockBatch" nillable="true" type="tns:AvaibleStockBatch" />
 </xs:schema>

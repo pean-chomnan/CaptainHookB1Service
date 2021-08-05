@@ -465,15 +465,15 @@ Public Class Service1
         Return obj.FGetManufacturer
     End Function
 
-    'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
-    '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
-    '    Return obj.FGetReturnLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)
-    'End Function
+    Public Function _GetAvaibleStock(ByVal ItemCode As String, ByVal WhsCode As String) As ReturnAvaibleStock Implements IServices._GetAvaibleStock
+        Dim obj As New CReturnAvaibleStock
+        Return obj.FGetReturnAvaibleStock(ItemCode, WhsCode)
+    End Function
 
-    'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
-    '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
-    '    Return obj.FGetReturnLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)
-    'End Function
+    Public Function _GetAvaibleStockBatch(ByVal ItemCode As String, ByVal WhsCode As String, ByVal Batch As String) As ReturnAvaibleStockBatch Implements IServices._GetAvaibleStockBatch
+        Dim obj As New CReturnAvaibleStockBatch
+        Return obj.FGetReturnAvaibleStockBatch(ItemCode, WhsCode, Batch)
+    End Function
 
     'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
     '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine

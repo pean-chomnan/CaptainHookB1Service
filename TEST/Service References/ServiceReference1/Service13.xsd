@@ -983,4 +983,35 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="_GetAvaibleStock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WhsCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetAvaibleStockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetAvaibleStockResult" nillable="true" type="q90:ReturnAvaibleStock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetAvaibleStockBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WhsCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Batch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="_GetAvaibleStockBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="_GetAvaibleStockBatchResult" nillable="true" type="q91:ReturnAvaibleStockBatch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

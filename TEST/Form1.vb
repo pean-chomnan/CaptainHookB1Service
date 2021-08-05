@@ -86,36 +86,16 @@ Public Class Form1
         'Dim i As Integer
         'i = ls_Res.ls_data.Count
 
-
         '======================== xxxx ========================='
-        Dim ls_Packing As New List(Of ServiceReference1.PackingClassClassPacking)
-        Dim Packing As New ServiceReference1.PackingClassClassPacking
-        Dim ReturnSt As New List(Of ServiceReference1.ReturnStatus)
 
-        'Batch PO20082008009-00003
-        Packing.ItemCode = "4GT0100"
-        Packing.DistNumber = "PO20082008009-00003"
-        Packing.BarCodeBoxNumber = "BX004"
-        ls_Packing.Add(Packing)
-        Packing = New ServiceReference1.PackingClassClassPacking
+        'Get Avaibl Stock Batch
+        'Dim ls_Res1 As New ServiceReference1.ReturnAvaibleStockBatch
+        'ls_Res1 = Client._GetAvaibleStockBatch("1IGSG0000", "03.HKT05", "2021070610003")
+        'Dim i As Integer
+        'i = ls_Res1.ls_data.Count
+        'i = i
 
-        'Batch BX008
-        Packing.ItemCode = "4GT0100"
-        Packing.DistNumber = "BX008"
-        Packing.BarCodeBoxNumber = "BX004"
-        ls_Packing.Add(Packing)
-        Packing = New ServiceReference1.PackingClassClassPacking
-
-        'Batch SC-00022
-        Packing.ItemCode = "4GT0100"
-        Packing.DistNumber = "4B002"
-        Packing.BarCodeBoxNumber = "BX004"
-        ls_Packing.Add(Packing)
-        Packing = New ServiceReference1.PackingClassClassPacking
-        ReturnSt = Client._UpdateUDFBorCodeBoxNumber(ls_Packing.ToArray).ToList '(ls_Packing.ToList).
-
-        MsgBox("Total Batch Updated:" & ReturnSt.Count & ReturnSt.Item(0).ErrirMsg)
-
+        '
 
     End Sub
 End Class
