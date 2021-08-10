@@ -31,7 +31,8 @@
 
                 Do While i < obj.Count
                     'If myClasss.Has("U_WebDocNum", obj(i).WebDocNum, "ODLN") = False Then
-                    If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""ODLN"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & obj(i).WebDocNum, oCompany) = 0 Then
+                    If True Then
+                        'If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""ODLN"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & obj(i).WebDocNum, oCompany) = 0 Then
                         DLN.Series = obj(i).Series
                         DLN.CardCode = obj(i).CardCode
                         DLN.DocDate = obj(i).DocDate
@@ -40,9 +41,20 @@
                         DLN.BPL_IDAssignedToInvoice = obj(i).RequestByBranch
 
                         DLN.DiscountPercent = obj(i).DiscountPercent
-                        DLN.ContactPersonCode = obj(i).ContactPersonCode
-                        DLN.SalesPersonCode = obj(i).SalesPersonCode
-                        DLN.DocumentsOwner = obj(i).DocumentsOwner
+
+                        If obj(i).ContactPersonCode <> 0 And obj(i).ContactPersonCode.ToString <> "" Then
+                            DLN.ContactPersonCode = obj(i).ContactPersonCode
+                        End If
+
+                        If obj(i).SalesPersonCode <> 0 And obj(i).SalesPersonCode.ToString <> "" Then
+                            DLN.SalesPersonCode = obj(i).SalesPersonCode
+                        End If
+
+
+                        If obj(i).DocumentsOwner <> 0 And obj(i).DocumentsOwner.ToString <> "" Then
+                            DLN.DocumentsOwner = obj(i).DocumentsOwner
+                        End If
+
 
                         DLN.NumAtCard = obj(i).NumAtCard
                         DLN.Comments = obj(i).Comments

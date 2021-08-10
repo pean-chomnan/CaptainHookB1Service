@@ -1,10 +1,10 @@
-﻿Public Class ReturnSalesOrder
+﻿Public Class ReturnDelivery
     Public Property ErrCode As Integer
     Public Property ErrMsg As String
-    Public Property ls_data As List(Of SalesOrder)
+    Public Property ls_data As List(Of Delivery)
 End Class
 
-Public Class SalesOrder
+Public Class Delivery
     Public Property DocEntry As Integer
     Public Property CardCode As String
     Public Property CardName As String
@@ -23,7 +23,6 @@ Public Class SalesOrder
     Public Property DocTotal As Double
     Public Property ItemCode As String
     Public Property CodeBars As String
-
     Public Property Quantity As Double
     Public Property Price As Double
     Public Property LineDiscPrcnt As Double
@@ -40,16 +39,14 @@ Public Class SalesOrder
     Public Property WhsName As String
     Public Property ItemName As String
     Public Property ItemType As String
-    Public Property UomType As String
-    Public Property Weight As Double
 
 
 End Class
 
-Public Class CReturnGetSalesOrder
-    Public Function FGetReturnSalesOrder(ByVal DocNum As Integer) As ReturnSalesOrder
+Public Class CReturnGetDelivery
+    Public Function FGetReturnDelivery(ByVal DocNum As Integer) As ReturnDelivery
         Try
-            Dim ls As New List(Of SalesOrder)
+            Dim ls As New List(Of Delivery)
             Dim oCompany As SAPbobsCOM.Company = Nothing
             Dim oRs As SAPbobsCOM.Recordset = Nothing
             Dim strSql As String = ""
@@ -61,10 +58,10 @@ Public Class CReturnGetSalesOrder
             If oLoginService.lErrCode = 0 Then
                 oCompany = oLoginService.Company
                 oRs = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset)
-                strSql = "CALL " & _DBNAME & ".""USP_GetSO""(" & DocNum & ")"
+                strSql = "CALL " & _DBNAME & ".""USP_GetDelivery""(" & DocNum & ")"
                 oRs.DoQuery(strSql)
                 Do While Not oRs.EoF
-                    ls.Add(New SalesOrder With {
+                    ls.Add(New Delivery With {
                         .DocEntry = oRs.Fields.Item("DocEntry").Value,
                         .CardCode = oRs.Fields.Item("CardCode").Value.ToString.Trim,
                         .CardName = oRs.Fields.Item("CardName").Value.ToString.Trim,
@@ -98,26 +95,24 @@ Public Class CReturnGetSalesOrder
                         .Remark = oRs.Fields.Item("Comments").Value.ToString.Trim,
                         .ItemName = oRs.Fields.Item("ItemName").Value.ToString.Trim,
                         .WhsName = oRs.Fields.Item("WhsName").Value.ToString.Trim,
-                        .ItemType = oRs.Fields.Item("ItemType").Value.ToString.Trim,
-                        .UomType = oRs.Fields.Item("UOMType").Value.ToString.Trim,
-                        .Weight = oRs.Fields.Item("WeightTotal").Value.ToString.Trim
+                        .ItemType = oRs.Fields.Item("ItemType").Value.ToString.Trim
                     })
                     oRs.MoveNext()
                 Loop
-                Return (New ReturnSalesOrder With {
+                Return (New ReturnDelivery With {
                         .ErrCode = 0,
                         .ErrMsg = "",
                         .ls_data = ls
                     })
             Else
-                Return (New ReturnSalesOrder With {
+                Return (New ReturnDelivery With {
                         .ErrCode = oLoginService.lErrCode,
                         .ErrMsg = oLoginService.sErrMsg,
                         .ls_data = Nothing
                     })
             End If
         Catch ex As Exception
-            Return (New ReturnSalesOrder With {
+            Return (New ReturnDelivery With {
                        .ErrCode = ex.HResult,
                        .ErrMsg = ex.Message.ToString(),
                        .ls_data = Nothing
@@ -125,6 +120,7 @@ Public Class CReturnGetSalesOrder
         End Try
     End Function
 End Class
+
 
 
 

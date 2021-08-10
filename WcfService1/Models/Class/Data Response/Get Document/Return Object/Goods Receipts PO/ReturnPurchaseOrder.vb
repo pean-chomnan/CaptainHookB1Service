@@ -40,7 +40,8 @@ Public Class PurchaseOrder
     Public Property SlpName As String
     Public Property Remark As String
     Public Property WhsName As String
-
+    Public Property UomType As String
+    Public Property Weight As Double
 
 End Class
 
@@ -97,7 +98,9 @@ Public Class CReturnGetPurchaseOrder
                         .SlpCode = oRs.Fields.Item("SlpCode").Value.ToString.Trim,
                         .SlpName = oRs.Fields.Item("SlpName").Value.ToString.Trim,
                         .WhsName = oRs.Fields.Item("WhsName").Value.ToString.Trim,
-                        .Remark = oRs.Fields.Item("Comments").Value.ToString.Trim
+                        .Remark = oRs.Fields.Item("Comments").Value.ToString.Trim,
+                        .UomType = oRs.Fields.Item("UOMType").Value.ToString.Trim,
+                        .Weight = oRs.Fields.Item("WeightTotal").Value.ToString.Trim
                     })
                     oRs.MoveNext()
                 Loop

@@ -106,8 +106,20 @@ Public Interface IServices
     Function _GetBinCode(ByVal WarehouseCode As String) As ReturnBinCode
     <OperationContract()>
     Function _GetSalesOrder(ByVal DocNum As Integer) As ReturnSalesOrder
+
+
     <OperationContract()>
     Function _GetListOfSalesOrder() As ReturnListOfSalesOrder
+
+
+    <OperationContract()>
+    Function _GetDelivery(ByVal DocNum As Integer) As ReturnDelivery
+
+    <OperationContract()>
+    Function _GetListOfDelivery() As ReturnListOfDelivery
+
+
+
     <OperationContract()>
     Function _GetAvailableSerialBatch(ByVal ItemCode As String, ByVal WarehouseCode As String) As ReturnAvailableSerialBatch
     <OperationContract()>

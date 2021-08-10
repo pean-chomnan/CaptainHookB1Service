@@ -21,6 +21,7 @@ Public Class ListOfSalesOrder
     Public Property DiscPrcnt As Double
     Public Property DiscSum As Double
     Public Property DocTotal As Double
+    Public Property Remark As String
 
 End Class
 
@@ -57,7 +58,8 @@ Public Class CReturnGetListOfSalesOrder
                         .TotalBFDiscount = oRs.Fields.Item("TotalBFDiscount").Value.ToString.Trim,
                         .DiscPrcnt = oRs.Fields.Item("DiscPrcnt").Value.ToString.Trim,
                         .DiscSum = oRs.Fields.Item("DiscSum").Value.ToString.Trim,
-                        .DocTotal = oRs.Fields.Item("DocTotal").Value.ToString.Trim
+                        .DocTotal = oRs.Fields.Item("DocTotal").Value.ToString.Trim,
+                        .Remark = oRs.Fields.Item("Comments").Value.ToString.Trim
                     })
                     oRs.MoveNext()
                 Loop

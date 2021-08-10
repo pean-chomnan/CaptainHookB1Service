@@ -1,10 +1,11 @@
-﻿Public Class ReturnListOfPurchaseDocument
+﻿Public Class ReturnListOfDelivery
     Public Property ErrCode As Integer
     Public Property ErrMsg As String
-    Public Property ls_data As List(Of ListOfPurchaseDocument)
+    Public Property ls_data As List(Of ListOfDelivery)
 End Class
 
-Public Class ListOfPurchaseDocument
+Public Class ListOfDelivery
+
     Public Property Series As Integer
     Public Property SeriesName As String
     Public Property DocNum As Integer
@@ -24,10 +25,10 @@ Public Class ListOfPurchaseDocument
 
 End Class
 
-Public Class CReturnGetListOfPurchaseDocument
-    Public Function FGetReturnListOfPurchaseDocument() As ReturnListOfPurchaseDocument
+Public Class CReturnGetListOfDelivery
+    Public Function FGetReturnListOfDelivery() As ReturnListOfDelivery
         Try
-            Dim ls As New List(Of ListOfPurchaseDocument)
+            Dim ls As New List(Of ListOfDelivery)
             Dim oCompany As SAPbobsCOM.Company = Nothing
             Dim oRs As SAPbobsCOM.Recordset = Nothing
             Dim strSql As String = ""
@@ -39,10 +40,10 @@ Public Class CReturnGetListOfPurchaseDocument
             If oLoginService.lErrCode = 0 Then
                 oCompany = oLoginService.Company
                 oRs = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset)
-                strSql = "CALL " & _DBNAME & ".""USP_LisOfGetPO""()"
+                strSql = "CALL " & _DBNAME & ".""USP_LisOfGetDelivery""()"
                 oRs.DoQuery(strSql)
                 Do While Not oRs.EoF
-                    ls.Add(New ListOfPurchaseDocument With {
+                    ls.Add(New ListOfDelivery With {
                         .Series = oRs.Fields.Item("Series").Value.ToString.Trim,
                         .SeriesName = oRs.Fields.Item("SeriesName").Value.ToString.Trim,
                         .DocNum = oRs.Fields.Item("DocNum").Value.ToString.Trim,
@@ -62,20 +63,20 @@ Public Class CReturnGetListOfPurchaseDocument
                     })
                     oRs.MoveNext()
                 Loop
-                Return (New ReturnListOfPurchaseDocument With {
+                Return (New ReturnListOfDelivery With {
                         .ErrCode = 0,
                         .ErrMsg = "",
                         .ls_data = ls
                     })
             Else
-                Return (New ReturnListOfPurchaseDocument With {
+                Return (New ReturnListOfDelivery With {
                         .ErrCode = oLoginService.lErrCode,
                         .ErrMsg = oLoginService.sErrMsg,
                         .ls_data = Nothing
                     })
             End If
         Catch ex As Exception
-            Return (New ReturnListOfPurchaseDocument With {
+            Return (New ReturnListOfDelivery With {
                        .ErrCode = ex.HResult,
                        .ErrMsg = ex.Message.ToString(),
                        .ls_data = Nothing

@@ -353,6 +353,16 @@ Public Class Service1
         Return obj.FGetReturnListOfSalesOrder
     End Function
 
+    Public Function _GetDelivery(DocNum As Integer) As ReturnDelivery Implements IServices._GetDelivery
+        Dim obj As New CReturnGetDelivery
+        Return obj.FGetReturnDelivery(DocNum)
+    End Function
+
+    Public Function _GetListOfDelivery() As ReturnListOfDelivery Implements IServices._GetListOfDelivery
+        Dim obj As New CReturnGetListOfDelivery
+        Return obj.FGetReturnListOfDelivery
+    End Function
+
     Public Function _GetAvailableSerialBatch(ByVal ItemCode As String, ByVal WarehouseCode As String) As ReturnAvailableSerialBatch Implements IServices._GetAvailableSerialBatch
         Dim obj As New CReturnGetAvailableSerialBatch
         Return obj.FGetReturnAvailableSerialBatch(ItemCode, WarehouseCode)
@@ -464,6 +474,8 @@ Public Class Service1
         Dim obj As New CReturnManufacturer
         Return obj.FGetManufacturer
     End Function
+
+
 
     'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
     '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine

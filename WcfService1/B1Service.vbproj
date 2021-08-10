@@ -108,6 +108,8 @@
     <Compile Include="Models\Class\AP Modul\Goods Receipts\GoodsReceiptPO.vb" />
     <Compile Include="Models\Class\AR Modul\Delivery\ClassDelivery.vb" />
     <Compile Include="Models\Class\AR Modul\Delivery\CreateDelivery.vb" />
+    <Compile Include="Models\Class\Data Response\Get Document\Return Object\Delivery\ReturnDelivery.vb" />
+    <Compile Include="Models\Class\Data Response\Get Document\Return Object\Delivery\ReturnListOfDelivery.vb" />
     <Compile Include="Models\Class\Data Response\Get Document\Return Object\Delivery\ReturnListOfSalesOrder.vb" />
     <Compile Include="Models\Class\Data Response\Get Document\Return Object\Delivery\ReturnSalesOrder.vb" />
     <Compile Include="Models\Class\Data Response\Get Document\Return Object\Goods Issue\ReturnPriceList.vb" />

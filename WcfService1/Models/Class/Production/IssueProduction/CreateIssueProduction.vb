@@ -29,7 +29,8 @@
 
                 Do While i < obj.Count
                     'If myClasss.Has("U_WebDocNum", obj(i).WebDocNum, "OIGE") = False Then
-                    If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""OIGE"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & obj(i).WebDocNum, oCompany) = 0 Then
+                    ' If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""OIGE"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & obj(i).WebDocNum, oCompany) = 0 Then
+                    If True Then
                         IGE.Series = obj(i).Series
                         IGE.DocDate = obj(i).DocDate
                         'IGE.TaxDate = obj(i).TaxDate

@@ -34,6 +34,7 @@ Public Class OWORforReceiptFromProduction
     Public Property CmpltQty As Double
     Public Property RjctQty As Double
     Public Property Expirydate As Integer
+    Public Property UOM As String
 End Class
 
 Public Class GetListOfOWORforReceiptFromProduction
@@ -81,7 +82,8 @@ Public Class GetListOfOWORforReceiptFromProduction
                         .StockAvaible = oRs.Fields.Item("StockAvaible").Value,
                         .CmpltQty = oRs.Fields.Item("CmpltQty").Value,
                         .RjctQty = oRs.Fields.Item("RjctQty").Value,
-                        .Expirydate = oRs.Fields.Item("Expirydate").Value
+                        .Expirydate = oRs.Fields.Item("Expirydate").Value,
+                        .UOM = oRs.Fields.Item("Uom").Value
                     })
                     oRs.MoveNext()
                 Loop
