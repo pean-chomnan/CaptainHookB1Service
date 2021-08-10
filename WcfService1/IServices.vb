@@ -166,10 +166,10 @@ Public Interface IServices
     Function _GetProjectCode() As ReturnProjectCode
     <OperationContract()>
     Function _GetManufacturer() As ReturnManufacturer
-    '<OperationContract()>
-    'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
-    '<OperationContract()>
-    'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
+    <OperationContract()>
+    Function _GetAvaibleStock(ByVal ItemCode As String, ByVal WhsCode As String) As ReturnAvaibleStock
+    <OperationContract()>
+    Function _GetAvaibleStockBatch(ByVal ItemCode As String, ByVal WhsCode As String, ByVal Batch As String) As ReturnAvaibleStockBatch
     '<OperationContract()>
     'Function _GetPurchaseOrder(ByVal DocNum As Integer) As ReturnPurchaseOrder
     '<OperationContract()>

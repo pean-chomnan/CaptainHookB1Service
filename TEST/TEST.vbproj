@@ -144,6 +144,12 @@
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnAccountDownPayment.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnAvaibleStock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnAvaibleStockBatch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\TEST.ServiceReference1.ReturnAvailableSerialBatch.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -153,6 +153,8 @@
     <Compile Include="Models\Class\Data Response\Get Master\ReturnObject\BP Master\ReturnPaymentMeothod.vb" />
     <Compile Include="Models\Class\Data Response\Get Master\ReturnObject\BP Master\ReturnPaymentTerms.vb" />
     <Compile Include="Models\Class\Data Response\Get Master\ReturnObject\BP Master\ReturnWithholdingTax.vb" />
+    <Compile Include="Models\Class\Data Response\Get Master\ReturnObject\Item Master\ReturnAvaibleStock.vb" />
+    <Compile Include="Models\Class\Data Response\Get Master\ReturnObject\Item Master\ReturnAvaibleStockBatch.vb" />
     <Compile Include="Models\Class\Data Response\Get Master\ReturnObject\Item Master\ReturnFirmCode.vb" />
     <Compile Include="Models\Class\Data Response\Get Master\ReturnObject\Item Master\ReturnItemCode.vb" />
     <Compile Include="Models\Class\Data Response\Get Master\ReturnObject\Item Master\ReturnItemGroupCode.vb" />
