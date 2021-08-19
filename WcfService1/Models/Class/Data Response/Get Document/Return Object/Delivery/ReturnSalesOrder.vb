@@ -42,6 +42,9 @@ Public Class SalesOrder
     Public Property ItemType As String
     Public Property UomType As String
     Public Property Weight As Double
+    Public Property UomQty As Double
+    Public Property ItemInventoryUOM As String
+    Public Property UomName As String
 
 
 End Class
@@ -100,7 +103,10 @@ Public Class CReturnGetSalesOrder
                         .WhsName = oRs.Fields.Item("WhsName").Value.ToString.Trim,
                         .ItemType = oRs.Fields.Item("ItemType").Value.ToString.Trim,
                         .UomType = oRs.Fields.Item("UOMType").Value.ToString.Trim,
-                        .Weight = oRs.Fields.Item("WeightTotal").Value.ToString.Trim
+                        .Weight = oRs.Fields.Item("WeightTotal").Value.ToString.Trim,
+                        .UomQty = oRs.Fields.Item("UomQty").Value.ToString.Trim,
+                        .ItemInventoryUOM = oRs.Fields.Item("ItemBaseUomCode").Value.ToString.Trim,
+                        .UomName = oRs.Fields.Item("UomName").Value.ToString.Trim
                     })
                     oRs.MoveNext()
                 Loop

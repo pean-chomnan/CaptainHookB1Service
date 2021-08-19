@@ -34,6 +34,12 @@ Public Class IssueComponent
     Public Property OcrCode5 As String
     Public Property ExpiryDate As Integer
 
+    Public Property UomQty As Double
+    Public Property ItemInventoryUOM As String
+    Public Property UomName As String
+    Public Property ItemMngType As String
+    Public Property UomType As String
+
 End Class
 
 Public Class GetListOfIssueComponent
@@ -92,7 +98,12 @@ Public Class GetListOfIssueComponent
                         .OcrCode3 = oRs.Fields.Item("OcrCode3").Value,
                         .OcrCode4 = oRs.Fields.Item("OcrCode4").Value,
                         .OcrCode5 = oRs.Fields.Item("OcrCode5").Value,
-                        .ExpiryDate = oRs.Fields.Item("Expirydate").Value
+                        .ExpiryDate = oRs.Fields.Item("Expirydate").Value,
+                        .ItemMngType = oRs.Fields.Item("ItemMngType").Value,
+                        .ItemInventoryUOM = oRs.Fields.Item("ItemBaseUomCode").Value,
+                        .UomName = oRs.Fields.Item("UomName").Value,
+                        .UomQty = oRs.Fields.Item("UomQty").Value,
+                        .UomType = oRs.Fields.Item("UOMType").Value
                     })
                     oRs.MoveNext()
                 Loop

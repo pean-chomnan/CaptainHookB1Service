@@ -35,6 +35,11 @@ Public Class OWORforReceiptFromProduction
     Public Property RjctQty As Double
     Public Property Expirydate As Integer
     Public Property UOM As String
+
+    Public Property U_ProductComposition As String
+    Public Property U_HowToEat As String
+    Public Property U_CertifiedCode As String
+    Public Property U_StorageCondition As String
 End Class
 
 Public Class GetListOfOWORforReceiptFromProduction
@@ -83,7 +88,11 @@ Public Class GetListOfOWORforReceiptFromProduction
                         .CmpltQty = oRs.Fields.Item("CmpltQty").Value,
                         .RjctQty = oRs.Fields.Item("RjctQty").Value,
                         .Expirydate = oRs.Fields.Item("Expirydate").Value,
-                        .UOM = oRs.Fields.Item("Uom").Value
+                        .UOM = oRs.Fields.Item("Uom").Value,
+                        .U_CertifiedCode = oRs.Fields.Item("U_CertifiedCode").Value,
+                        .U_HowToEat = oRs.Fields.Item("U_HowToEat").Value,
+                        .U_ProductComposition = oRs.Fields.Item("U_ProductComposition").Value,
+                        .U_StorageCondition = oRs.Fields.Item("U_StorageCondition").Value
                     })
                     oRs.MoveNext()
                 Loop

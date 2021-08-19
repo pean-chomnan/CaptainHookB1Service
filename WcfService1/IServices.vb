@@ -154,8 +154,16 @@ Public Interface IServices
     Function _GetBatchByBatchNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BatchNo As String) As ReturnBatchNumber
     <OperationContract()>
     Function _GetBatchByBoxNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As ReturnBatchByBoxNumber
+
+
     <OperationContract()>
     Function _GetBatchMaster(ByVal BatchNo As String) As ReturnBatchNumber
+
+
+    <OperationContract()>
+    Function _GetStockBatchMaster(ByVal ItemCode As String, ByVal WhsCode As String, ByVal BatchNo As String) As ReturnBatchNumber
+
+
     <OperationContract()>
     Function _GetBatchMasterByBox(ByVal BoxNo As String) As ReturnBatchNumber
     <OperationContract()>

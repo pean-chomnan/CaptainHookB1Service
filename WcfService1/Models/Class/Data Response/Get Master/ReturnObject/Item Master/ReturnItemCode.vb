@@ -28,6 +28,13 @@ Public Class CReturnGetItemCode
                 oCompany = oLoginService.Company
                 oRs = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset)
                 strSql = "SELECT TOP 50 ""ItemCode"",""ItemName"",""OnHand"",""ItmsGrpCod"",""UserText"" FROM " & _DBNAME & ".""OITM"" WHERE LOWER(""ItemCode"") LIKE '%" & SearchingItem.ToLower & "%' OR LOWER(""ItemName"") LIKE '%" & SearchingItem.ToLower & "%' ORDER BY ""ItemCode"""
+
+                If SearchingItem = "" Then
+                    strSql = "SELECT TOP 50 ""ItemCode"",""ItemName"",""OnHand"",""ItmsGrpCod"",""UserText"" FROM " & _DBNAME & ".""OITM"" ORDER BY ""ItemCode"""
+
+                End If
+
+
                 oRs.DoQuery(strSql)
                 Do While Not oRs.EoF
                     ls.Add(New ItemCode With {

@@ -95,6 +95,11 @@
                             GPO.Lines.COGSCostingCode4 = L.CogsCode4
                             GPO.Lines.COGSCostingCode5 = L.CogsCode5
 
+                            If L.U_WeightTotal <> 0 And L.U_WeightTotal.ToString <> "" Then
+                                GPO.Lines.UserFields.Fields.Item("U_WeightTotal").Value = L.U_WeightTotal
+                            End If
+
+
                             ItemSetpBy = myClasss.ItemSetupBy(L.ItemCode)
 
                             If ItemSetpBy = 1 Then

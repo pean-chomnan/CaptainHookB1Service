@@ -490,6 +490,11 @@ Public Class Service1
         Return obj.FGetReturnAvaibleStockBatch(ItemCode, WhsCode, Batch)
     End Function
 
+    Public Function _GetStockBatchMaster(ItemCode As String, WhsCode As String, BatchNo As String) As ReturnBatchNumber Implements IServices._GetStockBatchMaster
+        Dim obj As New CReturnGetBatchNo
+        Return obj.GetStockBatchMaster(ItemCode, WhsCode, BatchNo)
+    End Function
+
     'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
     '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
     '    Return obj.FGetReturnLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)

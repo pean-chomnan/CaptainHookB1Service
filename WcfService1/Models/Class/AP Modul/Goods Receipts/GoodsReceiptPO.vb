@@ -51,6 +51,8 @@
         Public Property ls_Serial As List(Of SerialNumbers)
         Public Property ls_LineBIN As List(Of BINCode)
 
+        Public Property U_WeightTotal As Double
+
     End Class
 
     Public Class BatchNumbers
