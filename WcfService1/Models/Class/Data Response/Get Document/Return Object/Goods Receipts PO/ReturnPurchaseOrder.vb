@@ -45,6 +45,7 @@ Public Class PurchaseOrder
     Public Property UomQty As Double
     Public Property ItemInventoryUOM As String
     Public Property UomName As String
+    Public Property U_StorageCondition As String
 
 End Class
 
@@ -106,7 +107,8 @@ Public Class CReturnGetPurchaseOrder
                         .Weight = oRs.Fields.Item("WeightTotal").Value.ToString.Trim,
                         .UomQty = oRs.Fields.Item("UomQty").Value.ToString.Trim,
                         .ItemInventoryUOM = oRs.Fields.Item("ItemBaseUomCode").Value.ToString.Trim,
-                        .UomName = oRs.Fields.Item("UomName").Value.ToString.Trim
+                        .UomName = oRs.Fields.Item("UomName").Value.ToString.Trim,
+                        .U_StorageCondition = oRs.Fields.Item("U_StorageCondition").Value.ToString.Trim'U_StorageCondition""
                     })
                     oRs.MoveNext()
                 Loop

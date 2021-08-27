@@ -63,8 +63,8 @@
     End Class
 
     Public Class BinLocation
-        Public Property BinEntry As String
-        Public Property Quantity As Long
+        Public Property BinEntry As Integer
+        Public Property Quantity As Double
     End Class
 
 End Class

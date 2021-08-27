@@ -21,8 +21,8 @@
                 B1InventoryTransfer = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oStockTransfer)
                 Dim iIndex_Header As Integer = 0
                 Do While iIndex_Header < listOfInventoryTransfer.Count
-                    If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""OWTR"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & listOfInventoryTransfer(iIndex_Header).WebDocNum, oCompany) = 0 Then
-
+                    ' If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""OWTR"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & listOfInventoryTransfer(iIndex_Header).WebDocNum, oCompany) = 0 Then
+                    If True Then
                         B1InventoryTransfer.Series = listOfInventoryTransfer(iIndex_Header).Series
                         B1InventoryTransfer.DocDate = listOfInventoryTransfer(iIndex_Header).DocDate
                         B1InventoryTransfer.TaxDate = listOfInventoryTransfer(iIndex_Header).TaxDate
@@ -71,7 +71,8 @@
                                 B1InventoryTransfer.Lines.DistributionRule5 = inventoryTransferLine.CogsCode5
                             End If
 
-                            If inventoryTransferLine.ListOfSerial.Count > 0 Then 'Add Serial
+                            'If inventoryTransferLine.ListOfSerial.Count > 0 Then 'Add Serial
+                            If -1 > 0 Then 'Add Serial
                                 For Each oSerial In inventoryTransferLine.ListOfSerial
                                     B1InventoryTransfer.Lines.SerialNumbers.InternalSerialNumber = oSerial.SerialNumber
                                     B1InventoryTransfer.Lines.SerialNumbers.Add()
@@ -83,17 +84,21 @@
                                     B1InventoryTransfer.Lines.BatchNumbers.Add()
 
                                     'Add ToBinLocation 
-                                    If oBatch.ListOfToBinLocation.Count > 0 Then
-                                        Dim iIndex_Batch As Integer
-                                        For Each oToBin As ClassInventoryTransfer.BinLocation In oBatch.ListOfToBinLocation
-                                            B1InventoryTransfer.Lines.BinAllocations.BinActionType = SAPbobsCOM.BinActionTypeEnum.batToWarehouse
-                                            B1InventoryTransfer.Lines.BinAllocations.SerialAndBatchNumbersBaseLine = iIndex_Batch
-                                            B1InventoryTransfer.Lines.BinAllocations.Quantity = oToBin.Quantity
-                                            B1InventoryTransfer.Lines.BinAllocations.BinAbsEntry = oToBin.BinEntry
-                                            B1InventoryTransfer.Lines.BinAllocations.Add()
-                                            iIndex_Batch += 1
-                                        Next
+                                    If oBatch.ListOfToBinLocation IsNot Nothing Then
+                                        If oBatch.ListOfToBinLocation.Count > 0 Then
+                                            'If 1 = 2 Then
+                                            Dim iIndex_Batch As Integer = 0
+                                            For Each oToBin As ClassInventoryTransfer.BinLocation In oBatch.ListOfToBinLocation
+                                                B1InventoryTransfer.Lines.BinAllocations.BinActionType = SAPbobsCOM.BinActionTypeEnum.batToWarehouse
+                                                B1InventoryTransfer.Lines.BinAllocations.SerialAndBatchNumbersBaseLine = iIndex_Batch
+                                                B1InventoryTransfer.Lines.BinAllocations.Quantity = oToBin.Quantity
+                                                B1InventoryTransfer.Lines.BinAllocations.BinAbsEntry = oToBin.BinEntry
+                                                B1InventoryTransfer.Lines.BinAllocations.Add()
+                                                iIndex_Batch += 1
+                                            Next
+                                        End If
                                     End If
+
                                 Next
                             Else
                                 'Add ToBinLocation

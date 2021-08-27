@@ -150,8 +150,13 @@ Public Interface IServices
     Function _GetProductionOrderListForIssueProduction() As ReturnGetListOfOWORforIssueForProduction
     <OperationContract()>
     Function _GetLoadProductionOrderToIssueLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnGetListOfIssueComponent
+
+
+
     <OperationContract()>
     Function _GetBatchByBatchNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BatchNo As String) As ReturnBatchNumber
+
+
     <OperationContract()>
     Function _GetBatchByBoxNumber(ByVal WhsCode As String, ByVal ItemCode As String, ByVal BoxNumber As String) As ReturnBatchByBoxNumber
 
@@ -162,6 +167,21 @@ Public Interface IServices
 
     <OperationContract()>
     Function _GetStockBatchMaster(ByVal ItemCode As String, ByVal WhsCode As String, ByVal BatchNo As String) As ReturnBatchNumber
+
+    <OperationContract()>
+    Function _GetStockBatchMaster_WhsCodeBatchCode(ByVal WhsCode As String, ByVal BatchNo As String) As ReturnBatchNumber
+
+
+    <OperationContract()>
+    Function _GetStockBatchMaster_BatchCode(ByVal BatchNo As String) As ReturnBatchNumber
+
+
+    <OperationContract()>
+    Function _GetStockBy_WhsCode_BinCode(ByVal WhsCode As String, ByVal BinCode As String) As ResponseGetStock
+
+
+
+
 
 
     <OperationContract()>

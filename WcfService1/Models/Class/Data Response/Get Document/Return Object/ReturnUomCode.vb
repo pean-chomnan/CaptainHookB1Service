@@ -24,7 +24,7 @@ Public Class CReturnGetUomCode
             If oLoginService.lErrCode = 0 Then
                 oCompany = oLoginService.Company
                 oRs = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset)
-                strSql = "SELECT Distinct B.""UomEntry"",A.""UomCode"" FROM (SELECT ""BuyUnitMsr"" As ""UomCode"" FROM " & _DBNAME & ".""OITM"" WHERE ""ItemCode""='TC0005' AND ""UgpEntry""<>-1 UNION SELECT ""InvntryUom"" As ""UomCode"" FROM " & _DBNAME & ".""OITM"" WHERE ""ItemCode""='TC0005'  AND ""UgpEntry""<>-1  UNION SELECT 'Manual' As ""UomCode"" FROM " & _DBNAME & ".""OITM"" WHERE ""ItemCode""='TC0005'  AND ""UgpEntry""=-1) A INNER JOIN " & _DBNAME & ".""OUOM"" B On A.""UomCode""=B.""UomCode"""
+                strSql = "SELECT Distinct B.""UomEntry"",A.""UomCode"" FROM (SELECT ""BuyUnitMsr"" As ""UomCode"" FROM " & _DBNAME & ".""OITM"" WHERE ""ItemCode""='" & ItemCode & "' AND ""UgpEntry""<>-1 UNION SELECT ""InvntryUom"" As ""UomCode"" FROM " & _DBNAME & ".""OITM"" WHERE ""ItemCode""='" & ItemCode & "'  AND ""UgpEntry""<>-1  UNION SELECT 'Manual' As ""UomCode"" FROM " & _DBNAME & ".""OITM"" WHERE ""ItemCode""='" & ItemCode & "'  AND ""UgpEntry""=-1) A INNER JOIN " & _DBNAME & ".""OUOM"" B On A.""UomCode""=B.""UomCode"""
                 oRs.DoQuery(strSql)
                 Do While Not oRs.EoF
                     ls.Add(New UomCode With {

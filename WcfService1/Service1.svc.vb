@@ -495,6 +495,21 @@ Public Class Service1
         Return obj.GetStockBatchMaster(ItemCode, WhsCode, BatchNo)
     End Function
 
+    Public Function _GetStockBatchMaster_WhsCodeBatchCode(WhsCode As String, BatchNo As String) As ReturnBatchNumber Implements IServices._GetStockBatchMaster_WhsCodeBatchCode
+        Dim obj As New CReturnGetBatchNo
+        Return obj.GetStockBatchMaster(WhsCode, BatchNo)
+    End Function
+
+    Public Function _GetStockBatchMaster_BatchCode(BatchNo As String) As ReturnBatchNumber Implements IServices._GetStockBatchMaster_BatchCode
+        Dim obj As New CReturnGetBatchNo
+        Return obj.GetStockBatchMaster(BatchNo)
+    End Function
+
+    Public Function _GetStockBy_WhsCode_BinCode(WhsCode As String, BinCode As String) As ResponseGetStock Implements IServices._GetStockBy_WhsCode_BinCode
+        Dim obj As New ResponseGetStock.GetStock
+        Return obj.Execute(WhsCode, BinCode)
+    End Function
+
     'Public Function _GetLoadIssueForProductionToReceiptFromProductionLine(ByVal ListOfProductionOrderDocEntry As List(Of Integer)) As ReturnLoadIssueForProductionToReceiptFromProductionLine Implements IServices._GetLoadIssueForProductionToReceiptFromProductionLine
     '    Dim obj As New CReturnGetLoadIssueForProductionToReceiptFromProductionLine
     '    Return obj.FGetReturnLoadIssueForProductionToReceiptFromProductionLine(ListOfProductionOrderDocEntry)

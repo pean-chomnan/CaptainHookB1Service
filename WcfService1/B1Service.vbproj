@@ -188,6 +188,7 @@
     <Compile Include="Models\Class\Production\ReceiptFromProduction\CreateReceiptFromProduction.vb" />
     <Compile Include="Models\Funtion\LoginServiceWebRef.vb" />
     <Compile Include="Models\Funtion\myClassOfFuntion.vb" />
+    <Compile Include="NSC\ResponseGetStock.vb" />
     <Compile Include="Service1.svc.vb">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

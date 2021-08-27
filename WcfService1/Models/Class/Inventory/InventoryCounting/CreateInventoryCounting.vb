@@ -38,7 +38,8 @@
                 CountService = companyService.GetBusinessService(SAPbobsCOM.ServiceTypes.InventoryCountingsService)
                 InvCount = CountService.GetDataInterface(SAPbobsCOM.InventoryCountingsServiceDataInterfaces.icsInventoryCounting)
                 For Each header In obj
-                    If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""OINC"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & header.WebDocNum, oCompany) = 0 Then
+                    ' If myClasss.GetValFromQueryReturnNumberOCompany("SELECT * FROM " & _DBNAME & ".""OINC"" WHERE ""CANCELED""='N' AND ""U_WebDocNum""=" & header.WebDocNum, oCompany) = 0 Then
+                    If True Then
                         InvCount.Series = header.Series
                         InvCount.CountDate = header.CountingDate
                         InvCount.CountTime = header.CountingTime
@@ -47,7 +48,7 @@
                         InvCount.Reference2 = header.Ref2
                         InvCount.Remarks = header.Comments
                         'InvCount.UserFields.Fields.Item("U_WebDocNum").Value = header.WebDocNum
-                        InvCount.UserFields.Item("U_WebDocNum").Value = header.WebDocNum
+                        'InvCount.UserFields.Item("U_WebDocNum").Value = header.WebDocNum
                         InvCountLines = InvCount.InventoryCountingLines
                         For Each Line In header.Lines
                             InvCountLine = InvCountLines.Add()
@@ -75,7 +76,7 @@
                                     InventoryCountingLineUoMs.CountedQuantity = U.CountedQty
                                 Next
                             End If
-                            
+
                             InvCountLine.Counted = SAPbobsCOM.BoYesNoEnum.tYES
                             InvCountLine.CostingCode = Line.CogsCode
                             InvCountLine.CostingCode2 = Line.CogsCode2
